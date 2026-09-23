@@ -2,11 +2,15 @@
 import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 
-import { systemPython, systemPythonArgs, venvPython } from "./venv.mjs";
+import { repoRoot, systemPython, systemPythonArgs, venvPython } from "./venv.mjs";
 
 function run(command, args, label) {
   console.log(`\n> ${label}`);
-  const result = spawnSync(command, args, { stdio: "inherit", shell: false });
+  const result = spawnSync(command, args, {
+    stdio: "inherit",
+    shell: false,
+    cwd: repoRoot,
+  });
   if (result.status !== 0) {
     console.error(`\nFailed: ${label}`);
     process.exit(result.status ?? 1);

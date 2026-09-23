@@ -1,9 +1,10 @@
 import { spawn } from "node:child_process";
+import { join } from "node:path";
 
-import { venvPython } from "./venv.mjs";
+import { repoRoot, venvPython } from "./venv.mjs";
 
 const child = spawn(venvPython(), ["-m", "pytest"], {
   stdio: "inherit",
-  cwd: "api",
+  cwd: join(repoRoot, "api"),
 });
 child.on("exit", (code) => process.exit(code ?? 0));
