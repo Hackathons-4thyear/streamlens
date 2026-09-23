@@ -1,0 +1,17 @@
+# StreamLens API - Python 3.11
+
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.0
+sqlmodel==0.0.22
+python-multipart==0.0.20
+pillow==11.0.0
+numpy==2.2.1
+httpx==0.28.1
+
+# Vision provider. Imported lazily - the app runs without it on the mock provider.
+google-genai==0.3.0
+
+# Tests
+pytest==8.3.4
