@@ -1,0 +1,422 @@
+import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+import { Button, Notice, Spinner } from "./components/ui";
+import { LANGUAGES, setLanguage, type LanguageCode } from "./i18n";
+import { ApiError, api } from "./lib/api";
+import { cacheGet, cacheSet, pendingCount, queueObservation } from "./lib/db";
+import type { Position } from "./lib/geo";
+import { flushOutbox, startAutoSync } from "./lib/sync";
+import { PhotosScreen, type PhotoSlotValue } from "./screens/PhotosScreen";
+import { RatingScreen } from "./screens/RatingScreen";
+import { ReviewScreen } from "./screens/ReviewScreen";
+import { SiteScreen } from "./screens/SiteScreen";
+import { SubmitScreen, type SubmitOutcome } from "./screens/SubmitScreen";
+import {
+  answersReducer,
+  toPayloadAnswers,
+  type AnswersState,
+} from "./state/answers";
+import type {
+  Emotion,
+  ObservationPayload,
+  QuestionSet,
+  Site,
+  SitesResponse,
+  SuggestResponse,
+} from "./types";
+
+const STEPS = ["site", "photos", "review", "rating", "submit"] as const;
+type Step = (typeof STEPS)[number];
+
+const CLIENT_ID_KEY = "streamlens.client";
+
+function clientId(): string {
+  try {
+    const existing = localStorage.getItem(CLIENT_ID_KEY);
+    if (existing) return existing;
+    const created = crypto.randomUUID();
+    localStorage.setItem(CLIENT_ID_KEY, created);
+    return created;
+  } catch {
+    return "anonymous";
+  }
+}
+
+function useOnline(): boolean {
+  const [online, setOnline] = useState(navigator.onLine);
+  useEffect(() => {
+    const update = () => setOnline(navigator.onLine);
+    window.addEventListener("online", update);
+    window.addEventListener("offline", update);
+    return () => {
+      window.removeEventListener("online", update);
+      window.removeEventListener("offline", update);
+    };
+  }, []);
+  return online;
+}
+
+export default function App() {
+  const { t, i18n } = useTranslation();
+  const online = useOnline();
+
+  const [step, setStep] = useState<Step>("site");
+  const [catalogueError, setCatalogueError] = useState("");
+  const [sites, setSites] = useState<SitesResponse | null>(null);
+  const [questionSet, setQuestionSet] = useState<QuestionSet | null>(null);
+
+  const [site, setSite] = useState<Site | null>(null);
+  const [position, setPosition] = useState<Position | null>(null);
+  const [upstream, setUpstream] = useState<PhotoSlotValue | null>(null);
+  const [downstream, setDownstream] = useState<PhotoSlotValue | null>(null);
+
+  const [suggestion, setSuggestion] = useState<SuggestResponse | null>(null);
+  const [suggestLoading, setSuggestLoading] = useState(false);
+  const [suggestError, setSuggestError] = useState("");
+
+  const [answers, dispatch] = useReducer(answersReducer, {} as AnswersState);
+  const [overall, setOverall] = useState("");
+  const [emotions, setEmotions] = useState<Partial<Record<Emotion, number>>>({});
+  const [note, setNote] = useState("");
+
+  const [outcome, setOutcome] = useState<SubmitOutcome>({ kind: "idle" });
+  const [queued, setQueued] = useState(0);
+
+  // --- catalogue, cached so a cold start with no signal still works --------
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const load = async () => {
+      setCatalogueError("");
+      const lang = i18n.language;
+      try {
+        const [freshSites, freshQuestions] = await Promise.all([
+          api.sites(),
+          api.questions(lang),
+        ]);
+        if (cancelled) return;
+        setSites(freshSites);
+        setQuestionSet(freshQuestions);
+        void cacheSet("sites", freshSites);
+        void cacheSet(`questions.${lang}`, freshQuestions);
+      } catch {
+        const [cachedSites, cachedQuestions] = await Promise.all([
+          cacheGet<SitesResponse>("sites"),
+          cacheGet<QuestionSet>(`questions.${lang}`),
+        ]);
+        if (cancelled) return;
+        if (cachedSites && cachedQuestions) {
+          setSites(cachedSites);
+          setQuestionSet(cachedQuestions);
+        } else {
+          setCatalogueError(t("errors.sites"));
+        }
+      }
+    };
+
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, [i18n.language, t]);
+
+  // --- outbox --------------------------------------------------------------
+
+  const refreshQueued = useCallback(async () => {
+    setQueued(await pendingCount());
+  }, []);
+
+  useEffect(() => {
+    void refreshQueued();
+    return startAutoSync(() => {
+      void refreshQueued();
+    });
+  }, [refreshQueued]);
+
+  // --- suggestions ---------------------------------------------------------
+
+  const fetchSuggestions = useCallback(async () => {
+    if (!site) return;
+    setSuggestLoading(true);
+    setSuggestError("");
+    setSuggestion(null);
+    try {
+      const result = await api.suggest({
+        siteId: site.id,
+        upstream: upstream?.blob,
+        downstream: downstream?.blob,
+        lat: position?.lat ?? null,
+        lon: position?.lon ?? null,
+      });
+      setSuggestion(result);
+      dispatch({ type: "init", chips: result.suggestions });
+    } catch (error) {
+      const offline = error instanceof ApiError && error.status === 0;
+      setSuggestError(
+        offline ? t("errors.offlineSuggest") : t("errors.suggest")
+      );
+      dispatch({ type: "reset" });
+    } finally {
+      setSuggestLoading(false);
+    }
+  }, [site, upstream, downstream, position, t]);
+
+  // --- submit --------------------------------------------------------------
+
+  const buildPayload = (): ObservationPayload | null => {
+    if (!site || !questionSet) return null;
+    return {
+      site_id: site.id,
+      overall,
+      answers: toPayloadAnswers(answers, questionSet.questions),
+      emotions,
+      lang: i18n.language,
+      lat: position?.lat ?? null,
+      lon: position?.lon ?? null,
+      accuracy_m: position?.accuracy ?? null,
+      note,
+      consent_given: true,
+      synthetic: false,
+      client_id: clientId(),
+      recorded_at: new Date().toISOString(),
+      ai_provider: suggestion?.provider ?? "",
+      ai_model: suggestion?.model ?? "",
+    };
+  };
+
+  const submit = async (consent: boolean) => {
+    if (!consent) return;
+    const payload = buildPayload();
+    if (!payload) return;
+
+    const photos = { upstream: upstream?.blob, downstream: downstream?.blob };
+    setOutcome({ kind: "sending" });
+
+    if (!navigator.onLine) {
+      await queueObservation({ payload, ...photos });
+      await refreshQueued();
+      setOutcome({ kind: "queued" });
+      return;
+    }
+
+    try {
+      const saved = await api.createObservation(payload, photos);
+      setOutcome({ kind: "sent", id: saved.id });
+    } catch (error) {
+      const apiError =
+        error instanceof ApiError ? error : new ApiError(String(error), 0);
+      if (apiError.isRetryable) {
+        // The server is unreachable rather than unhappy: keep the visit.
+        await queueObservation({ payload, ...photos });
+        await refreshQueued();
+        setOutcome({ kind: "queued" });
+      } else {
+        setOutcome({ kind: "failed", message: apiError.message });
+      }
+    }
+  };
+
+  const restart = () => {
+    setSite(null);
+    setUpstream(null);
+    setDownstream(null);
+    setSuggestion(null);
+    setSuggestError("");
+    dispatch({ type: "reset" });
+    setOverall("");
+    setEmotions({});
+    setNote("");
+    setOutcome({ kind: "idle" });
+    setStep("site");
+  };
+
+  const overallLabel = useMemo(() => {
+    const question = questionSet?.questions.find((q) => q.id === "overall");
+    return question?.options.find((o) => o.code === overall)?.label ?? "";
+  }, [questionSet, overall]);
+
+  const stepIndex = STEPS.indexOf(step);
+
+  // --- render --------------------------------------------------------------
+
+  if (catalogueError) {
+    return (
+      <main className="mx-auto max-w-2xl p-4">
+        <Notice tone="danger" title={t("errors.generic")}>
+          {catalogueError}
+        </Notice>
+        <div className="mt-4">
+          <Button onClick={() => window.location.reload()}>
+            {t("common.retry")}
+          </Button>
+        </div>
+      </main>
+    );
+  }
+
+  if (!sites || !questionSet) {
+    return (
+      <main className="mx-auto flex max-w-2xl justify-center p-10">
+        <Spinner label={t("common.loading")} />
+      </main>
+    );
+  }
+
+  return (
+    <div className="min-h-full">
+      <header className="border-b border-line bg-white">
+        <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-2 px-4 py-3">
+          <div>
+            <h1 className="text-lg font-bold text-brand-dark">
+              {t("app.title")}
+            </h1>
+            <p className="text-xs text-muted">{t("app.tagline")}</p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span
+              className={`rounded-full px-2 py-1 text-xs font-bold ${
+                online
+                  ? "bg-emerald-100 text-emerald-900"
+                  : "bg-slate-200 text-slate-700"
+              }`}
+            >
+              {online ? t("common.online") : t("common.offline")}
+            </span>
+
+            {queued > 0 ? (
+              <button
+                type="button"
+                onClick={() => {
+                  void flushOutbox().then(() => refreshQueued());
+                }}
+                className="tap rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900"
+              >
+                {t("submit.pending", { count: queued })}
+              </button>
+            ) : null}
+
+            <label className="sr-only" htmlFor="lang">
+              {t("app.language")}
+            </label>
+            <select
+              id="lang"
+              value={i18n.language}
+              onChange={(event) =>
+                setLanguage(event.target.value as LanguageCode)
+              }
+              className="tap rounded-xl border-2 border-line bg-white px-2 py-1 text-sm"
+            >
+              {LANGUAGES.map((language) => (
+                <option key={language.code} value={language.code}>
+                  {language.label}
+                  {language.city ? ` · ${language.city}` : ""}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <ol className="mx-auto flex max-w-2xl gap-1 px-4 pb-3 text-xs">
+          {STEPS.map((name, index) => (
+            <li
+              key={name}
+              className={`flex-1 rounded-full px-2 py-1 text-center font-semibold ${
+                index === stepIndex
+                  ? "bg-brand text-white"
+                  : index < stepIndex
+                    ? "bg-brand-light text-brand-dark"
+                    : "bg-slate-100 text-slate-500"
+              }`}
+              aria-current={index === stepIndex ? "step" : undefined}
+            >
+              {t(`steps.${name}`)}
+            </li>
+          ))}
+        </ol>
+      </header>
+
+      <main className="mx-auto max-w-2xl px-4 py-5 pb-[calc(2rem+var(--safe-bottom))]">
+        {i18n.language !== "en" ? (
+          <p className="mb-3 text-xs text-muted">{t("app.translationWarning")}</p>
+        ) : null}
+
+        {step === "site" ? (
+          <SiteScreen
+            sites={sites.sites}
+            cities={sites.cities}
+            attribution={sites.attribution}
+            selected={site}
+            position={position}
+            onPosition={setPosition}
+            onSelect={setSite}
+            onNext={() => setStep("photos")}
+          />
+        ) : null}
+
+        {step === "photos" ? (
+          <PhotosScreen
+            upstream={upstream}
+            downstream={downstream}
+            onUpstream={setUpstream}
+            onDownstream={setDownstream}
+            onBack={() => setStep("site")}
+            onNext={() => {
+              setStep("review");
+              void fetchSuggestions();
+            }}
+          />
+        ) : null}
+
+        {step === "review" ? (
+          <ReviewScreen
+            loading={suggestLoading}
+            error={suggestError}
+            suggestion={suggestion}
+            questionSet={questionSet}
+            answers={answers}
+            dispatch={dispatch}
+            onBack={() => setStep("photos")}
+            onNext={() => setStep("rating")}
+          />
+        ) : null}
+
+        {step === "rating" ? (
+          <RatingScreen
+            questionSet={questionSet}
+            overall={overall}
+            emotions={emotions}
+            note={note}
+            onOverall={setOverall}
+            onEmotion={(emotion, level) =>
+              setEmotions((current) => ({ ...current, [emotion]: level }))
+            }
+            onNote={setNote}
+            onBack={() => setStep("review")}
+            onNext={() => setStep("submit")}
+          />
+        ) : null}
+
+        {step === "submit" && site ? (
+          <SubmitScreen
+            site={site}
+            overall={overall}
+            overallLabel={overallLabel}
+            answers={answers}
+            photoCount={[upstream, downstream].filter(Boolean).length}
+            outcome={outcome}
+            pendingCount={queued}
+            onSubmit={(consent) => void submit(consent)}
+            onSyncNow={() => {
+              void flushOutbox().then(() => refreshQueued());
+            }}
+            onBack={() => setStep("rating")}
+            onRestart={restart}
+          />
+        ) : null}
+      </main>
+    </div>
+  );
+}

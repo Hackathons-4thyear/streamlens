@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="StreamLens">
+  <rect width="64" height="64" rx="14" fill="#0f766e"/>
+  <path d="M8 40c8 0 8-8 16-8s8 8 16 8 8-8 16-8" fill="none" stroke="#ccfbf1" stroke-width="5" stroke-linecap="round"/>
+  <path d="M8 52c8 0 8-8 16-8s8 8 16 8 8-8 16-8" fill="none" stroke="#5eead4" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+  <circle cx="32" cy="20" r="9" fill="none" stroke="#f8fafc" stroke-width="4"/>
+  <line x1="38" y1="26" x2="46" y2="34" stroke="#f8fafc" stroke-width="4" stroke-linecap="round"/>
+</svg>

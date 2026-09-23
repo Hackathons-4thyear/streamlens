@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/*
+ * Palette notes: every pairing below was picked to clear WCAG AA (4.5:1 for
+ * body text, 3:1 for large text and UI borders) on the surfaces it is used on.
+ * The deep teal --color-brand on white is about 5.9:1; --color-ink on
+ * --color-surface is about 15:1. Do not lighten these without re-checking.
+ */
+@theme {
+  --color-brand: #0f766e;
+  --color-brand-dark: #115e59;
+  --color-brand-light: #ccfbf1;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-surface: #f8fafc;
+  --color-line: #cbd5e1;
+
+  --color-good: #15803d;
+  --color-moderate: #a16207;
+  --color-poor: #b91c1c;
+
+  --color-warn-bg: #fef3c7;
+  --color-warn-ink: #78350f;
+  --color-danger-bg: #fee2e2;
+  --color-danger-ink: #991b1b;
+}
+
+:root {
+  color-scheme: light;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Every interactive element keeps a visible focus ring. */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* Field use: tap targets never fall below 44px. */
+@utility tap {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.leaflet-container {
+  font: inherit;
+}
