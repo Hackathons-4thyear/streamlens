@@ -36,10 +36,22 @@ git clone <this repo>
 cd "IEEE Hackathon"
 
 # 1. one-time setup (creates the venv, installs api + web dependencies)
+npm install
 npm run setup
 
 # 2. start both apps
 npm run dev
+```
+
+Other commands:
+
+```powershell
+npm test              # pytest + vitest
+npm run test:api      # pytest only
+npm run test:web      # vitest only
+npm run build         # production build of the web app
+npm run data:sites    # re-fetch data/sites.json from the ENORA API
+npm run data:questions # rebuild data/questions.json
 ```
 
 - Web app: <http://localhost:5173>
@@ -73,6 +85,13 @@ to `api/.env` and set `AI_PROVIDER=gemini` plus your `GEMINI_API_KEY`.
   so [`data/questions.json`](data/questions.json) is reconstructed from the published
   OneAquaHealth assessment categories and marked `"source": "manual"`.
 - **Weather** — [Open-Meteo](https://open-meteo.com/) (no key).
+
+## Testing the vision prompt
+
+`docs/photo-sources.md` lists 45 checked, legally usable sources of stream
+photographs — the real watercourses of all five research cities, plus one
+category per thing the questions ask about (weirs, outfalls, gabions, dry beds,
+invasive species), plus licence-filtered search platforms.
 
 ## Repository layout
 
