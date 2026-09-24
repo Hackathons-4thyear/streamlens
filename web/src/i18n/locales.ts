@@ -102,6 +102,9 @@ const en = {
       "{{count}} suggestion was discarded because it did not match the official answer list.",
     dropped_other:
       "{{count}} suggestions were discarded because they did not match the official answer list.",
+    aiUnavailable: "AI unavailable — answer manually",
+    aiUnavailableBody:
+      "{{reason}} Nothing was lost: work through the questions yourself. The draft answers below come from the offline demo heuristic, not a model, so do not rely on them.",
     mockBadge: "demo AI (mock)",
     mockExplain:
       "No vision model is running. These suggestions come from a simple colour heuristic, for demonstration only. Add a GEMINI_API_KEY to use a real model.",
@@ -248,6 +251,9 @@ const pt: Dict = {
       "{{count}} sugestão foi descartada por não corresponder à lista oficial de respostas.",
     dropped_other:
       "{{count}} sugestões foram descartadas por não corresponderem à lista oficial de respostas.",
+    aiUnavailable: "IA indisponível — responda manualmente",
+    aiUnavailableBody:
+      "{{reason}} Nada se perdeu: responda às perguntas por si. As respostas em baixo vêm da heurística de demonstração, não de um modelo, por isso não confie nelas.",
     mockBadge: "IA de demonstração",
     mockExplain:
       "Não está a correr nenhum modelo de visão. Estas sugestões vêm de uma heurística de cor, apenas para demonstração. Adicione uma GEMINI_API_KEY para usar um modelo real.",
@@ -385,6 +391,9 @@ const it: Dict = {
       "{{count}} suggerimento è stato scartato perché non corrispondeva all'elenco ufficiale delle risposte.",
     dropped_other:
       "{{count}} suggerimenti sono stati scartati perché non corrispondevano all'elenco ufficiale delle risposte.",
+    aiUnavailable: "IA non disponibile — rispondi a mano",
+    aiUnavailableBody:
+      "{{reason}} Non si è perso nulla: rispondi tu alle domande. Le risposte qui sotto vengono dall'euristica dimostrativa, non da un modello, quindi non fidarti.",
     mockBadge: "IA dimostrativa",
     mockExplain:
       "Nessun modello di visione è attivo. Questi suggerimenti vengono da una semplice euristica di colore, solo a scopo dimostrativo. Aggiungi una GEMINI_API_KEY per usare un modello vero.",
@@ -522,6 +531,9 @@ const fr: Dict = {
       "{{count}} suggestion a été écartée car elle ne correspondait pas à la liste officielle de réponses.",
     dropped_other:
       "{{count}} suggestions ont été écartées car elles ne correspondaient pas à la liste officielle de réponses.",
+    aiUnavailable: "IA indisponible — répondez vous-même",
+    aiUnavailableBody:
+      "{{reason}} Rien n'est perdu : répondez aux questions vous-même. Les réponses ci-dessous viennent de l'heuristique de démonstration, pas d'un modèle : ne vous y fiez pas.",
     mockBadge: "IA de démonstration",
     mockExplain:
       "Aucun modèle de vision ne tourne. Ces suggestions viennent d'une simple heuristique de couleur, à titre de démonstration. Ajoutez une GEMINI_API_KEY pour un vrai modèle.",
@@ -659,6 +671,9 @@ const nl: Dict = {
       "{{count}} suggestie is weggegooid omdat ze niet op de officiële antwoordlijst stond.",
     dropped_other:
       "{{count}} suggesties zijn weggegooid omdat ze niet op de officiële antwoordlijst stonden.",
+    aiUnavailable: "AI niet beschikbaar — beantwoord zelf",
+    aiUnavailableBody:
+      "{{reason}} Er is niets verloren: loop de vragen zelf door. De antwoorden hieronder komen van de demo-heuristiek, niet van een model, dus vertrouw er niet op.",
     mockBadge: "demo-AI",
     mockExplain:
       "Er draait geen visiemodel. Deze suggesties komen van een eenvoudige kleurheuristiek, enkel ter demonstratie. Voeg een GEMINI_API_KEY toe voor een echt model.",
@@ -796,6 +811,9 @@ const no: Dict = {
       "{{count}} forslag ble forkastet fordi det ikke fantes i den offisielle svarlisten.",
     dropped_other:
       "{{count}} forslag ble forkastet fordi de ikke fantes i den offisielle svarlisten.",
+    aiUnavailable: "KI utilgjengelig — svar selv",
+    aiUnavailableBody:
+      "{{reason}} Ingenting gikk tapt: gå gjennom spørsmålene selv. Svarene under kommer fra demo-heuristikken, ikke fra en modell, så ikke stol på dem.",
     mockBadge: "demo-KI",
     mockExplain:
       "Ingen bildemodell kjører. Disse forslagene kommer fra en enkel fargeheuristikk, bare til demonstrasjon. Legg til en GEMINI_API_KEY for en ekte modell.",

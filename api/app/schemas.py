@@ -87,15 +87,39 @@ class DroppedSuggestion(BaseModel):
     why: str
 
 
+class UsageOut(BaseModel):
+    prompt_tokens: int = 0
+    output_tokens: int = 0
+    thought_tokens: int = 0
+    total_tokens: int = 0
+
+
 class SuggestResponse(BaseModel):
     site_id: str
     site_name: str = ""
-    provider: str
+    provider: str = Field(description="The provider that actually produced these.")
+    requested_provider: str = Field(
+        default="", description="The provider the server was configured to use."
+    )
     model: str
     is_mock: bool = Field(
         description="True when the demo heuristic produced these, not a vision model. "
         "The UI must show a badge when this is true."
     )
+    degraded: bool = Field(
+        default=False,
+        description="True when the configured provider failed and the mock stood in. "
+        "The UI must tell the citizen to answer manually.",
+    )
+    degraded_reason: str = Field(
+        default="", description="Plain-language reason, safe to show a citizen."
+    )
+    degraded_kind: str = Field(
+        default="", description="timeout | transport | auth | bad_output | other"
+    )
+    attempts: int = 1
+    latency_ms: int = 0
+    usage: UsageOut = Field(default_factory=UsageOut)
     prompt_version: str
     provider_note: str = ""
     generated_at: datetime

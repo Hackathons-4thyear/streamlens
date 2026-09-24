@@ -8,8 +8,8 @@ from __future__ import annotations
 
 import pytest
 
-from app.ai.base import ProviderResult, RawSuggestion
-from app.routers import assess as assess_router
+from app.ai import factory
+from app.ai.base import ProviderError, ProviderResult, RawSuggestion
 from tests.conftest import blurry_image, dark_image, green_image, sharp_image
 
 
@@ -19,29 +19,40 @@ class FakeProvider:
     name = "fake"
     model = "fake-1"
     is_mock = False
+    retries = 1
 
     def __init__(self, suggestions, note="") -> None:
         self._result = ProviderResult(suggestions=suggestions, note=note)
         self.calls: list[tuple] = []
 
-    def suggest(self, images, context):
+    async def suggest(self, images, context):
         self.calls.append((images, context))
         return self._result
 
 
 class ExplodingProvider:
+    """Fails every time, with a chosen failure kind."""
+
     name = "boom"
     model = "boom-1"
     is_mock = False
 
-    def suggest(self, images, context):
-        raise RuntimeError("provider is down")
+    def __init__(self, kind: str = "transport", retries: int = 1) -> None:
+        self.kind = kind
+        self.retries = retries
+        self.calls = 0
+
+    async def suggest(self, images, context):
+        self.calls += 1
+        raise ProviderError("provider is down", self.kind)
 
 
 @pytest.fixture
 def use_provider(monkeypatch):
+    """Install a provider for both the router and the fallback helper."""
+
     def _install(provider):
-        monkeypatch.setattr(assess_router, "get_provider", lambda settings: provider)
+        monkeypatch.setattr(factory, "get_provider", lambda settings: provider)
         return provider
 
     return _install
@@ -204,11 +215,78 @@ def test_a_file_that_is_not_an_image_is_rejected(client, site_id, use_provider):
     assert response.status_code == 422
 
 
-def test_provider_failure_does_not_lose_the_visit(client, site_id, use_provider):
-    use_provider(ExplodingProvider())
+# --------------------------------------------------------------------------
+# When the real provider fails: fall back, but never silently
+# --------------------------------------------------------------------------
+
+def test_provider_failure_falls_back_to_the_mock_instead_of_losing_the_visit(
+    client, site_id, use_provider
+):
+    use_provider(ExplodingProvider("transport"))
     response = _post(client, site_id)
-    assert response.status_code == 502
-    assert "yourself" in response.json()["detail"]
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["degraded"] is True
+    assert body["provider"] == "mock"
+    assert body["is_mock"] is True
+    assert body["suggestions"], "the citizen still gets something to work from"
+
+
+def test_the_fallback_tells_the_citizen_why_in_plain_words(
+    client, site_id, use_provider
+):
+    """A silent fallback would be the worst outcome: plausible suggestions with
+    nothing on screen saying they did not come from the model."""
+    use_provider(ExplodingProvider("timeout"))
+    body = _post(client, site_id).json()
+
+    assert body["degraded"] is True
+    assert body["degraded_kind"] == "timeout"
+    assert body["degraded_reason"] == "The AI took too long to answer."
+    assert "AI" in body["degraded_reason"]
+
+
+@pytest.mark.parametrize(
+    ("kind", "expected"),
+    [
+        ("timeout", "The AI took too long to answer."),
+        ("transport", "The AI could not be reached."),
+        ("auth", "The AI is not configured correctly on the server."),
+        ("bad_output", "The AI's answer could not be read."),
+        ("other", "The AI is unavailable."),
+    ],
+)
+def test_every_failure_kind_has_a_plain_message(
+    client, site_id, use_provider, kind, expected
+):
+    use_provider(ExplodingProvider(kind))
+    body = _post(client, site_id).json()
+    assert body["degraded_reason"] == expected
+
+
+def test_the_requested_provider_is_reported_even_after_a_fallback(
+    client, site_id, use_provider, settings
+):
+    settings.ai_provider = "gemini"
+    use_provider(ExplodingProvider("transport"))
+    body = _post(client, site_id).json()
+
+    assert body["requested_provider"] == "gemini"
+    assert body["provider"] == "mock"
+
+
+def test_a_healthy_provider_is_not_marked_degraded(client, site_id, use_provider):
+    use_provider(FakeProvider([RawSuggestion("channelType", ["ART"], 0.9, "concrete")]))
+    body = _post(client, site_id).json()
+
+    assert body["degraded"] is False
+    assert body["degraded_reason"] == ""
+
+
+def test_latency_is_reported(client, site_id, use_provider):
+    use_provider(FakeProvider([]))
+    assert _post(client, site_id).json()["latency_ms"] >= 0
 
 
 def test_the_prompt_carries_the_question_catalogue(client, site_id, use_provider):

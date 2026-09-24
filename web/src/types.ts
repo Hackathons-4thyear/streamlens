@@ -102,12 +102,27 @@ export interface DroppedSuggestion {
   why: string;
 }
 
+export interface Usage {
+  prompt_tokens: number;
+  output_tokens: number;
+  thought_tokens: number;
+  total_tokens: number;
+}
+
 export interface SuggestResponse {
   site_id: string;
   site_name: string;
   provider: string;
+  requested_provider: string;
   model: string;
   is_mock: boolean;
+  /** The configured provider failed and the mock stood in. Say so on screen. */
+  degraded: boolean;
+  degraded_reason: string;
+  degraded_kind: string;
+  attempts: number;
+  latency_ms: number;
+  usage: Usage;
   prompt_version: string;
   provider_note: string;
   generated_at: string;

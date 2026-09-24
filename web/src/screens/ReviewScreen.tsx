@@ -83,15 +83,31 @@ export function ReviewScreen({
           <h2 className="text-xl font-bold text-ink">{t("review.title")}</h2>
           {suggestion?.is_mock ? (
             <MockBadge
-              label={t("review.mockBadge")}
-              explanation={t("review.mockExplain")}
+              label={
+                suggestion.degraded
+                  ? t("review.aiUnavailable")
+                  : t("review.mockBadge")
+              }
+              explanation={
+                suggestion.degraded
+                  ? t("review.aiUnavailableBody", {
+                      reason: suggestion.degraded_reason,
+                    })
+                  : t("review.mockExplain")
+              }
             />
           ) : null}
         </div>
         <p className="text-sm text-muted">{t("review.lead")}</p>
       </header>
 
-      {suggestion?.is_mock ? (
+      {suggestion?.degraded ? (
+        <Notice tone="danger" title={t("review.aiUnavailable")}>
+          {t("review.aiUnavailableBody", { reason: suggestion.degraded_reason })}
+        </Notice>
+      ) : null}
+
+      {suggestion?.is_mock && !suggestion.degraded ? (
         <Notice tone="warn" title={t("review.mockBadge")}>
           {t("review.mockExplain")}
         </Notice>

@@ -23,6 +23,10 @@ class Settings(BaseSettings):
     ai_provider: str = "mock"
     gemini_api_key: str = ""
     gemini_model: str = "gemini-2.5-flash"
+    # A citizen standing in the rain does not wait indefinitely for a model.
+    gemini_timeout_s: float = 20.0
+    # Number of RETRIES after the first attempt, so 1 means two attempts.
+    gemini_retries: int = 1
 
     # --- Storage -----------------------------------------------------------
     database_url: str = "sqlite:///./streamlens.db"

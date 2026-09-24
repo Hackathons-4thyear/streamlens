@@ -67,7 +67,9 @@ class MockProvider:
 
     # --- provider interface ------------------------------------------------
 
-    def suggest(self, images: list[ImageInput], context: AssessContext) -> ProviderResult:
+    async def suggest(
+        self, images: list[ImageInput], context: AssessContext
+    ) -> ProviderResult:
         if not images:
             return ProviderResult(suggestions=[], note="No photo was supplied.")
 

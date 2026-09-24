@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
 from ..ai.base import AssessContext, ImageInput
-from ..ai.factory import get_provider
+from ..ai.factory import suggest_with_fallback
 from ..ai.gemini import PROMPT_VERSION
 from ..config import Settings, get_settings
 from ..imaging import PreparedPhoto, prepare
@@ -26,6 +26,7 @@ from ..schemas import (
     QualityIssueOut,
     SuggestionChip,
     SuggestResponse,
+    UsageOut,
 )
 from ..sites import SiteSet, get_sites, haversine_m
 
@@ -193,7 +194,6 @@ async def suggest(
         except ValueError as exc:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
-    provider = get_provider(settings)
     context = AssessContext(
         site_name=site.get("name", ""),
         city=site.get("city", ""),
@@ -203,27 +203,34 @@ async def suggest(
     images = [ImageInput(role=p.role, data=p.data) for p in prepared]
 
     try:
-        result = provider.suggest(images, context)
-    except Exception as exc:  # noqa: BLE001 - a provider failure must not lose the visit
+        outcome = await suggest_with_fallback(settings, images, context)
+    except Exception as exc:  # noqa: BLE001 - only reachable if the mock itself fails
         raise HTTPException(
             status_code=502,
-            detail=f"the AI provider could not be reached: {exc}. "
+            detail=f"suggestions could not be produced: {exc}. "
                    "You can still answer every question yourself.",
         ) from exc
 
     photos_ok = all(p.ok for p in prepared)
     chips, dropped = validate_suggestions(
-        result.suggestions, questions, settings.low_confidence, photos_ok
+        outcome.result.suggestions, questions, settings.low_confidence, photos_ok
     )
 
     return SuggestResponse(
         site_id=site_id,
         site_name=site.get("name", ""),
-        provider=provider.name,
-        model=provider.model,
-        is_mock=provider.is_mock,
+        provider=outcome.provider,
+        requested_provider=outcome.requested_provider,
+        model=outcome.model,
+        is_mock=outcome.is_mock,
+        degraded=outcome.degraded,
+        degraded_reason=outcome.degraded_reason,
+        degraded_kind=outcome.degraded_kind,
+        attempts=outcome.attempts,
+        latency_ms=outcome.latency_ms,
+        usage=UsageOut(**vars(outcome.usage)),
         prompt_version=PROMPT_VERSION,
-        provider_note=result.note,
+        provider_note=outcome.result.note,
         generated_at=datetime.now(timezone.utc),
         photo_quality=[_quality_out(p) for p in prepared],
         location=check_location(site, lat, lon, settings.gps_warn_m),
