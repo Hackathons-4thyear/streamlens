@@ -9,6 +9,7 @@ import {
   StatusPill,
 } from "../components/insights";
 import { Button, Card, Notice, Spinner } from "../components/ui";
+import { returns, type Quest } from "../lib/returns";
 import {
   insights,
   type DataScope,
@@ -35,6 +36,8 @@ export function SitePage({
   const [card, setCard] = useState<HealthCard | null>(null);
   const [alerts, setAlerts] = useState<SiteAlerts | null>(null);
   const [actions, setActions] = useState<SiteActions | null>(null);
+  const [quests, setQuests] = useState<Quest[]>([]);
+  const [latestObservation, setLatestObservation] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -47,12 +50,18 @@ export function SitePage({
       insights.healthCard(siteId, scope),
       insights.siteAlerts(siteId, scope).catch(() => null),
       insights.siteActions(siteId, scope).catch(() => null),
+      returns.siteQuests(siteId, scope).catch(() => null),
     ])
-      .then(([healthCard, siteAlerts, siteActions]) => {
+      .then(([healthCard, siteAlerts, siteActions, siteQuests]) => {
         if (cancelled) return;
         setCard(healthCard);
         setAlerts(siteAlerts);
         setActions(siteActions);
+        setQuests(siteQuests?.quests ?? []);
+        const history = healthCard.overall_history;
+        setLatestObservation(
+          history.length ? history[history.length - 1].observation_id : ""
+        );
       })
       .catch((cause) => {
         if (!cancelled) setError(String(cause));
@@ -117,6 +126,24 @@ export function SitePage({
         <Notice tone="info" title="Nobody has assessed this site yet">
           Be the first. Everything below fills in from citizen reports.
         </Notice>
+      ) : null}
+
+      {quests.length > 0 ? (
+        <section className="flex flex-col gap-2">
+          <h3 className="text-sm font-bold tracking-wide text-muted uppercase">
+            Why this site is worth a visit
+          </h3>
+          {quests.map((quest) => (
+            <Notice key={quest.rule_id} tone="info" title={quest.name}>
+              <p>{quest.why}</p>
+              {quest.weather_synthetic ? (
+                <span className="mt-2 inline-block rounded-full border border-amber-700/40 bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-900 uppercase">
+                  ● demo forecast
+                </span>
+              ) : null}
+            </Notice>
+          ))}
+        </section>
       ) : null}
 
       {/* --- alerts first: the time-sensitive thing ----------------------- */}
@@ -270,6 +297,24 @@ export function SitePage({
             >
               {actions.catalogue.doi}
             </a>
+          </p>
+        </section>
+      ) : null}
+
+      {latestObservation ? (
+        <section className="flex flex-col gap-2 border-t border-line pt-4">
+          <h3 className="text-sm font-bold tracking-wide text-muted uppercase">
+            For researchers
+          </h3>
+          <a
+            href={returns.fhirUrl(latestObservation)}
+            className="tap inline-flex w-fit items-center rounded-xl border-2 border-line bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
+          >
+            Export the latest assessment as FHIR
+          </a>
+          <p className="text-xs text-muted">
+            FHIR R4 Bundle shaped against the OneAquaHealth IG: 0 errors and 0
+            warnings from the official HL7 validator. See docs/fhir/ for the report.
           </p>
         </section>
       ) : null}

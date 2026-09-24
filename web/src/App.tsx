@@ -9,7 +9,9 @@ import type { Position } from "./lib/geo";
 import { flushOutbox, startAutoSync } from "./lib/sync";
 import { CityScreen, ExploreScreen } from "./screens/ExploreScreen";
 import { PhotosScreen, type PhotoSlotValue } from "./screens/PhotosScreen";
+import { IdentityCard, ReturnScreen } from "./screens/ReturnScreen";
 import { SitePage } from "./screens/SitePage";
+import { getIdentity, markIntroduced, needsIntroduction, setIdentity } from "./lib/identity";
 import type { DataScope } from "./lib/insights";
 import { RatingScreen } from "./screens/RatingScreen";
 import { ReviewScreen } from "./screens/ReviewScreen";
@@ -33,25 +35,11 @@ const STEPS = ["site", "photos", "review", "rating", "submit"] as const;
 type Step = (typeof STEPS)[number];
 
 /** The two halves of the product: record an assessment, or read what is there. */
-type Mode = "observe" | "explore";
+type Mode = "observe" | "explore" | "return";
 type ExploreView =
   | { kind: "home" }
   | { kind: "site"; siteId: string }
   | { kind: "city"; city: string };
-
-const CLIENT_ID_KEY = "streamlens.client";
-
-function clientId(): string {
-  try {
-    const existing = localStorage.getItem(CLIENT_ID_KEY);
-    if (existing) return existing;
-    const created = crypto.randomUUID();
-    localStorage.setItem(CLIENT_ID_KEY, created);
-    return created;
-  } catch {
-    return "anonymous";
-  }
-}
 
 function useOnline(): boolean {
   const [online, setOnline] = useState(navigator.onLine);
@@ -74,6 +62,8 @@ export default function App() {
   const [mode, setMode] = useState<Mode>("observe");
   const [explore, setExplore] = useState<ExploreView>({ kind: "home" });
   const [scope, setScope] = useState<DataScope>("all");
+  const [identity, setIdentityState] = useState(getIdentity);
+  const [askName, setAskName] = useState(needsIntroduction);
   const [step, setStep] = useState<Step>("site");
   const [catalogueError, setCatalogueError] = useState("");
   const [sites, setSites] = useState<SitesResponse | null>(null);
@@ -192,7 +182,9 @@ export default function App() {
       note,
       consent_given: true,
       synthetic: false,
-      client_id: clientId(),
+      client_id: identity.clientId,
+      team: identity.team,
+      completed_quest: "",
       recorded_at: new Date().toISOString(),
       ai_provider: suggestion?.provider ?? "",
       ai_model: suggestion?.model ?? "",
@@ -333,7 +325,7 @@ export default function App() {
         </div>
 
         <nav className="mx-auto flex max-w-2xl gap-2 px-4 pb-2">
-          {(["observe", "explore"] as Mode[]).map((name) => (
+          {(["observe", "explore", "return"] as Mode[]).map((name) => (
             <button
               key={name}
               type="button"
@@ -345,7 +337,11 @@ export default function App() {
                   : "bg-slate-100 text-slate-600 hover:text-brand"
               }`}
             >
-              {name === "observe" ? t("nav.observe") : t("nav.explore")}
+              {name === "observe"
+                ? t("nav.observe")
+                : name === "explore"
+                  ? t("nav.explore")
+                  : t("nav.return")}
             </button>
           ))}
         </nav>
@@ -374,6 +370,33 @@ export default function App() {
       <main className="mx-auto max-w-2xl px-4 py-5 pb-[calc(2rem+var(--safe-bottom))]">
         {i18n.language !== "en" ? (
           <p className="mb-3 text-xs text-muted">{t("app.translationWarning")}</p>
+        ) : null}
+
+        {askName ? (
+          <div className="mb-4">
+            <IdentityCard
+              onSaved={(nickname, team) => {
+                setIdentityState(setIdentity(nickname, team));
+                markIntroduced();
+                setAskName(false);
+              }}
+              onSkip={() => {
+                markIntroduced();
+                setAskName(false);
+              }}
+            />
+          </div>
+        ) : null}
+
+        {mode === "return" ? (
+          <ReturnScreen
+            scope={scope}
+            onScope={setScope}
+            onOpenSite={(siteId) => {
+              setExplore({ kind: "site", siteId });
+              setMode("explore");
+            }}
+          />
         ) : null}
 
         {mode === "explore" && explore.kind === "home" ? (

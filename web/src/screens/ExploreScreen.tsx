@@ -4,6 +4,7 @@ import { ScopeToggle, StatusPill } from "../components/insights";
 import { Button, Card, Notice, Spinner } from "../components/ui";
 import { getPosition, type Position } from "../lib/geo";
 import { insights, type DataScope, type SiteAlerts } from "../lib/insights";
+import { returns, type Quest } from "../lib/returns";
 import type { Site } from "../types";
 
 /** Home for Understand & Act: what needs attention near you. */
@@ -27,6 +28,7 @@ export function ExploreScreen({
   onOpenCity: (city: string) => void;
 }) {
   const [near, setNear] = useState<SiteAlerts[] | null>(null);
+  const [quests, setQuests] = useState<Quest[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [locating, setLocating] = useState(false);
@@ -50,6 +52,21 @@ export function ExploreScreen({
   useEffect(() => {
     if (position) void load(position.lat, position.lon);
   }, [position, load]);
+
+  useEffect(() => {
+    let cancelled = false;
+    returns
+      .quests(scope, position?.lat, position?.lon)
+      .then((result) => {
+        if (!cancelled) setQuests(result.quests);
+      })
+      .catch(() => {
+        if (!cancelled) setQuests([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [scope, position]);
 
   const locate = async () => {
     setLocating(true);
@@ -151,6 +168,44 @@ export function ExploreScreen({
               <span className="text-xs text-muted">
                 {entry.distance_km != null ? `${entry.distance_km} km` : entry.city}
               </span>
+            </button>
+          ))}
+        </section>
+      ) : null}
+
+      {quests && quests.length > 0 ? (
+        <section className="flex flex-col gap-2">
+          <h3 className="text-sm font-bold tracking-wide text-muted uppercase">
+            Worth a visit
+          </h3>
+          <p className="text-sm text-muted">
+            Each of these points at a real gap in the record.
+          </p>
+          {quests.slice(0, 6).map((quest) => (
+            <button
+              key={`${quest.site_id}-${quest.rule_id}`}
+              type="button"
+              onClick={() => onOpenSite(quest.site_id)}
+              className="tap rounded-2xl border-2 border-brand/30 bg-brand-light/30 p-4 text-left"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="font-semibold text-ink">{quest.site_name}</span>
+                <span className="text-xs text-muted">
+                  {quest.city}
+                  {quest.distance_km != null ? ` · ${quest.distance_km} km` : ""}
+                </span>
+              </div>
+              <p className="mt-1 text-sm text-muted">{quest.why}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <span className="rounded-full bg-brand px-2 py-0.5 text-xs font-bold text-white">
+                  {quest.name}
+                </span>
+                {quest.weather_synthetic ? (
+                  <span className="rounded-full border border-amber-700/40 bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-900 uppercase">
+                    ● demo forecast
+                  </span>
+                ) : null}
+              </div>
             </button>
           ))}
         </section>
@@ -277,12 +332,21 @@ export function CityScreen({
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <ScopeToggle scope={scope} onChange={onScope} />
-        <a
-          href={insights.cityCsvUrl(city, scope)}
-          className="tap inline-flex items-center rounded-xl border-2 border-line bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
-        >
-          Download CSV
-        </a>
+        <div className="flex gap-2">
+          <a
+            href={insights.cityCsvUrl(city, scope)}
+            className="tap inline-flex items-center rounded-xl border-2 border-line bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
+          >
+            Download CSV
+          </a>
+          <a
+            href={returns.cityFhirUrl(city, scope)}
+            className="tap inline-flex items-center rounded-xl border-2 border-line bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
+            title="FHIR R4 Bundle, validated against the OneAquaHealth IG"
+          >
+            Export FHIR
+          </a>
+        </div>
       </div>
 
       {data ? <Notice tone="info">{data.disclaimer}</Notice> : null}

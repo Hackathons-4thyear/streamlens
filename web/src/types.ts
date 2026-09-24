@@ -158,6 +158,9 @@ export interface ObservationPayload {
   consent_given: boolean;
   synthetic: boolean;
   client_id: string;
+  /** Optional team code. Not an account, not verified. */
+  team?: string;
+  completed_quest?: string;
   recorded_at: string;
   ai_provider: string;
   ai_model: string;
