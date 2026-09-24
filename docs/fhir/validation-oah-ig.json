@@ -1,0 +1,403 @@
+{
+  "resourceType" : "OperationOutcome",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>OperationOutcome </b></p><p>All OK</p><table class=\"grid\"><tr><td><b>Severity</b></td><td><b>Location</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td><td><b>Source</b></td></tr><tr><td>Information</td><td>Bundle.entry[1].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#channelType)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[2].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#bankType)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[3].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#waterAspect)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[4].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#waterFlow)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[5].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#habitats)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[6].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#fallenBiomass)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[7].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#vegCoverL)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[8].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#imperviousL)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[9].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#imperviousR)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[10].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#sewage)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[11].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#pollutedPipes)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[12].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#dams)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[13].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#construction)</td><td/><td>TerminologyEngine</td></tr><tr><td>Information</td><td>Bundle.entry[14].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall*/.code</td><td>Invalid Code</td><td>None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#overall)</td><td/><td>TerminologyEngine</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
+    "valueString" : "docs\\fhir\\example-bundle.json"
+  }],
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 63
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#channelType)"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 122
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#bankType)"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 181
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#waterAspect)"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 240
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#waterFlow)"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 299
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#habitats)"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 358
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#fallenBiomass)"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 417
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#vegCoverL)"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 476
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#imperviousL)"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 535
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#imperviousR)"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 594
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#sewage)"
+    },
+    "expression" : ["Bundle.entry[10].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 653
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#pollutedPipes)"
+    },
+    "expression" : ["Bundle.entry[11].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 712
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#dams)"
+    },
+    "expression" : ["Bundle.entry[12].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 771
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#construction)"
+    },
+    "expression" : ["Bundle.entry[13].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction*/.code"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 830
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 10
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "TerminologyEngine"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "Terminology_TX_NoValid_3_CC"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "code-invalid",
+    "details" : {
+      "text" : "None of the codings provided are in the value set 'OAH Indicators (Non-Health)' (http://hl7.eu/fhir/ig/oah/ValueSet/oah-indicators-no-health-oah-vs), and a coding is recommended to come from this value set (codes = https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question#overall)"
+    },
+    "expression" : ["Bundle.entry[14].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall*/.code"]
+  }]
+}

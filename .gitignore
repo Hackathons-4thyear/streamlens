@@ -38,3 +38,7 @@ eval/_dryrun_photos/
 # Source documents fetched from their publishers. Cited, not redistributed:
 # see data/README.md for the DOI and the download command.
 data/sources/
+
+# Downloaded tooling: the FHIR validator jar (200 MB) and the IG source.
+# docs/fhir/validation-report.md has the commands to fetch both.
+tools/

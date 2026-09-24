@@ -1,0 +1,851 @@
+{
+  "resourceType" : "OperationOutcome",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>OperationOutcome </b></p><table class=\"grid\"><tr><td><b>Severity</b></td><td><b>Location</b></td><td><b>Code</b></td><td><b>Details</b></td><td><b>Diagnostics</b></td><td><b>Source</b></td></tr><tr><td>Information</td><td>Bundle.entry[0].resource/*Location/site-O12*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[0].resource/*Location/site-O12*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[1].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[1].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[2].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[2].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[3].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[3].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[4].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[4].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[5].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[5].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[6].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[6].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[7].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[7].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[8].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[8].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[9].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[9].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[10].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[10].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[11].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[11].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[12].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[12].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[13].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[13].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr><tr><td>Information</td><td>Bundle.entry[14].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall*/.meta.profile[0]</td><td>Invalid Content</td><td>A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'</td><td/><td>InstanceValidator</td></tr><tr><td>Warning</td><td>Bundle.entry[14].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall*/.meta.profile[0]</td><td>Structural Issue</td><td>Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404</td><td/><td>InstanceValidator</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-file",
+    "valueString" : "docs\\fhir\\example-bundle.json"
+  }],
+  "issue" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 14
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 73
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah'"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Location/site-O12*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 9
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Location|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[0].resource/*Location/site-O12*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 47
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 42
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[1].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 106
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 101
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[2].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 165
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 160
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[3].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 224
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 219
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[4].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 283
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 278
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[5].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 342
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 337
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[6].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 401
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 396
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[7].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 460
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 455
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[8].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 519
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 514
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[9].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 578
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[10].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 573
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[10].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 637
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[11].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 632
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[11].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 696
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[12].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 691
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[12].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 755
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[13].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 750
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[13].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 814
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 87
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "TYPE_SPECIFIC_CHECKS_DT_CANONICAL_RESOLVE"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Observation|4.0.1"
+    }],
+    "severity" : "information",
+    "code" : "invalid",
+    "details" : {
+      "text" : "A definition could not be found for Canonical URL 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah'"
+    },
+    "expression" : ["Bundle.entry[14].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall*/.meta.profile[0]"]
+  },
+  {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line",
+      "valueInteger" : 809
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col",
+      "valueInteger" : 8
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source",
+      "valueString" : "InstanceValidator"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id",
+      "valueCode" : "VALIDATION_VAL_PROFILE_UNKNOWN_ERROR"
+    },
+    {
+      "url" : "http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-context",
+      "valueString" : "http://hl7.org/fhir/StructureDefinition/Organization|4.0.1"
+    }],
+    "severity" : "warning",
+    "code" : "structure",
+    "details" : {
+      "text" : "Profile reference 'http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah' has not been checked because it could not be found, and fetching it resulted in the error org.hl7.fhir.r4.utils.client.EFhirClientException: Error from https://hl7.eu/fhir/ig/oah: Page Not Found body { background-color: #f5f5f5; margin-top: 8%; color: #5d5d5d; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75); text-align: center; } h1 { font-size: 2.45em; font-weight: 700; color: #5d5d5d; letter-spacing: -0.02em; margin-bottom: 30px; margin-top: 30px; } .container { width: 100%; margin-right: auto; margin-left: auto; } .animate__animated { animation-duration: 1s; animation-fill-mode: both; } .animate__fadeIn { animation-name: fadeIn; } .info { color: #5594cf; fill: #5594cf; } .error { color: #c92127; fill: #c92127; } .warning { color: #ffcc33; fill: #ffcc33; } .success { color: #5aba47; fill: #5aba47; } .icon-large { height: 132px; width: 132px; } .description-text { color: #707070; letter-spacing: -0.01em; font-size: 1.25em; line-height: 20px; } .footer { margin-top: 40px; font-size: 0.7em; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } Page Not Found Oops! We couldn't find the page that you're looking for. Please check the address and try again. Error Code: 404"
+    },
+    "expression" : ["Bundle.entry[14].resource/*Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall*/.meta.profile[0]"]
+  }]
+}

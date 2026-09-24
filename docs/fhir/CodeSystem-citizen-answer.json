@@ -1,0 +1,447 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "citizen-answer",
+  "url": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+  "version": "1.2.0",
+  "name": "StreamLensCitizenAnswer",
+  "title": "StreamLens citizen assessment answers",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-09-24",
+  "publisher": "StreamLens (IEEE OneAquaHealth Global Hackathon 2026)",
+  "description": "Local codes for the StreamLens citizen stream assessment. The OneAquaHealth FHIR IG (hl7-eu/oah) does not define codes for the citizen question set, so these are defined here and marked experimental. They are NOT official OneAquaHealth codes.",
+  "caseSensitive": true,
+  "content": "complete",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Local codes for the StreamLens citizen stream assessment. The OneAquaHealth FHIR IG (hl7-eu/oah) does not define codes for the citizen question set, so these are defined here and marked experimental. They are NOT official OneAquaHealth codes.</p></div>"
+  },
+  "count": 85,
+  "concept": [
+    {
+      "code": "channelForm.FLAT",
+      "display": "Flat and wide",
+      "definition": "The ground on both sides is roughly level with the water and the stream is broad."
+    },
+    {
+      "code": "channelForm.U",
+      "display": "U shape",
+      "definition": "Sides rise on both banks but the bottom is flat - like a bathtub."
+    },
+    {
+      "code": "channelForm.V",
+      "display": "V shape, steep sides",
+      "definition": "The banks slope steeply down to a narrow bottom."
+    },
+    {
+      "code": "channelForm.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if the photo does not show the banks clearly."
+    },
+    {
+      "code": "channelType.NAT",
+      "display": "Natural",
+      "definition": "Gravel, sand, stones, silt or mud - material the stream itself moves and sorts."
+    },
+    {
+      "code": "channelType.ART",
+      "display": "Artificial",
+      "definition": "Concrete, brick or another hard engineered surface."
+    },
+    {
+      "code": "channelType.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if the water is too deep, too cloudy or too shaded to see the bottom."
+    },
+    {
+      "code": "bankType.NAT",
+      "display": "Natural",
+      "definition": "Earth, sediment and plant roots holding the bank together, with no concrete or placed stone anywhere on it."
+    },
+    {
+      "code": "bankType.ART",
+      "display": "Concrete",
+      "definition": "A poured or rendered concrete wall, sheet piling, or any hard engineered facing - even if it covers only part of the bank."
+    },
+    {
+      "code": "bankType.LAS",
+      "display": "Laid stones",
+      "definition": "Stones or blocks placed by people - rip-rap, gabions or a stone wall."
+    },
+    {
+      "code": "bankType.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if vegetation hides the bank surface."
+    },
+    {
+      "code": "habitats.SB",
+      "display": "Sand banks",
+      "definition": "A build-up of sand along the edge or inside the channel."
+    },
+    {
+      "code": "habitats.SI",
+      "display": "Sand islands",
+      "definition": "A patch of sand or sediment standing above the water with flow on both sides."
+    },
+    {
+      "code": "habitats.SD",
+      "display": "Stone deposits",
+      "definition": "Loose stones and gravel gathered on the bed."
+    },
+    {
+      "code": "habitats.RF",
+      "display": "Riffles, rapids or small falls",
+      "definition": "Shallow fast stretches where water breaks over stones and looks broken and white. These mix air into the water."
+    },
+    {
+      "code": "habitats.AV",
+      "display": "Plants growing in the water",
+      "definition": "Rooted or floating plants living in the channel itself."
+    },
+    {
+      "code": "habitats.NONE",
+      "display": "None of these",
+      "definition": "The channel is uniform, with none of these features visible."
+    },
+    {
+      "code": "fallenBiomass.FT",
+      "display": "Fallen trees",
+      "definition": "A whole trunk or large tree lying in or across the channel."
+    },
+    {
+      "code": "fallenBiomass.FB",
+      "display": "Fallen branches",
+      "definition": "Branches and smaller woody pieces in the water."
+    },
+    {
+      "code": "fallenBiomass.FL",
+      "display": "Piles of leaves",
+      "definition": "Collected leaf litter caught in the channel."
+    },
+    {
+      "code": "fallenBiomass.NONE",
+      "display": "None",
+      "definition": "No natural wood or leaf material visible in the water."
+    },
+    {
+      "code": "waterFlow.FAS",
+      "display": "Fast, with waves",
+      "definition": "The surface is broken, rippled or white where it passes obstacles."
+    },
+    {
+      "code": "waterFlow.NOR",
+      "display": "Slow",
+      "definition": "Water is clearly moving but the surface is smooth."
+    },
+    {
+      "code": "waterFlow.STA",
+      "display": "Standing",
+      "definition": "Water is present but not moving at all - a pool or a stagnant reach."
+    },
+    {
+      "code": "waterFlow.DRY",
+      "display": "Dry",
+      "definition": "No water in the channel at the time of the visit."
+    },
+    {
+      "code": "waterFlow.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if a still photo cannot show movement."
+    },
+    {
+      "code": "waterAspect.CL",
+      "display": "Clear",
+      "definition": "You can see through the water to the bed."
+    },
+    {
+      "code": "waterAspect.MU",
+      "display": "Muddy or cloudy",
+      "definition": "Brown or milky water carrying suspended sediment. Common and often natural after heavy rain."
+    },
+    {
+      "code": "waterAspect.FO",
+      "display": "Foam on the surface",
+      "definition": "White or off-white froth. Natural foam is tan and breaks up easily; persistent bright white foam can point to detergents."
+    },
+    {
+      "code": "waterAspect.CO",
+      "display": "An unusual colour",
+      "definition": "Green, orange, grey, black or any colour that stands out."
+    },
+    {
+      "code": "waterAspect.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if glare, shade or reflections hide the water."
+    },
+    {
+      "code": "withdrawal.Y",
+      "display": "Yes",
+      "definition": "A pump, hose, intake or diversion taking water out is visible."
+    },
+    {
+      "code": "withdrawal.N",
+      "display": "No",
+      "definition": "No abstraction structure is visible."
+    },
+    {
+      "code": "withdrawal.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "dams.Y",
+      "display": "Yes",
+      "definition": "A weir, dam, sluice, culvert or step blocks movement along the channel."
+    },
+    {
+      "code": "dams.N",
+      "display": "No",
+      "definition": "The water runs uninterrupted through the whole stretch you can see."
+    },
+    {
+      "code": "dams.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "pollutedPipes.Y",
+      "display": "Yes",
+      "definition": "A pipe is discharging something that looks polluted, or the outfall is stained."
+    },
+    {
+      "code": "pollutedPipes.N",
+      "display": "No",
+      "definition": "No pipe is discharging, or a pipe is present but the water looks clean."
+    },
+    {
+      "code": "pollutedPipes.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "sewage.Y",
+      "display": "Yes",
+      "definition": "Sewage-related material or staining is visible."
+    },
+    {
+      "code": "sewage.N",
+      "display": "No",
+      "definition": "No sign of waste water."
+    },
+    {
+      "code": "sewage.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "litter.NONE",
+      "display": "None that I can see",
+      "definition": "You looked along the channel and the banks and saw no dropped rubbish."
+    },
+    {
+      "code": "litter.SOME",
+      "display": "A little",
+      "definition": "A few items - the odd bottle, can or bag."
+    },
+    {
+      "code": "litter.LOTS",
+      "display": "A lot",
+      "definition": "Rubbish is a conspicuous feature here: many items, or large dumped objects such as a trolley or a tyre."
+    },
+    {
+      "code": "litter.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "construction.Y",
+      "display": "Yes",
+      "definition": "Active or very recent works are visible in or beside the channel."
+    },
+    {
+      "code": "construction.N",
+      "display": "No",
+      "definition": "No works visible."
+    },
+    {
+      "code": "construction.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "imperviousL.Y",
+      "display": "Yes",
+      "definition": "Paving, tarmac, concrete or buildings run up close to the bank."
+    },
+    {
+      "code": "imperviousL.N",
+      "display": "No",
+      "definition": "The ground beside the stream is soil, grass or another surface rain can soak into."
+    },
+    {
+      "code": "imperviousL.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "vegCoverL.Y",
+      "display": "Yes",
+      "definition": "Plants cover most of the bank strip."
+    },
+    {
+      "code": "vegCoverL.N",
+      "display": "No",
+      "definition": "The bank strip is mostly bare, paved, or mown to nothing."
+    },
+    {
+      "code": "vegCoverL.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "vegDominantL.H",
+      "display": "Grass and herbs",
+      "definition": "Low, soft, non-woody plants."
+    },
+    {
+      "code": "vegDominantL.B",
+      "display": "Shrubs",
+      "definition": "Woody plants below roughly head height."
+    },
+    {
+      "code": "vegDominantL.T",
+      "display": "Trees",
+      "definition": "Woody plants with a trunk, taller than a person."
+    },
+    {
+      "code": "vegDominantL.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if no plant type clearly dominates, or the bank is out of frame."
+    },
+    {
+      "code": "invasiveL.Y",
+      "display": "Yes",
+      "definition": "You recognise an invasive species on this bank."
+    },
+    {
+      "code": "invasiveL.N",
+      "display": "No",
+      "definition": "You looked and recognised none."
+    },
+    {
+      "code": "invasiveL.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "cutsL.Y",
+      "display": "Yes",
+      "definition": "Recent cutting, mowing or clearing is visible."
+    },
+    {
+      "code": "cutsL.N",
+      "display": "No",
+      "definition": "The vegetation looks unmanaged."
+    },
+    {
+      "code": "cutsL.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "imperviousR.Y",
+      "display": "Yes",
+      "definition": "Paving, tarmac, concrete or buildings run up close to the bank."
+    },
+    {
+      "code": "imperviousR.N",
+      "display": "No",
+      "definition": "The ground beside the stream is soil, grass or another surface rain can soak into."
+    },
+    {
+      "code": "imperviousR.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "vegCoverR.Y",
+      "display": "Yes",
+      "definition": "Plants cover most of the bank strip."
+    },
+    {
+      "code": "vegCoverR.N",
+      "display": "No",
+      "definition": "The bank strip is mostly bare, paved, or mown to nothing."
+    },
+    {
+      "code": "vegCoverR.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "vegDominantR.H",
+      "display": "Grass and herbs",
+      "definition": "Low, soft, non-woody plants."
+    },
+    {
+      "code": "vegDominantR.B",
+      "display": "Shrubs",
+      "definition": "Woody plants below roughly head height."
+    },
+    {
+      "code": "vegDominantR.T",
+      "display": "Trees",
+      "definition": "Woody plants with a trunk, taller than a person."
+    },
+    {
+      "code": "vegDominantR.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this if no plant type clearly dominates, or the bank is out of frame."
+    },
+    {
+      "code": "invasiveR.Y",
+      "display": "Yes",
+      "definition": "You recognise an invasive species on this bank."
+    },
+    {
+      "code": "invasiveR.N",
+      "display": "No",
+      "definition": "You looked and recognised none."
+    },
+    {
+      "code": "invasiveR.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "cutsR.Y",
+      "display": "Yes",
+      "definition": "Recent cutting, mowing or clearing is visible."
+    },
+    {
+      "code": "cutsR.N",
+      "display": "No",
+      "definition": "The vegetation looks unmanaged."
+    },
+    {
+      "code": "cutsR.NS",
+      "display": "I'm not sure",
+      "definition": "Choose this whenever the photo does not show it clearly. 'Not sure' is a good answer - a guess is not."
+    },
+    {
+      "code": "overall.GOOD",
+      "display": "Good",
+      "definition": "Looks healthy: natural bed and banks, varied habitat, clean water, living margins."
+    },
+    {
+      "code": "overall.MODERATE",
+      "display": "Moderate",
+      "definition": "Some clear problems, but the stream still works as a habitat."
+    },
+    {
+      "code": "overall.POOR",
+      "display": "Poor",
+      "definition": "Heavily damaged: hard engineering, pollution signs, little or no habitat."
+    }
+  ]
+}

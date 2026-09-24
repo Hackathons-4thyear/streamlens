@@ -1,0 +1,2634 @@
+{
+  "prompt_version": "assess_v3",
+  "generated_at": "20260924T131724Z",
+  "provider": "gemini",
+  "labels_filled": 134,
+  "runs": [
+    {
+      "photo": "algae_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 74620,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 71,
+        "thought_tokens": 0,
+        "total_tokens": 5155
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "benevento_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 50902,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.43,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.64,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.55,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.52,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.54,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.46,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.55,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": false
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.59,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.61,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.31,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.48,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.6,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "benevento_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 25212,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.44,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.58,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.59,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.48,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.53,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.45,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.54,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.59,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.58,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.59,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.56,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "canal_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 23176,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.6,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.56,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.5,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.53,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.45,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.54,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.54,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.59,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.59,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.48,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.6,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "culvert_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 30608,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.57,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.61,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.44,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.49,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.41,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.57,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.5,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.57,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.31,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.59,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "drybed_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 34030,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.63,
+          "reason": "The bed looks grey and evenly coloured, the way concrete does.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.62,
+          "reason": "The sides look like a hard grey surface rather than soil.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.41,
+          "reason": "Nothing breaks the surface in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.47,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.52,
+          "reason": "Glare and shade make the water hard to read here.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.4,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.56,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.59,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.51,
+          "reason": "Paving or hard surfacing runs close to the left bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.57,
+          "reason": "The left bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.47,
+          "reason": "Paving or hard surfacing runs close to the right bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.61,
+          "reason": "The right bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "erosion_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 55380,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.42,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.66,
+          "reason": "The bed looks grey and evenly coloured, the way concrete does.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.57,
+          "reason": "The sides look like a hard grey surface rather than soil.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.42,
+          "reason": "Nothing breaks the surface in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.45,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.54,
+          "reason": "Glare and shade make the water hard to read here.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.4,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.54,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.59,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.52,
+          "reason": "Paving or hard surfacing runs close to the left bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.58,
+          "reason": "The left bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.51,
+          "reason": "Paving or hard surfacing runs close to the right bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.56,
+          "reason": "The right bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "gabion_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 65941,
+      "degraded": true,
+      "degraded_reason": "The AI took too long to answer.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.41,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.58,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.55,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.51,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.48,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.44,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.59,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.61,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.58,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "gabion_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 59769,
+      "degraded": true,
+      "degraded_reason": "The AI took too long to answer.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.44,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.57,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.58,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.46,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.51,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.42,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.51,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.58,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.58,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.56,
+          "reason": "The left bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.35,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.48,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.55,
+          "reason": "The right bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "giantreed_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 74878,
+      "degraded": true,
+      "degraded_reason": "The AI could not be reached.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.4,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.6,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.6,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.45,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.54,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.41,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.56,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": false
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.57,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.58,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.54,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.61,
+          "reason": "The left bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.56,
+          "reason": "The right bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "giantreed_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 36478,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 64,
+        "thought_tokens": 0,
+        "total_tokens": 5148
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "litter_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 83348,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5127,
+        "output_tokens": 65,
+        "thought_tokens": 0,
+        "total_tokens": 5192
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "litter_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 19203,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5100,
+        "output_tokens": 56,
+        "thought_tokens": 0,
+        "total_tokens": 5156
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "oslo_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 37375,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 70,
+        "thought_tokens": 0,
+        "total_tokens": 5154
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "oslo_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 15022,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "habitats",
+          "codes": [
+            "SI",
+            "RF"
+          ],
+          "confidence": 0.85,
+          "reason": "There is a central vegetated sand island and shallow fast stretches where water breaks over stones.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.9,
+          "reason": "The water surface is fast and rippled with white water breaking over obstacles.",
+          "needs_review": false
+        },
+        {
+          "question_id": "litter",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.8,
+          "reason": "No dropped rubbish is visible along the channel or the banks.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants and trees cover most of the left bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation on the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants and trees cover most of the right bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation on the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5103,
+        "output_tokens": 550,
+        "thought_tokens": 0,
+        "total_tokens": 5653
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "outfall_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 17263,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 56,
+        "thought_tokens": 0,
+        "total_tokens": 5140
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "outfall_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 18654,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The bed consists of natural mud and sediment sorted by water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The banks are made of natural earth and sediment without engineered facing.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "A concrete structure and metal barrier cross the channel and obstruct movement.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the strip along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "H"
+          ],
+          "confidence": 0.9,
+          "reason": "Low grass and herbs are the dominant vegetation on the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "The right bank strip is mostly bare earth and mud rather than covered in plants.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5100,
+        "output_tokens": 481,
+        "thought_tokens": 0,
+        "total_tokens": 5581
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "pollution_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 60215,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.95,
+          "reason": "The bed is made of loose stones and gravel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The banks are made of soil and sediment covered with erosion control mesh.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "DRY"
+          ],
+          "confidence": 0.95,
+          "reason": "There is no water visible in the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "litter",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.9,
+          "reason": "No dropped rubbish is visible along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Active or recent landscaping and earthworks are visible along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "A paved road runs right up close to the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "The left bank strip is mostly covered in erosion mesh rather than plants.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.8,
+          "reason": "The ground beside the right bank consists of soil and vegetation.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the right bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "B"
+          ],
+          "confidence": 0.85,
+          "reason": "Shrubs dominate the vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5095,
+        "output_tokens": 749,
+        "thought_tokens": 0,
+        "total_tokens": 5844
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "pollution_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 15148,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5100,
+        "output_tokens": 62,
+        "thought_tokens": 0,
+        "total_tokens": 5162
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "pollution_03.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 11659,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5105,
+        "output_tokens": 52,
+        "thought_tokens": 0,
+        "total_tokens": 5157
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "overexposed"
+      ]
+    },
+    {
+      "photo": "rapids_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 9972,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5086,
+        "output_tokens": 62,
+        "thought_tokens": 0,
+        "total_tokens": 5148
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "rapids_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 11246,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5112,
+        "output_tokens": 50,
+        "thought_tokens": 0,
+        "total_tokens": 5162
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "riparian_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 10988,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 50,
+        "thought_tokens": 0,
+        "total_tokens": 5134
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "riparian_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 18965,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 55,
+        "thought_tokens": 0,
+        "total_tokens": 5139
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "streambed_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 14670,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.95,
+          "reason": "The bed is made of natural rock and stones shaped by the stream.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The banks are made of natural rock and earth with vegetation.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "SD",
+            "RF"
+          ],
+          "confidence": 0.9,
+          "reason": "Loose stone deposits and fast stretches breaking over rocks provide instream habitats.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.85,
+          "reason": "The water surface is rippled and broken where it passes over rocks.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.8,
+          "reason": "The water is clear enough to see through to the bed in places.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "A dam or weir structure crosses the channel in the distance.",
+          "needs_review": false
+        },
+        {
+          "question_id": "litter",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.8,
+          "reason": "No dropped rubbish is visible along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.9,
+          "reason": "No active construction works are visible in or beside the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "The ground beside the stream is natural vegetation and rock.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the strip along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Trees are the dominant vegetation along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "The ground beside the stream on the right is natural and unpaved.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the strip along the right bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Trees are the dominant vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 1130,
+        "thought_tokens": 0,
+        "total_tokens": 6214
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "streambed_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 12613,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.9,
+          "reason": "The stream bed is made of natural stones and rocks.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "DRY"
+          ],
+          "confidence": 0.95,
+          "reason": "There is no water visible in the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "litter",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.85,
+          "reason": "No dropped rubbish is visible along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the left bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees and tall woody plants are the dominant vegetation on the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the right bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 524,
+        "thought_tokens": 0,
+        "total_tokens": 5608
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "toulouse_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 34230,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5100,
+        "output_tokens": 79,
+        "thought_tokens": 0,
+        "total_tokens": 5179
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "toulouse_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 81357,
+      "degraded": true,
+      "degraded_reason": "The AI took too long to answer.",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.43,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.64,
+          "reason": "The bed looks grey and evenly coloured, the way concrete does.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.57,
+          "reason": "The sides look like a hard grey surface rather than soil.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.47,
+          "reason": "Nothing breaks the surface in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.51,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.53,
+          "reason": "Glare and shade make the water hard to read here.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.55,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": false
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.57,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.63,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.49,
+          "reason": "Paving or hard surfacing runs close to the left bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.58,
+          "reason": "The left bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.49,
+          "reason": "Paving or hard surfacing runs close to the right bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.59,
+          "reason": "The right bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "weir_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 61558,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.95,
+          "reason": "The channel bed features a large engineered concrete weir structure.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "RF",
+            "SD"
+          ],
+          "confidence": 0.9,
+          "reason": "Loose stones and fast shallow stretches breaking over rocks are clearly visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.9,
+          "reason": "The water surface is broken and rippled as it flows fast over stones.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "MU"
+          ],
+          "confidence": 0.85,
+          "reason": "The water is cloudy and brownish, carrying suspended sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.95,
+          "reason": "A large concrete weir structure blocks movement along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "litter",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.85,
+          "reason": "No dropped rubbish is visible along the visible parts of the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Fresh concrete engineering works and bare earth are visible beside the channel.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 576,
+        "thought_tokens": 0,
+        "total_tokens": 5660
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "weir_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 58032,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "FL"
+          ],
+          "confidence": 0.85,
+          "reason": "A pile of fallen leaves is caught on the structure in the water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.9,
+          "reason": "The water is rushing down in a fast fall with broken white water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "A weir or drop step is visible spanning across the water.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5084,
+        "output_tokens": 269,
+        "thought_tokens": 0,
+        "total_tokens": 5353
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "woodydebris_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 14387,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 5122,
+        "output_tokens": 74,
+        "thought_tokens": 0,
+        "total_tokens": 5196
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    }
+  ]
+}

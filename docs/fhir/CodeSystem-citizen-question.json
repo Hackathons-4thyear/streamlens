@@ -1,0 +1,142 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "citizen-question",
+  "url": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+  "version": "1.2.0",
+  "name": "StreamLensCitizenQuestion",
+  "title": "StreamLens citizen assessment questions",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-09-24",
+  "publisher": "StreamLens (IEEE OneAquaHealth Global Hackathon 2026)",
+  "description": "Local codes for the StreamLens citizen stream assessment. The OneAquaHealth FHIR IG (hl7-eu/oah) does not define codes for the citizen question set, so these are defined here and marked experimental. They are NOT official OneAquaHealth codes.",
+  "caseSensitive": true,
+  "content": "complete",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Local codes for the StreamLens citizen stream assessment. The OneAquaHealth FHIR IG (hl7-eu/oah) does not define codes for the citizen question set, so these are defined here and marked experimental. They are NOT official OneAquaHealth codes.</p></div>"
+  },
+  "count": 24,
+  "concept": [
+    {
+      "code": "channelForm",
+      "display": "Channel form",
+      "definition": "The shape of the ditch or valley the water runs through, seen from the side. A flat wide channel spreads water out; a steep V holds it in a narrow cut."
+    },
+    {
+      "code": "channelType",
+      "display": "Channel bed",
+      "definition": "What the bottom of the stream is made of. A natural bed is gravel, sand, stones or mud that the stream itself shaped. An artificial bed is concrete or another hard surface people laid down."
+    },
+    {
+      "code": "bankType",
+      "display": "Bank type",
+      "definition": "What the sides of the channel are made of. Answer for the HARDEST material you can see on the bank: if any part of it has been armoured with concrete or stone, answer for that, even where the rest is bare earth. Natural banks are soil and plant roots held together by vegetation."
+    },
+    {
+      "code": "habitats",
+      "display": "Instream habitats",
+      "definition": "Features inside the water that give small animals places to live, feed and hide. More variety usually means more life."
+    },
+    {
+      "code": "fallenBiomass",
+      "display": "Natural debris",
+      "definition": "Wood and leaves that fell into the stream naturally. This is not litter - it is food and shelter for stream life, and it slows the water down."
+    },
+    {
+      "code": "waterFlow",
+      "display": "Flow type",
+      "definition": "How fast the water is moving. Standing or dry channels behave very differently from flowing ones - they warm up faster and hold less oxygen."
+    },
+    {
+      "code": "waterAspect",
+      "display": "Water aspect",
+      "definition": "How the water looks. Colour, cloudiness and foam can point to pollution, erosion or perfectly natural conditions after rain."
+    },
+    {
+      "code": "withdrawal",
+      "display": "Water abstraction",
+      "definition": "Signs that water is being taken out of the stream - a pump, a hose, a pipe running from the channel, or a small diversion channel."
+    },
+    {
+      "code": "dams",
+      "display": "Longitudinal connectivity",
+      "definition": "Whether anything blocks the way along the stream. Weirs, dams, culverts and drops stop fish and other animals moving up and down."
+    },
+    {
+      "code": "pollutedPipes",
+      "display": "Polluted outfalls",
+      "definition": "A pipe discharging into the stream where the water coming out looks or smells wrong - discoloured, foamy, greasy, or stained around the mouth."
+    },
+    {
+      "code": "sewage",
+      "display": "Sewage discharge",
+      "definition": "Signs of waste water: toilet paper, sanitary items, grey scum, sewage fungus (a white or grey slimy growth), or a strong smell."
+    },
+    {
+      "code": "litter",
+      "display": "Litter",
+      "definition": "Rubbish people have dropped or dumped - bottles, cans, bags, wrappers, trolleys, tyres. This is not the same as natural debris: wood and leaves belong in a stream, litter does not."
+    },
+    {
+      "code": "construction",
+      "display": "Channel works",
+      "definition": "Building or engineering work in or right beside the channel - machinery, fresh concrete, dredging, bare disturbed earth or site fencing."
+    },
+    {
+      "code": "imperviousL",
+      "display": "Impervious surface, left bank",
+      "definition": "Sealed ground next to the stream - tarmac, concrete, paving or buildings - that rain cannot soak into. It sends rain straight into the stream, carrying whatever was lying on the surface."
+    },
+    {
+      "code": "vegCoverL",
+      "display": "Riparian vegetation cover, left bank",
+      "definition": "Whether plants cover the strip of land along the bank. That strip shades the water, holds the bank together and filters what runs off the land."
+    },
+    {
+      "code": "vegDominantL",
+      "display": "Dominant vegetation, left bank",
+      "definition": "Which kind of plant takes up the most space along the bank. Trees shade and cool the water; grass alone gives much less shelter."
+    },
+    {
+      "code": "invasiveL",
+      "display": "Invasive species, left bank",
+      "definition": "Plants brought from elsewhere that spread fast and crowd out local ones - for example giant reed, Japanese knotweed, acacia or pampas grass. Only answer yes if you actually recognise one."
+    },
+    {
+      "code": "cutsL",
+      "display": "Vegetation management, left bank",
+      "definition": "Signs that plants have been cut, mown or cleared recently - stumps, cut stems, mown strips or piles of cuttings."
+    },
+    {
+      "code": "imperviousR",
+      "display": "Impervious surface, right bank",
+      "definition": "Sealed ground next to the stream - tarmac, concrete, paving or buildings - that rain cannot soak into. It sends rain straight into the stream, carrying whatever was lying on the surface."
+    },
+    {
+      "code": "vegCoverR",
+      "display": "Riparian vegetation cover, right bank",
+      "definition": "Whether plants cover the strip of land along the bank. That strip shades the water, holds the bank together and filters what runs off the land."
+    },
+    {
+      "code": "vegDominantR",
+      "display": "Dominant vegetation, right bank",
+      "definition": "Which kind of plant takes up the most space along the bank. Trees shade and cool the water; grass alone gives much less shelter."
+    },
+    {
+      "code": "invasiveR",
+      "display": "Invasive species, right bank",
+      "definition": "Plants brought from elsewhere that spread fast and crowd out local ones - for example giant reed, Japanese knotweed, acacia or pampas grass. Only answer yes if you actually recognise one."
+    },
+    {
+      "code": "cutsR",
+      "display": "Vegetation management, right bank",
+      "definition": "Signs that plants have been cut, mown or cleared recently - stumps, cut stems, mown strips or piles of cuttings."
+    },
+    {
+      "code": "overall",
+      "display": "Overall stream assessment",
+      "definition": "Your own verdict on this stretch of stream, taking everything you saw into account. This one is yours alone - StreamLens will never suggest it."
+    }
+  ]
+}

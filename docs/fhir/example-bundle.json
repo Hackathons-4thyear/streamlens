@@ -1,0 +1,978 @@
+{
+  "resourceType": "Bundle",
+  "id": "streamlens-6579adfd-1c73-4eee-a2c5-9957e2f654b0",
+  "type": "collection",
+  "timestamp": "2026-09-24T13:16:39+00:00",
+  "entry": [
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Location/site-O12",
+      "resource": {
+        "resourceType": "Location",
+        "id": "site-O12",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/location-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>OneAquaHealth research site O12: Makrellbekken – ring3, Oslo</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "https://api.enora-oah.eu/api/sites",
+            "value": "O12"
+          }
+        ],
+        "status": "active",
+        "name": "Makrellbekken – ring3",
+        "mode": "instance",
+        "address": {
+          "city": "Oslo",
+          "country": "Norway"
+        },
+        "position": {
+          "longitude": 10.6736,
+          "latitude": 59.9356
+        }
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Channel bed: Natural (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "channelType",
+              "display": "Channel bed"
+            }
+          ],
+          "text": "Channel bed"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "channelType.NAT",
+              "display": "Natural"
+            }
+          ],
+          "text": "Natural"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI suggested 'NAT' with confidence 0.77. The citizen agreed. Model: scripts/seed_demo.py. Prompt: assess_v3."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Bank type: Natural (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "bankType",
+              "display": "Bank type"
+            }
+          ],
+          "text": "Bank type"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "bankType.NAT",
+              "display": "Natural"
+            }
+          ],
+          "text": "Natural"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Water aspect: Clear (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "waterAspect",
+              "display": "Water aspect"
+            }
+          ],
+          "text": "Water aspect"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "waterAspect.CL",
+              "display": "Clear"
+            }
+          ],
+          "text": "Clear"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Flow type: Slow (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "waterFlow",
+              "display": "Flow type"
+            }
+          ],
+          "text": "Flow type"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "waterFlow.NOR",
+              "display": "Slow"
+            }
+          ],
+          "text": "Slow"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Instream habitats: Stone deposits (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "habitats",
+              "display": "Instream habitats"
+            }
+          ],
+          "text": "Instream habitats"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "habitats.SD",
+              "display": "Stone deposits"
+            }
+          ],
+          "text": "Stone deposits"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI suggested 'SD'. The citizen agreed. Model: scripts/seed_demo.py. Prompt: assess_v3."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Natural debris: Fallen branches (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "fallenBiomass",
+              "display": "Natural debris"
+            }
+          ],
+          "text": "Natural debris"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "fallenBiomass.FB",
+              "display": "Fallen branches"
+            }
+          ],
+          "text": "Fallen branches"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Riparian vegetation cover, left bank: Yes (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "vegCoverL",
+              "display": "Riparian vegetation cover, left bank"
+            }
+          ],
+          "text": "Riparian vegetation cover, left bank"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "vegCoverL.Y",
+              "display": "Yes"
+            }
+          ],
+          "text": "Yes"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI suggested 'Y' with confidence 0.79. The citizen agreed. Model: scripts/seed_demo.py. Prompt: assess_v3."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Impervious surface, left bank: No (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "imperviousL",
+              "display": "Impervious surface, left bank"
+            }
+          ],
+          "text": "Impervious surface, left bank"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "imperviousL.N",
+              "display": "No"
+            }
+          ],
+          "text": "No"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Impervious surface, right bank: Yes (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "imperviousR",
+              "display": "Impervious surface, right bank"
+            }
+          ],
+          "text": "Impervious surface, right bank"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "imperviousR.Y",
+              "display": "Yes"
+            }
+          ],
+          "text": "Yes"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI suggested 'Y'. The citizen agreed. Model: scripts/seed_demo.py. Prompt: assess_v3."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sewage discharge: No (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "sewage",
+              "display": "Sewage discharge"
+            }
+          ],
+          "text": "Sewage discharge"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "sewage.N",
+              "display": "No"
+            }
+          ],
+          "text": "No"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Polluted outfalls: No (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "pollutedPipes",
+              "display": "Polluted outfalls"
+            }
+          ],
+          "text": "Polluted outfalls"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "pollutedPipes.N",
+              "display": "No"
+            }
+          ],
+          "text": "No"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI suggested 'NS' with confidence 0.46. The citizen chose differently. Model: scripts/seed_demo.py. Prompt: assess_v3."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Longitudinal connectivity: No (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "dams",
+              "display": "Longitudinal connectivity"
+            }
+          ],
+          "text": "Longitudinal connectivity"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "dams.N",
+              "display": "No"
+            }
+          ],
+          "text": "No"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI suggested 'N' with confidence 0.49. The citizen agreed. Model: scripts/seed_demo.py. Prompt: assess_v3."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Channel works: Yes (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "construction",
+              "display": "Channel works"
+            }
+          ],
+          "text": "Channel works"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "construction.Y",
+              "display": "Yes"
+            }
+          ],
+          "text": "Yes"
+        },
+        "note": [
+          {
+            "text": "Citizen-confirmed answer. The AI made no suggestion for this question."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall",
+        "meta": {
+          "profile": [
+            "http://hl7.eu/fhir/ig/oah/StructureDefinition/observation-indicators-oah"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Overall stream assessment: Good (citizen-confirmed, 2026-09-16T06:03:51+00:00)</p></div>"
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "programme",
+            "active": true,
+            "name": "StreamLens citizen monitoring - team ELVEVENNER"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-question",
+              "code": "overall",
+              "display": "Overall stream assessment"
+            }
+          ],
+          "text": "Overall stream assessment"
+        },
+        "subject": {
+          "reference": "Location/site-O12"
+        },
+        "effectiveDateTime": "2026-09-16T06:03:51+00:00",
+        "performer": [
+          {
+            "reference": "#programme"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://hackathons-4thyear.github.io/streamlens/fhir/CodeSystem/citizen-answer",
+              "code": "overall.GOOD",
+              "display": "Good"
+            }
+          ],
+          "text": "Good"
+        },
+        "note": [
+          {
+            "text": "The citizen's own overall rating. StreamLens never lets the AI suggest this value."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://hackathons-4thyear.github.io/streamlens/fhir/Provenance/prov-6579adfd-1c73-4eee-a2c5-9957e2f654b0",
+      "resource": {
+        "resourceType": "Provenance",
+        "id": "prov-6579adfd-1c73-4eee-a2c5-9957e2f654b0",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Answers confirmed by a pseudonymous citizen observer; draft suggestions assembled by scripts/seed_demo.py using prompt assess_v3.</p></div>"
+        },
+        "target": [
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-channelType"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-bankType"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterAspect"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-waterFlow"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-habitats"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-fallenBiomass"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-vegCoverL"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousL"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-imperviousR"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-sewage"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-pollutedPipes"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-dams"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-construction"
+          },
+          {
+            "reference": "Observation/obs-6579adfd-1c73-4eee-a2c5-9957e2f654b0-overall"
+          },
+          {
+            "reference": "Location/site-O12"
+          }
+        ],
+        "recorded": "2026-09-16T06:03:51+00:00",
+        "agent": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "author",
+                  "display": "Author"
+                }
+              ]
+            },
+            "who": {
+              "identifier": {
+                "system": "https://hackathons-4thyear.github.io/streamlens/fhir/pseudonymous-client",
+                "value": "demo-8"
+              },
+              "display": "Citizen observer (pseudonymous)"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "assembler",
+                  "display": "Assembler"
+                }
+              ]
+            },
+            "who": {
+              "reference": "#ai"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Device",
+            "id": "ai",
+            "status": "active",
+            "deviceName": [
+              {
+                "name": "scripts/seed_demo.py",
+                "type": "model-name"
+              }
+            ],
+            "version": [
+              {
+                "value": "assess_v3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

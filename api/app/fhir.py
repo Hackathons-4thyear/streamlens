@@ -31,6 +31,10 @@ from datetime import datetime, timezone
 from typing import Any
 
 CANONICAL_BASE = "https://hackathons-4thyear.github.io/streamlens/fhir"
+# Bundle.entry.fullUrl must be an absolute URL. "urn:uuid:" is only legal in
+# front of an actual UUID, so entries are addressed under a resource base and
+# relative references resolve against it.
+RESOURCE_BASE = "https://hackathons-4thyear.github.io/streamlens/fhir"
 QUESTION_CS = f"{CANONICAL_BASE}/CodeSystem/citizen-question"
 ANSWER_CS = f"{CANONICAL_BASE}/CodeSystem/citizen-answer"
 
@@ -44,6 +48,19 @@ CLIENT_ID_SYSTEM = f"{CANONICAL_BASE}/pseudonymous-client"
 PROVENANCE_AGENT_TYPE = "http://terminology.hl7.org/CodeSystem/provenance-participant-type"
 
 PROGRAMME_NAME = "StreamLens citizen monitoring"
+
+
+def _narrative(text: str) -> dict:
+    """A minimal generated narrative, so dom-6 is satisfied.
+
+    dom-6 is a best-practice constraint rather than a rule, but a resource a
+    human cannot read is a poor export, and the text costs almost nothing.
+    """
+    safe = (text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    return {
+        "status": "generated",
+        "div": f'<div xmlns="http://www.w3.org/1999/xhtml"><p>{safe}</p></div>',
+    }
 
 
 def _instant(moment: datetime) -> str:
@@ -80,6 +97,11 @@ def build_location(site: dict) -> dict:
         "resourceType": "Location",
         "id": f"site-{site['id']}",
         "meta": {"profile": [LOCATION_PROFILE]},
+        "text": _narrative(
+            f"OneAquaHealth research site {site['id']}: "
+            f"{site.get('name') or site['id']}"
+            + (f", {site['city']}" if site.get("city") else "")
+        ),
         "identifier": [{"system": SITE_ID_SYSTEM, "value": site["id"]}],
         "status": "active",
         "name": site.get("name") or site["id"],
@@ -143,6 +165,11 @@ def build_observation(
         "resourceType": "Observation",
         "id": f"obs-{observation_id}-{question_id}",
         "meta": {"profile": [OBSERVATION_PROFILE]},
+        "text": _narrative(
+            f"{question_display}: "
+            + ", ".join(display_for(c) for c in codes)
+            + f" (citizen-confirmed, {_instant(recorded_at)})"
+        ),
         "contained": [_programme(team)],
         "status": "final",
         "code": {
@@ -237,6 +264,13 @@ def build_provenance(
     provenance: dict[str, Any] = {
         "resourceType": "Provenance",
         "id": f"prov-{observation_id}",
+        "text": _narrative(
+            "Answers confirmed by a pseudonymous citizen observer"
+            + (f"; draft suggestions assembled by {ai_model}" if ai_used and ai_model
+               else "")
+            + (f" using prompt {prompt_version}" if ai_used and prompt_version else "")
+            + "."
+        ),
         "target": [{"reference": reference} for reference in targets],
         "recorded": _instant(recorded_at),
         "agent": agents,
@@ -260,7 +294,7 @@ def build_bundle(
 
     location = build_location(site)
     entries: list[dict] = [{
-        "fullUrl": f"urn:uuid:location-{site['id']}",
+        "fullUrl": f"{RESOURCE_BASE}/Location/site-{site['id']}",
         "resource": location,
     }]
 
@@ -275,7 +309,7 @@ def build_bundle(
             prompt_version=prompt_version,
         )
         entries.append({
-            "fullUrl": f"urn:uuid:{resource['id']}",
+            "fullUrl": f"{RESOURCE_BASE}/Observation/{resource['id']}",
             "resource": resource,
         })
         targets.append(f"Observation/{resource['id']}")
@@ -294,7 +328,7 @@ def build_bundle(
                     "suggest this value."
         }]
         entries.append({
-            "fullUrl": f"urn:uuid:{resource['id']}",
+            "fullUrl": f"{RESOURCE_BASE}/Observation/{resource['id']}",
             "resource": resource,
         })
         targets.append(f"Observation/{resource['id']}")
@@ -309,7 +343,7 @@ def build_bundle(
         ai_used=bool(observation.get("ai_provider")),
     )
     entries.append({
-        "fullUrl": f"urn:uuid:{provenance['id']}",
+        "fullUrl": f"{RESOURCE_BASE}/Provenance/{provenance['id']}",
         "resource": provenance,
     })
 
