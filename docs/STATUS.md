@@ -2,11 +2,12 @@
 
 Written for: the judges and anyone picking this repository up mid-build.
 
-Last updated: 23 September 2026.
+Last updated: 24 September 2026.
 
-Phase 1 delivered the **Observe** vertical slice end to end. Phases 2 and 3 are
-designed and scaffolded but not built. This document says exactly which is which,
-because a demo that hides its seams wastes a reviewer's time.
+Phase 1 delivered the **Observe** vertical slice. Phase 1.5 measured the vision
+prompt against real photographs. Phase 2 built **Understand & Act**. Phase 3 is
+designed but not built. This document says exactly which is which, because a demo
+that hides its seams wastes a reviewer's time.
 
 ---
 
@@ -93,6 +94,85 @@ tappable popover rather than a hover tooltip — hover does not exist on a phone
 | **PWA install** | Manifest and service worker build correctly | Not tested on a physical phone. |
 | **"Answer contradicts the photo" check** | Not built | Only blur, brightness and GPS distance checks exist. Cross-answer consistency is Phase 2. |
 | **Phase 2 and 3** | Not started | See below. |
+
+---
+
+## Phase 2 — Understand & Act (built)
+
+### The watercourse gate
+`assess_v3` returns `is_watercourse` in the same structured response as the
+suggestions, so it costs no extra call. When it is false the API returns no
+chips at all and the review screen asks for a different photo. Measured on the
+same 29 evaluation photographs, silence on the 13 images that show no
+watercourse went from **10/13 to 13/13**.
+
+### Stream health card
+Built only from citizen-confirmed answers. Sections graded by how many of their
+answered questions match a known problem in the measures catalogue — a rule a
+reader can check. Carries **"indicator view, not a validated ecological index"**
+in the payload and on screen. Includes rating history, visit count, last visit,
+a data-completeness meter and averaged emotions.
+
+### 48-hour alerts
+Three rules in `data/alert_rules.json`, executed by `app/alerts.py`:
+
+| Rule | Fires when |
+|---|---|
+| `sewage_overflow_risk` | ≥20 mm forecast rain **and** a sewage or polluted-pipe report within 14 days |
+| `mosquito_breeding_conditions` | ≥20 °C forecast **and** standing or dry water reported within 21 days |
+| `debris_blockage_watch` | ≥25 mm forecast rain **and** a barrier or fallen wood reported within 60 days |
+
+Every threshold carries its own source. The 72-hour advice figure is quoted from
+Directive 2006/7/EC Article 2; the mosquito temperature reasoning cites published
+Culex development rates. **The rainfall triggers say `project judgement`** and
+explain why: no pan-European figure defines when a combined sewer spills, and the
+UK Met Office dropped fixed millimetre thresholds in 2011. Nothing borrows an
+unrelated citation to look authoritative.
+
+No rule fires on weather alone — weather is not a property of a stream, so each
+also needs a citizen observation. Every alert shows the numbers that triggered
+it, and a test asserts no alert ever uses a banned word or omits "Check official
+local advice."
+
+### Measures
+`data/measures.json`: 25 measures across 10 observable problems, from the
+OneAquaHealth D2.4 catalogue (DOI 10.5281/zenodo.20040211, CC-BY-4.0).
+`scripts/build_measures.py` opens the PDF and confirms each cited page still
+names the measure cited against it — **25 of 25 confirmed**. The mapping,
+plain-language text, health co-benefit tags and effort estimates are ours and
+marked `project judgement (StreamLens)`, because the catalogue links health at
+p.132 in general terms rather than measure by measure.
+
+### Weather
+Open-Meteo, cached one hour per site, stale cache served offline **with its
+timestamp and a stale flag**. With neither forecast nor cache, the engine
+produces no weather-based alerts rather than failing the page.
+
+### Demo data
+`scripts/seed_demo.py` writes 101 observations across 12 sites in all five
+cities over 90 days, every one `synthetic: true`. A scope toggle (all / real /
+demo) sits on every view and is passed to the API. Two sites get **planted
+forecasts** so the rain-driven rules can be shown on a dry day; these are flagged
+`_streamlens_synthetic`, reported by the API and badged "demo forecast" on
+screen. `--no-demo-weather` turns that off.
+
+### Screens
+Site page (alerts, health card, measures), Home "alerts near you", and a
+sortable city table with CSV export for municipal users.
+
+---
+
+## What Phase 2 did NOT do
+
+| Area | State |
+|---|---|
+| **Litter** | Inferred from `waterAspect: CO` rather than asked directly. It needs its own question; `measures.json` says so in `detection_note`. |
+| **City page polish** | Functional sortable table with CSV, but no charts or map view. |
+| **Alert delivery** | Alerts are shown when you open a site. No push, no email, no subscriptions. |
+| **Thresholds** | Rainfall triggers are our judgement, not calibrated to any real catchment. A municipality must replace them. |
+| **Health card weighting** | Every question counts equally within a section. A real index would weight them. |
+| **Measures** | 25 of roughly 60 in the catalogue, chosen for the problems StreamLens can observe. |
+| **Phase 3** | Not started: quests, leaderboard, wellbeing mirror, FHIR export. |
 
 ---
 
