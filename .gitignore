@@ -27,3 +27,10 @@ coverage/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Evaluation images: keep third-party licensing out of the repository.
+# The reports and labels ARE committed; the photographs are not.
+eval/photos/*
+!eval/photos/README.md
+!eval/photos/.gitkeep
+eval/_dryrun_photos/

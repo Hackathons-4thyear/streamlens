@@ -1,0 +1,1099 @@
+{
+  "prompt_version": "assess_v1",
+  "generated_at": "20260924T063027Z",
+  "provider": "mock",
+  "labels_filled": 0,
+  "runs": [
+    {
+      "photo": "not_a_photo.jpg",
+      "ok": false,
+      "error": "could not read the upstream photo as an image: cannot identify image file <_io.BytesIO object at 0x0000022BFC663880>",
+      "latency_ms": 0,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "",
+      "model": "",
+      "is_mock": true,
+      "chips": [],
+      "dropped": [],
+      "usage": {},
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "synthetic_concrete.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.62,
+          "reason": "The bed looks grey and evenly coloured, the way concrete does.",
+          "needs_review": true
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.58,
+          "reason": "The sides look like a hard grey surface rather than soil.",
+          "needs_review": true
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.49,
+          "reason": "Nothing breaks the surface in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.46,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.5,
+          "reason": "Glare and shade make the water hard to read here.",
+          "needs_review": true
+        },
+        {
+          "question_id": "withdrawal",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.35,
+          "reason": "No pump, hose or intake is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.61,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.49,
+          "reason": "Paving or hard surfacing runs close to the left bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.56,
+          "reason": "The left bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.35,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.5,
+          "reason": "Paving or hard surfacing runs close to the right bank.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.59,
+          "reason": "The right bank is mostly out of frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.35,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "blurry"
+      ]
+    },
+    {
+      "photo": "synthetic_dark.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.58,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": true
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.56,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.44,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.51,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "withdrawal",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "No pump, hose or intake is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.42,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.48,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.51,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.57,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.48,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.58,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.59,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.31,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "blurry",
+        "dark"
+      ]
+    },
+    {
+      "photo": "synthetic_muddy.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.59,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": true
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.57,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.46,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.54,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "withdrawal",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "No pump, hose or intake is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.44,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.56,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.57,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.35,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.49,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.56,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "blurry"
+      ]
+    },
+    {
+      "photo": "synthetic_smooth.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.63,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": true
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.6,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.51,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.36,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.55,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "withdrawal",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "No pump, hose or intake is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.4,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.56,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.54,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.56,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.51,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.59,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.35,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.62,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "blurry"
+      ]
+    },
+    {
+      "photo": "synthetic_vegetated.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "mock",
+      "model": "heuristic-colour-v1",
+      "is_mock": true,
+      "chips": [
+        {
+          "question_id": "channelForm",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.43,
+          "reason": "This view does not show both banks well enough to judge the shape.",
+          "needs_review": true
+        },
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.59,
+          "reason": "The bed shows mixed browns and greys, like gravel or sediment.",
+          "needs_review": true
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.59,
+          "reason": "The sides look like earth with plants growing out of them.",
+          "needs_review": true
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "NONE"
+          ],
+          "confidence": 0.5,
+          "reason": "No wood or leaf piles stand out in the channel.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.39,
+          "reason": "A photo cannot show how fast the water is moving.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.54,
+          "reason": "The water looks even in colour, with nothing standing out.",
+          "needs_review": true
+        },
+        {
+          "question_id": "withdrawal",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.34,
+          "reason": "No pump, hose or intake is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "This stretch is too short to tell whether anything blocks it.",
+          "needs_review": true
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.52,
+          "reason": "No discharging pipe is visible in the frame.",
+          "needs_review": true
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.57,
+          "reason": "No waste material or grey slime is visible.",
+          "needs_review": true
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.62,
+          "reason": "No machinery or fresh works are in view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "The ground beside the left bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.6,
+          "reason": "Plants cover most of the left bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.32,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsL",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.53,
+          "reason": "The ground beside the right bank looks soft and planted.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.6,
+          "reason": "Plants cover most of the right bank in this view.",
+          "needs_review": true
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.38,
+          "reason": "The bank plants are not clear enough to say which kind dominates.",
+          "needs_review": true
+        },
+        {
+          "question_id": "invasiveR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.33,
+          "reason": "Telling an invasive plant apart needs a closer look than this.",
+          "needs_review": true
+        },
+        {
+          "question_id": "cutsR",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.37,
+          "reason": "Recent cutting is not something this view settles.",
+          "needs_review": true
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 0,
+        "output_tokens": 0,
+        "thought_tokens": 0,
+        "total_tokens": 0
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "blurry"
+      ]
+    }
+  ]
+}

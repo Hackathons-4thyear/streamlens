@@ -1,0 +1,17 @@
+{
+  "_comment": [
+    "Token prices in US dollars per one million tokens, paid tier.",
+    "Cost figures in the evaluation reports are APPROXIMATE and depend on these",
+    "numbers being current. Re-check them before quoting a cost anywhere that",
+    "matters, and update 'checked' when you do.",
+    "Thinking tokens are billed as output, and the harness counts them that way."
+  ],
+  "source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "checked": "2026-09-24",
+  "currency": "USD",
+  "per_million_tokens": {
+    "gemini-2.5-flash": { "input": 0.3, "output": 2.5 },
+    "gemini-2.5-flash-lite": { "input": 0.1, "output": 0.4 },
+    "_default": { "input": 0.3, "output": 2.5 }
+  }
+}
