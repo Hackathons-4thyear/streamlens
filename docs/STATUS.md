@@ -1,4 +1,4 @@
-# StreamLens — status after Phase 1
+# StreamLens — status
 
 Written for: the judges and anyone picking this repository up mid-build.
 
@@ -21,7 +21,7 @@ submission stored with two photos, three answers and a measured AI agreement
 rate of 0.5 (one suggestion kept, one overridden).
 
 ### AI suggests, humans decide — enforced in three places
-- **The prompt** (`api/app/ai/prompts/assess_v1.md`, loaded from disk at call
+- **The prompt** (`api/app/ai/prompts/assess_v3.md`, loaded from disk at call
   time) tells the model the `overall` question does not exist for it.
 - **The API** drops any suggestion for a question marked `ai_suggestable: false`,
   even at confidence 1.0. There is a test that tries exactly that and asserts it
@@ -75,7 +75,7 @@ documented in `web/src/index.css`, labelled controls, and a glossary built as a
 tappable popover rather than a hover tooltip — hover does not exist on a phone.
 
 ### Tests
-- **68 pytest tests**, none touching the network.
+- **168 pytest tests**, none touching the network.
 - **22 vitest tests** covering the answer state machine and the offline outbox.
 - TypeScript compiles clean under `strict`.
 
@@ -85,15 +85,15 @@ tappable popover rather than a hover tooltip — hover does not exist on a phone
 
 | Area | State | Why |
 |---|---|---|
-| **Gemini provider** | Written, never executed | No API key yet. The code path, structured-output schema and prompt loading are in place; it has not been run against the real service, so treat it as unverified. |
+| **Gemini provider** | Verified against the live API | Runs on `gemini-3.5-flash-lite`. `gemini-2.5-flash` is retired for new keys and `gemini-3.6-flash` returned 503 on every one of 29 sequential calls, so it is unusable under load. |
 | **Question translations** | English and Portuguese complete; it, fr, nl, no fall back to English | Priority was the working vertical slice. Interface chrome *is* translated into all six. |
 | **All translations** | Ours, not the consortium's | Flagged `machine_translated` in the data and warned about in the UI. A native speaker should review before field use. |
 | **Photo storage** | Files on local disk | Fine for a demo; a real deployment needs object storage and a retention policy. |
 | **Authentication** | None | Anyone who can reach the API can post an observation. Acceptable for a hackathon demo, not for production. |
 | **`GET /observations`** | Unpaginated, capped at 200 | Demo convenience endpoint, not a real query API. |
 | **PWA install** | Manifest and service worker build correctly | Not tested on a physical phone. |
-| **"Answer contradicts the photo" check** | Not built | Only blur, brightness and GPS distance checks exist. Cross-answer consistency is Phase 2. |
-| **Phase 2 and 3** | Not started | See below. |
+| **"Answer contradicts the photo" check** | Not built | Blur, brightness, GPS distance and the watercourse gate exist. Cross-answer consistency does not. |
+| **Phase 3** | Not started | Quests, leaderboard, wellbeing mirror, FHIR export. |
 
 ---
 
