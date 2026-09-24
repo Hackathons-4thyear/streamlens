@@ -43,7 +43,13 @@ class Observation(SQLModel, table=True):
     note: str = ""
     consent_given: bool = False
     synthetic: bool = Field(default=False, index=True)
+    # Pseudonymous id generated on the phone. Never a name or an email.
     client_id: str = ""
+    # Optional free-text team or school code, typed by the citizen. Used only to
+    # group a leaderboard; it is not an account and is not verified.
+    team: str = ""
+    # The quest this assessment answered, if any.
+    completed_quest: str = ""
 
     ai_provider: str = ""
     ai_model: str = ""

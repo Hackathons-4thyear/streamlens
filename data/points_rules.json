@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "synthetic": false,
+  "purpose": "Reward the things that make the dataset more useful, and nothing else.",
+  "why_not_volume": [
+    "Volume is not rewarded, because paying people per submission pays them to submit rubbish. A scoring rule that counts records will reliably produce records: half-answered forms, repeat visits to the nearest bridge, and answers guessed rather than looked at. Every one of those makes the dataset worse while making the score go up.",
+    "So there are no points for the number of questions answered, no points for the number of observations submitted, and no points for streaks. Submitting an assessment at all earns nothing on its own.",
+    "What is rewarded instead is evidence quality (a photograph a scientist can actually use), going where the data is missing (a completed quest), and agreeing with an independent observer at the same site - which is the one signal that the answers were looked at rather than invented.",
+    "A daily cap exists for the same reason: without it, the agreement rule could be farmed by visiting many sites badly in one afternoon."
+  ],
+  "never_awarded_for": [
+    "number of answers given",
+    "number of observations submitted",
+    "consecutive days active",
+    "speed of completion"
+  ],
+  "daily_cap": {
+    "points": 60,
+    "source": "project judgement",
+    "source_note": "Roughly three thorough assessments' worth. High enough that a genuine afternoon out is never penalised, low enough that farming the agreement rule across many sites stops paying."
+  },
+  "rules": [
+    {
+      "id": "both_photos",
+      "name": "Both views photographed",
+      "points": 10,
+      "plain_language_condition": "The assessment has both an upstream and a downstream photograph.",
+      "why": "Two views let a reviewer see the reach rather than one framing of it, and several questions can only be answered from the pair.",
+      "max_per_observation": 10
+    },
+    {
+      "id": "photo_quality",
+      "name": "Photograph a scientist can use",
+      "points": 8,
+      "per": "photo",
+      "plain_language_condition": "A photograph passes the blur and brightness checks.",
+      "why": "A sharp, properly exposed photograph is the difference between evidence and a memory. This is measured by the same checks that warn the citizen at capture time, so the reward and the advice agree.",
+      "max_per_observation": 16
+    },
+    {
+      "id": "quest_completed",
+      "name": "Filled a real gap",
+      "points": 20,
+      "plain_language_condition": "The assessment was made at a site that had an open quest, and the quest's reason still held at the time of the visit.",
+      "why": "Going to the site nobody has checked for two months is worth more to the dataset than a tenth visit to the convenient one. This is the largest single award for exactly that reason.",
+      "max_per_observation": 20
+    },
+    {
+      "id": "observer_agreement",
+      "name": "Agreed with another visitor",
+      "points": 12,
+      "plain_language_condition": "Another person assessed the same site within 14 days, and at least three questions were answered by both, with a majority agreeing.",
+      "why": "Two people who never met, looking at the same stream and giving the same answers, is the strongest evidence available that the answers describe the stream rather than the observer. It cannot be earned alone, which is the point.",
+      "thresholds": [
+        {
+          "key": "within_days",
+          "value": 14,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "Two weeks, so both observers are describing roughly the same stream."
+        },
+        {
+          "key": "min_shared_questions",
+          "value": 3,
+          "unit": "questions",
+          "source": "project judgement",
+          "source_note": "Fewer than three overlapping answers is too thin to mean anything."
+        },
+        {
+          "key": "min_agreement",
+          "value": 0.6,
+          "unit": "share",
+          "source": "project judgement",
+          "source_note": "A majority, not unanimity. Honest observers disagree about borderline questions, and penalising that would teach people to copy rather than look."
+        }
+      ],
+      "max_per_observation": 12
+    }
+  ],
+  "disagreement_note": "Disagreeing with another observer costs nothing. Points are never deducted: a scoring system that punishes disagreement teaches people to submit what they think the app expects, which is the opposite of what a scientific dataset needs."
+}

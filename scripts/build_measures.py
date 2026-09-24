@@ -398,9 +398,7 @@ PROBLEMS: list[dict] = [
     {
         "id": "litter",
         "name": "Litter in or beside the channel",
-        "detected_by": [{"question_id": "waterAspect", "codes": ["CO"]}],
-        "detection_note": "StreamLens has no dedicated litter question yet; this is "
-                          "currently inferred and should get its own question.",
+        "detected_by": [{"question_id": "litter", "codes": ["SOME", "LOTS"]}],
         "why_it_matters": "Litter harms animals directly and is the strongest visible "
                           "signal to residents that a stream is neglected.",
         "measures": ["litter_control", "citizen_science"],

@@ -320,6 +320,31 @@ QUESTIONS: list[dict] = [
         terms=["sewage fungus"],
     ),
     q(
+        "litter", "pressures",
+        "Litter", "Lixo",
+        "Rubbish people have dropped or dumped - bottles, cans, bags, wrappers, "
+        "trolleys, tyres. This is not the same as natural debris: wood and leaves "
+        "belong in a stream, litter does not.",
+        "Lixo deixado por pessoas: garrafas, latas, sacos, embalagens. Nao confundir "
+        "com detritos naturais (madeira e folhas), que fazem parte do ribeiro.",
+        [
+            opt("NONE", "None that I can see", "Nenhum que eu veja",
+                "You looked along the channel and the banks and saw no dropped rubbish.",
+                source=MANUAL),
+            opt("SOME", "A little", "Algum",
+                "A few items - the odd bottle, can or bag.", source=MANUAL),
+            opt("LOTS", "A lot", "Muito",
+                "Rubbish is a conspicuous feature here: many items, or large dumped "
+                "objects such as a trolley or a tyre.", source=MANUAL),
+            opt("NS", "I'm not sure", "Nao tenho a certeza",
+                NOT_SURE_EXPLAIN, source=MANUAL),
+        ],
+        photo_hint_en="Look at the water's edge and where the current pushes things - "
+                      "against stones, bends and bridge supports.",
+        terms=["natural debris"],
+        source=MANUAL,
+    ),
+    q(
         "construction", "pressures",
         "Channel works", "Obras no canal",
         "Building or engineering work in or right beside the channel - machinery, fresh "
@@ -558,10 +583,10 @@ def main() -> int:
             question["not_suggestable_reason"] = reason
 
     doc = {
-        "version": "1.1.0",
+        "version": "1.2.0",
         "changelog": [
             {
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "date": "2026-09-24",
                 "changes": [
                     "bankType: the question now says to answer for the HARDEST material "

@@ -1,0 +1,111 @@
+{
+  "version": "1.0.0",
+  "synthetic": false,
+  "purpose": "Turn real gaps in the dataset into things a volunteer can usefully go and do.",
+  "principle": [
+    "A quest must point at a gap that actually exists in the stored data. Inventing errands to keep people busy wastes their afternoon and teaches them not to trust the app.",
+    "Every quest says in one plain sentence why it is worth doing, naming the real fact behind it - the date of the last visit, the rain that fell, the season that is missing.",
+    "Quests are never ranked by how many a person completes. See data/points_rules.json for why volume is not rewarded."
+  ],
+  "rules": [
+    {
+      "id": "stale_site",
+      "name": "Nobody has been here for a while",
+      "priority": 3,
+      "plain_language_condition": "The site has been visited before, but not in the last 30 days.",
+      "why_template": "The last check here was {days} days ago, on {last_date}. A fresh look shows whether anything has changed since.",
+      "inputs": ["stored observations for the site"],
+      "thresholds": [
+        {
+          "key": "days_since_last_visit",
+          "operator": ">=",
+          "value": 30,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "A month is long enough that vegetation, flow and litter can all have changed, and short enough that a volunteer can reasonably be asked to return. No published standard sets a revisit interval for citizen stream assessment."
+        }
+      ]
+    },
+    {
+      "id": "after_rain",
+      "name": "Check after the rain",
+      "priority": 1,
+      "plain_language_condition": "Heavy rain has fallen here in the last 48 hours AND somebody has previously reported sewage or a discharging pipe at this site.",
+      "why_template": "{rain} mm of rain fell here in the last two days, and this site has {reports} report(s) of sewage or a discharging pipe. A check now shows whether it overflowed.",
+      "inputs": [
+        "Open-Meteo, precipitation already observed in the last 48 hours",
+        "citizen-confirmed answers: sewage = Y or pollutedPipes = Y"
+      ],
+      "thresholds": [
+        {
+          "key": "rain_mm_past_48h",
+          "operator": ">=",
+          "value": 15,
+          "unit": "mm",
+          "source": "project judgement",
+          "source_note": "Set below the sewer-overflow alert threshold of 20 mm on purpose. The alert warns people away; this quest asks somebody to go and look, and it is worth looking at a lower bar than it is worth warning at. Neither figure is calibrated to any real network."
+        },
+        {
+          "key": "sewage_reports",
+          "operator": ">=",
+          "value": 1,
+          "unit": "observations",
+          "source": "project judgement",
+          "source_note": "One prior report is enough to make a post-rain check worthwhile."
+        },
+        {
+          "key": "reports_within_days",
+          "operator": "<=",
+          "value": 90,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "Three months: a site with a known pipe problem stays worth rechecking after rain for longer than the problem stays visible."
+        }
+      ]
+    },
+    {
+      "id": "missing_season",
+      "name": "This season has no record",
+      "priority": 2,
+      "plain_language_condition": "The site has been visited before, but never in the season we are in now.",
+      "why_template": "Nobody has seen {site} in {season}. Streams look very different across the year, and the record here has a {season} gap.",
+      "inputs": ["stored observations for the site, by calendar season"],
+      "thresholds": [
+        {
+          "key": "visits_this_season",
+          "operator": "==",
+          "value": 0,
+          "unit": "observations",
+          "source": "project judgement",
+          "source_note": "Seasons are the meteorological quarters (Dec-Feb, Mar-May, Jun-Aug, Sep-Nov) for the northern hemisphere, where all five research cities are."
+        }
+      ]
+    },
+    {
+      "id": "second_opinion",
+      "name": "A second opinion would help",
+      "priority": 4,
+      "plain_language_condition": "A recent assessment here was made by only one person.",
+      "why_template": "One person assessed {site} on {last_date}. A second pair of eyes makes the record much stronger, and disagreement is useful data in itself.",
+      "inputs": ["stored observations for the site, by pseudonymous client id"],
+      "thresholds": [
+        {
+          "key": "distinct_observers",
+          "operator": "==",
+          "value": 1,
+          "unit": "people",
+          "source": "project judgement",
+          "source_note": "Two independent assessments of the same site within a short window are what make inter-observer agreement measurable at all."
+        },
+        {
+          "key": "within_days",
+          "operator": "<=",
+          "value": 14,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "Two weeks, so the second visitor is describing roughly the same stream as the first."
+        }
+      ]
+    }
+  ]
+}

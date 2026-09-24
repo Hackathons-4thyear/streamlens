@@ -137,6 +137,8 @@ async def create_observation(
         consent_given=data.consent_given,
         synthetic=data.synthetic,
         client_id=data.client_id,
+        team=data.team,
+        completed_quest=data.completed_quest,
         ai_provider=data.ai_provider,
         ai_model=data.ai_model,
         recorded_at=data.recorded_at or datetime.now(timezone.utc),

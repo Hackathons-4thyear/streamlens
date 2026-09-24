@@ -7,6 +7,10 @@ not a human expert's judgement.
 
 Two rules were followed throughout:
 
+0. **Litter is labelled only where the view is close and clear enough that
+   litter would be obvious if present.** On a wide or distant shot a blank is
+   honest: small items are simply not resolvable, and marking such a photo
+   "NONE" would punish a model for seeing something real.
 1. **Blank when unsure.** A blank cell means "I could not tell from this photo
    either", and the scorer skips it. It is not counted against the model.
 2. **Left/right only when both banks agree.** The photographs carry no flow
@@ -55,6 +59,9 @@ NEGATIVE_CONTROLS = {
     "erosion_01.jpg": "hillside landslip above houses; no channel",
     "giantreed_01.jpg": "giant reed beside a beach; no channel",
     "giantreed_02.jpg": "giant reed in grassland; no channel",
+    "litter_01.jpg": "aerosol can on a sea beach; no channel",
+    "litter_02.jpg": "derelict urban courtyard full of dumped waste; no water, and a "
+                     "person in frame",
 }
 
 # What each labelled photograph shows, and the answers that were clear in it.
@@ -68,6 +75,7 @@ LABELS: dict[str, dict[str, str]] = {
     },
     # Shallow clear pool, cobble bed visible through the water, trees both sides.
     "benevento_02.jpg": {
+        "litter": "NONE",
         "channelType": "NAT", "habitats": "SD", "waterAspect": "CL",
         "dams": "N", "pollutedPipes": "N", "sewage": "N", "construction": "N",
         "imperviousL": "N", "imperviousR": "N",
@@ -89,6 +97,7 @@ LABELS: dict[str, dict[str, str]] = {
     },
     # Fast broken water over a shallow reach, wooded both sides, fallen tree.
     "oslo_02.jpg": {
+        "litter": "NONE",
         "waterFlow": "FAS", "channelType": "NAT", "bankType": "NAT",
         "habitats": "RF", "fallenBiomass": "FT",
         "dams": "N", "pollutedPipes": "N", "sewage": "N", "construction": "N",
@@ -116,11 +125,13 @@ LABELS: dict[str, dict[str, str]] = {
     },
     # Urban canal: concrete retaining wall, sluice gates, still dark water.
     "culvert_01.jpg": {
+        "litter": "NONE",
         "bankType": "ART", "dams": "Y", "waterFlow": "STA",
         "pollutedPipes": "N", "sewage": "N", "construction": "N",
     },
     # Dried-out river channel with stranded boats and rice seedlings.
     "drybed_01.jpg": {
+        "litter": "SOME",
         "waterFlow": "DRY", "channelType": "NAT",
         "sewage": "N", "construction": "N",
     },
@@ -137,6 +148,7 @@ LABELS: dict[str, dict[str, str]] = {
     },
     # Dry stony streambed running through woodland.
     "streambed_02.jpg": {
+        "litter": "NONE",
         "waterFlow": "DRY", "channelType": "NAT", "bankType": "NAT",
         "pollutedPipes": "N", "sewage": "N", "construction": "N",
         "imperviousL": "N", "imperviousR": "N",

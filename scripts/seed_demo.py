@@ -47,6 +47,16 @@ from app.sites import get_sites  # noqa: E402
 
 CLIENT_PREFIX = "demo-"
 
+# Demo teams, so the team leaderboard and coverage map have something to show.
+# A team is a free-text code typed on the phone, not an account.
+TEAMS = {
+    "Coimbra": ["ESC-COIMBRA-7B", "RIO-MONDEGO"],
+    "Benevento": ["LICEO-BN-3A", "AMICI-DEL-CALORE"],
+    "Toulouse": ["LYCEE-TLS-2", "GARONNE-VERTE"],
+    "Ghent": ["SCHOOL-GENT-4", "LEIE-WACHT"],
+    "Oslo": ["OSLO-SKOLE-9", "ELVEVENNER"],
+}
+
 # Site "characters": what a visitor would plausibly keep reporting there.
 # (key, how many of the city's sites get it, the answers that define it)
 CHARACTERS = {
@@ -135,6 +145,15 @@ MOODS = {
 
 # Which character each chosen site gets. Ordered so every city appears and the
 # three alert-triggering characters are all present.
+# Shifting some sites' visits back in time so every quest type has something to
+# fire on. This shapes WHEN the demo visits happened; it invents no observation
+# that the rules would not otherwise see.
+#   (city, character) -> extra days to age every visit at that site
+QUEST_SHAPING = {
+    ("Oslo", "stagnant"): 45,      # -> "nobody has been here for a while"
+    ("Ghent", "recovering"): 200,  # -> "this season has no record"
+}
+
 PLAN = [
     ("Coimbra", "sewage"), ("Coimbra", "healthy"), ("Coimbra", "concrete"),
     ("Benevento", "stagnant"), ("Benevento", "healthy"),
@@ -189,7 +208,8 @@ def make_observation(
         note="",
         consent_given=True,
         synthetic=True,
-        client_id=f"{CLIENT_PREFIX}{rng.randrange(1, 9)}",
+        client_id=f"{CLIENT_PREFIX}{rng.randrange(1, 14)}",
+        team=rng.choice(TEAMS.get(site.get("city", ""), ["STREAMLENS-DEMO"])),
         ai_provider="seed",
         ai_model="scripts/seed_demo.py",
         recorded_at=when,
@@ -239,10 +259,14 @@ def plant_demo_weather(session: Session, targets: dict[str, dict]) -> None:
 
     now = datetime.now(timezone.utc)
     for site_id, shape in targets.items():
+        # 48 hours of already-fallen rain, then 72 of forecast, so one planted
+        # payload can drive both the alert rules (future) and the after-rain
+        # quest (past).
+        offsets = list(range(-48, 72))
         hours = [(now + timedelta(hours=h)).strftime("%Y-%m-%dT%H:00")
-                 for h in range(0, 72)]
-        rain = [shape["rain_per_hour"] if h < 48 else 0.0 for h in range(72)]
-        temps = [shape["temp"] for _ in range(72)]
+                 for h in offsets]
+        rain = [shape["rain_per_hour"] if -48 <= h < 48 else 0.0 for h in offsets]
+        temps = [shape["temp"] for _ in offsets]
         payload = {
             "_streamlens_synthetic": True,
             "_note": "Planted by scripts/seed_demo.py so the demo can show this rule. "
@@ -343,8 +367,10 @@ def main() -> int:
                 (rng.betavariate(1.6, 2.6) * args.days for _ in range(visits)),
                 reverse=True,
             )
+            shift = QUEST_SHAPING.get((site.get("city", ""), character), 0)
             for offset in offsets:
-                when = now - timedelta(days=offset, hours=rng.uniform(0, 12))
+                when = now - timedelta(days=offset + shift,
+                                       hours=rng.uniform(0, 12))
                 observation, answers = make_observation(
                     site, character, when, rng, questions
                 )
@@ -352,8 +378,10 @@ def main() -> int:
                 for answer in answers:
                     session.add(answer)
                 total += 1
+            shift = QUEST_SHAPING.get((site.get("city", ""), character), 0)
+            aged = f" (+{shift}d older)" if shift else ""
             print(f"  {site['id']:6s} {site['city']:10s} {site['name'][:26]:28s} "
-                  f"{character:11s} {visits:2d} visits")
+                  f"{character:11s} {visits:2d} visits{aged}")
 
         session.commit()
 

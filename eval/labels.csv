@@ -6,21 +6,17 @@ algae_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,AV,claude
 algae_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,FB,claude-code,yes
 algae_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,STA,claude-code,yes
 algae_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,CO,claude-code,yes
-algae_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,yes
+algae_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 algae_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-algae_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-algae_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 algae_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-algae_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-algae_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 benevento_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,FLAT,claude-code,yes
 benevento_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 benevento_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,NAT,claude-code,yes
@@ -28,21 +24,17 @@ benevento_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,SB,cl
 benevento_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 benevento_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 benevento_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,MU,claude-code,yes
-benevento_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 benevento_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,N,claude-code,yes
 benevento_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 benevento_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+benevento_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 benevento_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 benevento_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,N,claude-code,yes
 benevento_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,Y,claude-code,yes
 benevento_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,T,claude-code,yes
-benevento_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-benevento_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 benevento_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,N,claude-code,yes
 benevento_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,Y,claude-code,yes
 benevento_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,T,claude-code,yes
-benevento_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-benevento_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 benevento_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 benevento_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,NAT,claude-code,yes
 benevento_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,yes
@@ -50,21 +42,17 @@ benevento_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,SD,cl
 benevento_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 benevento_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 benevento_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,CL,claude-code,yes
-benevento_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 benevento_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,N,claude-code,yes
 benevento_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 benevento_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+benevento_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,NONE,claude-code,yes
 benevento_02.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 benevento_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,N,claude-code,yes
 benevento_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,Y,claude-code,yes
 benevento_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,T,claude-code,yes
-benevento_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-benevento_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 benevento_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,N,claude-code,yes
 benevento_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,Y,claude-code,yes
 benevento_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,T,claude-code,yes
-benevento_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-benevento_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 canal_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 canal_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 canal_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,NAT,claude-code,yes
@@ -72,21 +60,17 @@ canal_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,NONE,clau
 canal_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,NONE,claude-code,yes
 canal_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 canal_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,MU,claude-code,yes
-canal_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 canal_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,N,claude-code,yes
 canal_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 canal_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+canal_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 canal_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 canal_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,N,claude-code,yes
 canal_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,Y,claude-code,yes
 canal_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,T,claude-code,yes
-canal_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-canal_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 canal_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,N,claude-code,yes
 canal_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,Y,claude-code,yes
 canal_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,T,claude-code,yes
-canal_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-canal_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 culvert_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 culvert_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,ART,claude-code,yes
@@ -94,21 +78,17 @@ culvert_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude
 culvert_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 culvert_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,STA,claude-code,yes
 culvert_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-culvert_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,Y,claude-code,yes
 culvert_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 culvert_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+culvert_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,NONE,claude-code,yes
 culvert_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 culvert_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-culvert_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-culvert_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 culvert_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-culvert_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-culvert_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 drybed_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,NAT,claude-code,yes
 drybed_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,yes
@@ -116,21 +96,17 @@ drybed_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-
 drybed_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 drybed_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,DRY,claude-code,yes
 drybed_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-drybed_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+drybed_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,SOME,claude-code,yes
 drybed_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 drybed_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-drybed_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-drybed_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 drybed_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-drybed_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-drybed_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 erosion_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 erosion_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 erosion_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -138,21 +114,17 @@ erosion_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude
 erosion_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 erosion_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 erosion_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-erosion_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+erosion_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 erosion_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-erosion_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-erosion_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 erosion_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-erosion_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-erosion_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 gabion_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 gabion_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -160,21 +132,17 @@ gabion_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-
 gabion_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 gabion_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 gabion_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-gabion_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+gabion_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 gabion_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-gabion_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-gabion_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 gabion_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-gabion_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-gabion_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 gabion_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 gabion_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -182,21 +150,17 @@ gabion_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-
 gabion_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 gabion_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 gabion_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-gabion_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+gabion_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 gabion_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-gabion_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-gabion_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 gabion_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-gabion_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-gabion_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 giantreed_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 giantreed_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -204,21 +168,17 @@ giantreed_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,clau
 giantreed_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 giantreed_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 giantreed_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-giantreed_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+giantreed_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 giantreed_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-giantreed_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-giantreed_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 giantreed_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-giantreed_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-giantreed_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 giantreed_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 giantreed_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -226,21 +186,53 @@ giantreed_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,clau
 giantreed_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 giantreed_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 giantreed_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-giantreed_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+giantreed_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 giantreed_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-giantreed_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-giantreed_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 giantreed_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-giantreed_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-giantreed_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
+litter_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
+litter_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
+litter_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-code,no
+litter_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
+litter_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
+litter_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
+litter_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
+litter_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
+litter_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
+litter_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
+litter_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
+litter_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
+litter_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
+litter_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-code,no
+litter_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
+litter_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
+litter_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
+litter_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
+litter_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
+litter_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
+litter_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
 oslo_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 oslo_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 oslo_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,yes
@@ -248,21 +240,17 @@ oslo_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-co
 oslo_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 oslo_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 oslo_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-oslo_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+oslo_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 oslo_01.jpg,construction,Channel works,choose ONE,Y N NS,Y,claude-code,yes
 oslo_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-oslo_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-oslo_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 oslo_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-oslo_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-oslo_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 oslo_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 oslo_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,NAT,claude-code,yes
 oslo_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,NAT,claude-code,yes
@@ -270,21 +258,17 @@ oslo_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,RF,claude-
 oslo_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,FT,claude-code,yes
 oslo_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,FAS,claude-code,yes
 oslo_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-oslo_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 oslo_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,N,claude-code,yes
 oslo_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 oslo_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+oslo_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,NONE,claude-code,yes
 oslo_02.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 oslo_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,N,claude-code,yes
 oslo_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,Y,claude-code,yes
 oslo_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,T,claude-code,yes
-oslo_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-oslo_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 oslo_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,N,claude-code,yes
 oslo_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,Y,claude-code,yes
 oslo_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,T,claude-code,yes
-oslo_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-oslo_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 outfall_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 outfall_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 outfall_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -292,21 +276,17 @@ outfall_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude
 outfall_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 outfall_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 outfall_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-outfall_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+outfall_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 outfall_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-outfall_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-outfall_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 outfall_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-outfall_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-outfall_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 outfall_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 outfall_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 outfall_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,ART,claude-code,yes
@@ -314,21 +294,17 @@ outfall_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude
 outfall_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 outfall_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 outfall_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,MU,claude-code,yes
-outfall_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 outfall_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,Y,claude-code,yes
 outfall_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 outfall_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+outfall_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 outfall_02.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 outfall_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 outfall_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 outfall_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-outfall_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-outfall_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 outfall_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 outfall_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 outfall_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-outfall_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-outfall_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 pollution_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 pollution_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,ART,claude-code,yes
@@ -336,21 +312,17 @@ pollution_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,clau
 pollution_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 pollution_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,DRY,claude-code,yes
 pollution_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-pollution_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 pollution_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+pollution_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 pollution_01.jpg,construction,Channel works,choose ONE,Y N NS,Y,claude-code,yes
 pollution_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-pollution_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-pollution_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 pollution_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-pollution_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-pollution_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 pollution_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 pollution_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 pollution_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -358,21 +330,17 @@ pollution_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,clau
 pollution_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 pollution_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 pollution_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-pollution_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+pollution_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 pollution_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-pollution_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-pollution_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 pollution_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-pollution_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-pollution_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 pollution_03.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 pollution_03.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -380,21 +348,17 @@ pollution_03.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,clau
 pollution_03.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 pollution_03.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 pollution_03.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-pollution_03.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+pollution_03.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 pollution_03.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-pollution_03.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-pollution_03.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 pollution_03.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-pollution_03.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-pollution_03.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 rapids_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 rapids_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -402,21 +366,17 @@ rapids_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-
 rapids_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 rapids_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 rapids_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-rapids_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+rapids_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 rapids_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-rapids_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-rapids_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 rapids_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-rapids_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-rapids_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 rapids_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 rapids_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -424,21 +384,17 @@ rapids_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-
 rapids_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 rapids_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 rapids_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-rapids_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+rapids_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 rapids_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-rapids_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-rapids_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 rapids_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-rapids_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-rapids_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 riparian_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 riparian_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -446,21 +402,17 @@ riparian_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claud
 riparian_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 riparian_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 riparian_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-riparian_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+riparian_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 riparian_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-riparian_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-riparian_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 riparian_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-riparian_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-riparian_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 riparian_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 riparian_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -468,21 +420,17 @@ riparian_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claud
 riparian_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 riparian_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 riparian_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-riparian_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+riparian_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 riparian_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-riparian_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-riparian_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 riparian_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-riparian_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-riparian_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no
 streambed_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 streambed_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,NAT,claude-code,yes
 streambed_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,yes
@@ -490,21 +438,17 @@ streambed_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,SD,cl
 streambed_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 streambed_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 streambed_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,CL,claude-code,yes
-streambed_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 streambed_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,Y,claude-code,yes
 streambed_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 streambed_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+streambed_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 streambed_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 streambed_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 streambed_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,Y,claude-code,yes
 streambed_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,T,claude-code,yes
-streambed_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-streambed_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 streambed_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 streambed_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,Y,claude-code,yes
 streambed_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,T,claude-code,yes
-streambed_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-streambed_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 streambed_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 streambed_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,NAT,claude-code,yes
 streambed_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,NAT,claude-code,yes
@@ -512,21 +456,17 @@ streambed_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,clau
 streambed_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 streambed_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,DRY,claude-code,yes
 streambed_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-streambed_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 streambed_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,yes
 streambed_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 streambed_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+streambed_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,NONE,claude-code,yes
 streambed_02.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 streambed_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,N,claude-code,yes
 streambed_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,Y,claude-code,yes
 streambed_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,T,claude-code,yes
-streambed_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-streambed_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 streambed_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,N,claude-code,yes
 streambed_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,Y,claude-code,yes
 streambed_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,T,claude-code,yes
-streambed_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-streambed_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 toulouse_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 toulouse_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,ART,claude-code,yes
@@ -534,21 +474,17 @@ toulouse_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claud
 toulouse_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,NONE,claude-code,yes
 toulouse_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 toulouse_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-toulouse_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,Y,claude-code,yes
 toulouse_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 toulouse_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+toulouse_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 toulouse_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 toulouse_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-toulouse_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-toulouse_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-toulouse_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-toulouse_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 toulouse_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 toulouse_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,ART,claude-code,yes
@@ -556,21 +492,17 @@ toulouse_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claud
 toulouse_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 toulouse_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 toulouse_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-toulouse_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,N,claude-code,yes
 toulouse_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 toulouse_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+toulouse_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 toulouse_02.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 toulouse_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-toulouse_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-toulouse_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 toulouse_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-toulouse_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-toulouse_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 weir_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,yes
 weir_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,ART,claude-code,yes
@@ -578,21 +510,17 @@ weir_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,SD,claude-
 weir_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,yes
 weir_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,yes
 weir_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,MU,claude-code,yes
-weir_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,Y,claude-code,yes
 weir_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,N,claude-code,yes
 weir_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,N,claude-code,yes
+weir_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 weir_01.jpg,construction,Channel works,choose ONE,Y N NS,N,claude-code,yes
 weir_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-weir_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-weir_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 weir_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-weir_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-weir_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,yes
 weir_02.jpg,channelType,Channel bed,choose ONE,NAT ART NS,ART,claude-code,yes
 weir_02.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,yes
@@ -600,21 +528,17 @@ weir_02.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,claude-co
 weir_02.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,FL,claude-code,yes
 weir_02.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,FAS,claude-code,yes
 weir_02.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,yes
-weir_02.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,Y,claude-code,yes
 weir_02.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,yes
+weir_02.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,yes
 weir_02.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,yes
-weir_02.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,yes
-weir_02.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,yes
 weir_02.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,yes
-weir_02.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,yes
-weir_02.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,yes
 woodydebris_01.jpg,channelForm,Channel form,choose ONE,FLAT U V NS,,claude-code,no
 woodydebris_01.jpg,channelType,Channel bed,choose ONE,NAT ART NS,,claude-code,no
 woodydebris_01.jpg,bankType,Bank type,choose ONE,NAT ART LAS NS,,claude-code,no
@@ -622,18 +546,14 @@ woodydebris_01.jpg,habitats,Instream habitats,choose ALL,SB SI SD RF AV NONE,,cl
 woodydebris_01.jpg,fallenBiomass,Natural debris,choose ALL,FT FB FL NONE,,claude-code,no
 woodydebris_01.jpg,waterFlow,Flow type,choose ONE,FAS NOR STA DRY NS,,claude-code,no
 woodydebris_01.jpg,waterAspect,Water aspect,choose ALL,CL MU FO CO NS,,claude-code,no
-woodydebris_01.jpg,withdrawal,Water abstraction,choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,dams,Longitudinal connectivity,choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,pollutedPipes,Polluted outfalls,choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,sewage,Sewage discharge,choose ONE,Y N NS,,claude-code,no
+woodydebris_01.jpg,litter,Litter,choose ONE,NONE SOME LOTS NS,,claude-code,no
 woodydebris_01.jpg,construction,Channel works,choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,imperviousL,"Impervious surface, left bank",choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,vegCoverL,"Riparian vegetation cover, left bank",choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,vegDominantL,"Dominant vegetation, left bank",choose ONE,H B T NS,,claude-code,no
-woodydebris_01.jpg,invasiveL,"Invasive species, left bank",choose ONE,Y N NS,,claude-code,no
-woodydebris_01.jpg,cutsL,"Vegetation management, left bank",choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,imperviousR,"Impervious surface, right bank",choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,vegCoverR,"Riparian vegetation cover, right bank",choose ONE,Y N NS,,claude-code,no
 woodydebris_01.jpg,vegDominantR,"Dominant vegetation, right bank",choose ONE,H B T NS,,claude-code,no
-woodydebris_01.jpg,invasiveR,"Invasive species, right bank",choose ONE,Y N NS,,claude-code,no
-woodydebris_01.jpg,cutsR,"Vegetation management, right bank",choose ONE,Y N NS,,claude-code,no

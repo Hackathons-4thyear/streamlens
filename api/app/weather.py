@@ -41,6 +41,9 @@ class Forecast:
 
     site_id: str
     rain_mm_48h: float = 0.0
+    # Rain that has already fallen in the last 48 hours. Quests ask "did it rain
+    # here on Tuesday?", which the forecast half of the window cannot answer.
+    rain_mm_past_48h: float = 0.0
     temp_max_c: float | None = None
     temp_min_c: float | None = None
     fetched_at: datetime | None = None
@@ -92,12 +95,16 @@ def _parse(site_id: str, payload: dict, fetched_at: datetime, stale: bool) -> Fo
     rain_window = [r for r in rain[window] if r is not None]
     temp_window = [t for t in temps[window] if t is not None]
 
+    past = slice(max(0, start - 48), start)
+    rain_past = [r for r in rain[past] if r is not None]
+
     age = int((_now() - fetched_at).total_seconds()) if fetched_at else 0
     synthetic = bool(payload.get("_streamlens_synthetic"))
     return Forecast(
         synthetic=synthetic,
         site_id=site_id,
         rain_mm_48h=round(sum(rain_window), 1),
+        rain_mm_past_48h=round(sum(rain_past), 1),
         temp_max_c=max(temp_window) if temp_window else None,
         temp_min_c=min(temp_window) if temp_window else None,
         fetched_at=fetched_at,
@@ -118,6 +125,9 @@ def fetch_live(lat: float, lon: float) -> dict:
         "longitude": f"{lon:.4f}",
         "hourly": "precipitation,temperature_2m",
         "forecast_days": 3,
+        # Two days of already-observed weather, so one cached response serves
+        # both the forecast rules and the after-rain quests.
+        "past_days": 2,
         "timezone": "UTC",
     })
     request = urllib.request.Request(

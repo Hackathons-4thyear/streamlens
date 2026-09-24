@@ -172,6 +172,9 @@ class ObservationIn(BaseModel):
     )
     synthetic: bool = False
     client_id: str = ""
+    team: str = Field(default="", max_length=40,
+                      description="Optional team or school code. Not an account.")
+    completed_quest: str = Field(default="", max_length=40)
     recorded_at: datetime | None = None
     ai_provider: str = ""
     ai_model: str = ""

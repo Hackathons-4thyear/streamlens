@@ -49,11 +49,12 @@ FORBIDDEN_LICENCES = ("nc", "nd", "non-commercial", "noderiv", "fair use")
 
 # (slug, category, how many to take, what it is meant to show)
 TOPUP: list[tuple[str, str, int, str]] = [
-    ("coimbra", "Category:Mondego River", 2, "River in Coimbra, Portugal (OAH city)"),
-    ("ghent", "Category:Leie", 2, "River at Ghent, Belgium (OAH city)"),
-    ("knotweed", "Category:Fallopia japonica", 2, "Japanese knotweed, an invasive plant"),
-    ("sewage", "Category:Sewage", 1, "Sewage-related water"),
+    ("litter", "Category:Litter", 2, "Litter in or beside a watercourse"),
+    ("litter", "Category:Plastic pollution", 2, "Plastic waste in water"),
+    ("litter", "Category:Illegal dumping", 2, "Dumped waste beside water"),
+    ("litter", "Category:Marine debris", 1, "Debris washed up at the water's edge"),
 ]
+
 
 TARGETS: list[tuple[str, str, int, str]] = [
     # --- the five OneAquaHealth research cities ---------------------------
@@ -262,7 +263,15 @@ def main() -> int:
     if not rows:
         print("nothing fetched")
         return 1
-    rows.sort(key=lambda r: r["filename"])
+
+    # One row per file, newest entry winning, and only for files that exist.
+    # Without this a second --topup run re-appends every existing row.
+    on_disk = {p.name for p in PHOTOS_DIR.glob("*.jpg")}
+    deduped: dict[str, dict] = {}
+    for row in rows:
+        if row["filename"] in on_disk:
+            deduped[row["filename"]] = row
+    rows = sorted(deduped.values(), key=lambda r: r["filename"])
     with MANIFEST_PATH.open("w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         writer.writeheader()
