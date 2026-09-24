@@ -19,13 +19,19 @@ short reason in plain language. The citizen confirms or rejects every single one
 |---|---|---|
 | **1. Observe** | Photo-first guided assessment, AI suggestion chips with reasons, plain-language glossary, live photo/GPS quality checks, 6 languages, offline-first PWA | 1, 3 |
 | **2. Understand & Act** | Stream health card, rule-based 48-hour alert (Open-Meteo + recent reports) that shows its reasons, problems → restoration measures with health benefits | 6, 2 |
-| **3. Return** | Quests aimed at real data gaps, points for good photos and agreeing answers, team leaderboard, wellbeing mirror from emotion data | 5, 4 |
+| **3. Return** | Quests computed from real data gaps, points for evidence quality and never for volume, team-only leaderboard, coverage map, wellbeing mirror with a minimum group size | 5, 4 |
 
 Plus **FHIR R4 export** (Observation + Location) following the hl7-eu/oah
 Implementation Guide.
 
-**Status: Phase 1 — the Observe vertical slice.** Parts 2 and 3 are scaffolded, not
-built. See [docs/STATUS.md](docs/STATUS.md) for exactly what works and what is stubbed.
+**Status: all three parts built, plus FHIR R4 export.** See
+[docs/STATUS.md](docs/STATUS.md) for exactly what works and what is stubbed —
+including the things that are deliberately unfinished.
+
+The FHIR export validates with **0 errors and 0 warnings** against the
+OneAquaHealth IG profiles using the official HL7 validator; the report, the
+modelling decisions and a negative control proving the profiles were really
+applied are in [docs/fhir/](docs/fhir/).
 
 ## Quick start
 

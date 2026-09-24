@@ -5,8 +5,7 @@ Written for: the judges and anyone picking this repository up mid-build.
 Last updated: 24 September 2026.
 
 Phase 1 delivered the **Observe** vertical slice. Phase 1.5 measured the vision
-prompt against real photographs. Phase 2 built **Understand & Act**. Phase 3 is
-designed but not built. This document says exactly which is which, because a demo
+prompt against real photographs. Phase 2 built **Understand & Act**. Phase 3 built **Return & Standards**. This document says exactly which is which, because a demo
 that hides its seams wastes a reviewer's time.
 
 ---
@@ -93,7 +92,7 @@ tappable popover rather than a hover tooltip — hover does not exist on a phone
 | **`GET /observations`** | Unpaginated, capped at 200 | Demo convenience endpoint, not a real query API. |
 | **PWA install** | Manifest and service worker build correctly | Not tested on a physical phone. |
 | **"Answer contradicts the photo" check** | Not built | Blur, brightness, GPS distance and the watercourse gate exist. Cross-answer consistency does not. |
-| **Phase 3** | Not started | Quests, leaderboard, wellbeing mirror, FHIR export. |
+
 
 ---
 
@@ -173,6 +172,92 @@ sortable city table with CSV export for municipal users.
 | **Health card weighting** | Every question counts equally within a section. A real index would weight them. |
 | **Measures** | 25 of roughly 60 in the catalogue, chosen for the problems StreamLens can observe. |
 | **Phase 3** | Not started: quests, leaderboard, wellbeing mirror, FHIR export. |
+
+---
+
+## Phase 3 — Return & Standards (built)
+
+### Litter as its own question
+`litter` (NONE / SOME / LOTS / NS) replaces the old inference from
+`waterAspect: CO`. It is **not** a OneAquaHealth code and is marked
+`source: manual` throughout. questions.json 1.2.0.
+
+**Measured, and the honest answer is "not measured".** Wikimedia Commons had
+litter photographs but not litter-in-a-stream photographs — the two that came
+back were a beach and an urban courtyard, kept as negative controls. Across the
+existing set the model was asked about litter on 5 photographs and only **2 had
+labels**; both matched, at 0.82 mean confidence. Two comparisons is an anecdote,
+not a result, and it is reported here as one.
+
+### Identity, without accounts
+A nickname and an optional team code live in `localStorage`. The nickname never
+leaves the phone. The server receives a random `client_id` generated on the
+device and, if the citizen typed one, the team code. No name, no email, no
+password, no account.
+
+### Quests
+`data/quest_rules.json` + `app/quests.py`. Four kinds of real gap:
+
+| Quest | Fires when |
+|---|---|
+| `stale_site` | Visited before, but not in 30+ days |
+| `after_rain` | ≥15 mm has **already fallen** in 48 h at a site with prior sewage reports |
+| `missing_season` | Visited before, but never in the current meteorological season |
+| `second_opinion` | A visit in the last 14 days by exactly one person |
+
+Each states the fact behind it — the date, the millimetres, the season. The list
+shows one quest per site so a volunteer gets one clear reason to go; the site
+page shows all of them. The weather cache now carries the last 48 h of observed
+rain as well as the forecast, so one Open-Meteo response serves alerts and
+quests alike.
+
+### Points, and what they refuse to reward
+`data/points_rules.json` awards photo quality, both photos, completing a quest,
+and agreeing with an independent visitor at the same site within 14 days.
+
+**Nothing is awarded for volume** — not answers given, not observations
+submitted, not streaks, not speed. The file says why at length: paying per
+submission pays for rubbish. A 60-point daily cap per person stops the agreement
+rule being farmed across many sites in one afternoon, and disagreement never
+costs anything.
+
+### Teams only
+Individuals are never ranked. A team of fewer than 2 people is withheld from the
+board — a team of one is an individual ranking by another name — and the
+response says how many were withheld rather than dropping them silently.
+
+The **coverage map** shows which of the 106 sites got a visit in the last 30 days.
+
+### Wellbeing mirror
+Splits recorded emotions by the rating the person themselves gave. The personal
+view always works; the community view needs **at least 10 people**, enforced in
+`app/points.py` and stated in the interface. Wording is descriptive: it reports
+what people recorded feeling, states it is not a health measurement, and says
+explicitly that it does not show a stream caused a feeling.
+
+### FHIR R4
+`GET /observations/{id}/fhir` and `GET /cities/{city}/fhir`.
+
+**Validated with the official HL7 validator: 0 errors, 0 warnings against the
+OneAquaHealth IG profiles.** The published IG was unavailable (every URL 404 on
+24 September, re-checked once), so it was compiled from its own FSH source with
+SUSHI. A deliberately broken bundle was re-validated as a negative control and
+produced exactly the profile's constraints, proving the pass is real. Full
+reasoning, every modelling decision and every check with its date:
+[`docs/fhir/validation-report.md`](fhir/validation-report.md).
+
+---
+
+## What Phase 3 did NOT do
+
+| Area | State |
+|---|---|
+| **Litter evaluation** | 2 labelled comparisons. Needs litter-in-a-stream photographs, which Commons did not provide. |
+| **Quest completion** | The API accepts `completed_quest` on an observation, but the web app does not yet set it automatically when you assess a quested site — so the quest-completion points are reachable by API and not yet by tapping through the app. |
+| **Nickname** | Stored and displayed, but there is no settings screen to change it after the first prompt. |
+| **Leaderboard filtering** | Works per city via the API; the UI shows the overall board only. |
+| **FHIR** | One bundle validated, not a corpus. `Bundle.type` is `collection`; nothing is designed to be POSTed to a server. |
+| **Points UI** | Shows the total and the reasoning; no per-award breakdown screen. |
 
 ---
 
