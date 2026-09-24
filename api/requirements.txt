@@ -13,6 +13,9 @@ httpx==0.28.1
 # Vision provider. Imported lazily - the app runs without it on the mock provider.
 google-genai==2.25.0
 
+# Extracting the OneAquaHealth catalogue of measures (scripts/build_measures.py)
+pypdf==5.1.0
+
 # Tests
 pytest==8.3.4
 pytest-asyncio==0.25.0

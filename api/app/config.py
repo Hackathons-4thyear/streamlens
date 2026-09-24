@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     # Base for exponential backoff between retries, with jitter.
     gemini_backoff_base_s: float = 0.6
     # Which prompt in app/ai/prompts/ to use, without the .md.
-    assess_prompt: str = "assess_v2"
+    assess_prompt: str = "assess_v3"
 
     # --- Storage -----------------------------------------------------------
     database_url: str = "sqlite:///./streamlens.db"

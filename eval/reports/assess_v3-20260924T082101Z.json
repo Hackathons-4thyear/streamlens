@@ -1,0 +1,1499 @@
+{
+  "prompt_version": "assess_v3",
+  "generated_at": "20260924T082101Z",
+  "provider": "gemini",
+  "labels_filled": 129,
+  "runs": [
+    {
+      "photo": "algae_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4514,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 81,
+        "thought_tokens": 0,
+        "total_tokens": 5000
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "benevento_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 5101,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The banks are covered in soil and vegetation with no hard engineered walls visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "SB"
+          ],
+          "confidence": 0.8,
+          "reason": "A sand bank is visible along the edge of the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "FB"
+          ],
+          "confidence": 0.9,
+          "reason": "Fallen branches are clearly visible floating and resting in the water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NOR"
+          ],
+          "confidence": 0.75,
+          "reason": "The water surface looks smooth with slow movement.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CO"
+          ],
+          "confidence": 0.7,
+          "reason": "The water has a distinct greenish color.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.8,
+          "reason": "The water runs without any visible barriers or weirs across the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.75,
+          "reason": "No discharging pipes are visible along the banks.",
+          "needs_review": false
+        },
+        {
+          "question_id": "sewage",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.8,
+          "reason": "No signs of waste water or sewage are visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "There are no signs of active construction or channel works.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "The ground beside the left bank is covered by soil and vegetation.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants and trees fully cover the strip of land along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Trees are the dominant plant type along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.85,
+          "reason": "The ground beside the right bank consists of soil and vegetation.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Plants cover most of the land strip along the right bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Trees are the dominant vegetation type along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 1103,
+        "thought_tokens": 0,
+        "total_tokens": 6022
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "benevento_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3820,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.9,
+          "reason": "The stream bed is made of natural stones and gravel sorted by the water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.8,
+          "reason": "The banks consist of natural earth and rocks supporting the surrounding vegetation.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NOR"
+          ],
+          "confidence": 0.85,
+          "reason": "The water is moving slowly with a smooth surface reflecting the trees.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.9,
+          "reason": "The water is clear enough to see the stones on the stream bed.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Large trees are the dominant vegetation along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Large trees are the dominant vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 498,
+        "thought_tokens": 0,
+        "total_tokens": 5417
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "canal_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3754,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NS"
+          ],
+          "confidence": 0.85,
+          "reason": "The water is too deep and dark to see what the bottom is made of.",
+          "needs_review": true
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NOR"
+          ],
+          "confidence": 0.75,
+          "reason": "The water flows smoothly without breaking into waves.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.8,
+          "reason": "Plants and grass cover the left bank area alongside the path.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Tall trees with visible trunks line the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Grass and trees cover the right bank completely.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Tall trees are the dominant vegetation on the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4957,
+        "output_tokens": 478,
+        "thought_tokens": 0,
+        "total_tokens": 5435
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "culvert_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3828,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.95,
+          "reason": "The banks are made of poured concrete walls.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "STA"
+          ],
+          "confidence": 0.8,
+          "reason": "The water is standing and smooth with no apparent movement.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "MU"
+          ],
+          "confidence": 0.75,
+          "reason": "The water appears cloudy and dark.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.95,
+          "reason": "A concrete structure blocks movement along the channel.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 319,
+        "thought_tokens": 0,
+        "total_tokens": 5238
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "drybed_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4472,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The bed is made of natural silt and earth.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The banks are made of natural soil and earth.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "DRY"
+          ],
+          "confidence": 0.95,
+          "reason": "The channel bed is completely dry mud with parked boats.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4935,
+        "output_tokens": 278,
+        "thought_tokens": 0,
+        "total_tokens": 5213
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "erosion_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3066,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 59,
+        "thought_tokens": 0,
+        "total_tokens": 4978
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "gabion_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2822,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4962,
+        "output_tokens": 71,
+        "thought_tokens": 0,
+        "total_tokens": 5033
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "gabion_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4033,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4947,
+        "output_tokens": 71,
+        "thought_tokens": 0,
+        "total_tokens": 5018
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "giantreed_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3177,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 74,
+        "thought_tokens": 0,
+        "total_tokens": 4993
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "giantreed_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 6048,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 64,
+        "thought_tokens": 0,
+        "total_tokens": 4983
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "oslo_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4225,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 73,
+        "thought_tokens": 0,
+        "total_tokens": 4992
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "oslo_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4390,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "habitats",
+          "codes": [
+            "SI",
+            "RF"
+          ],
+          "confidence": 0.8,
+          "reason": "There is an island-like patch of vegetation and turbulent shallow stretches visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.85,
+          "reason": "The water surface is rippled and broken where it passes rocks and vegetation.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Plants and trees fully cover the left bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Plants and trees cover the right bank strip completely.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4938,
+        "output_tokens": 517,
+        "thought_tokens": 0,
+        "total_tokens": 5455
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "outfall_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3391,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 56,
+        "thought_tokens": 0,
+        "total_tokens": 4975
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "outfall_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 5298,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.8,
+          "reason": "The channel bed is made of soft mud and sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The banks are made of natural earth and sediment without concrete or stone facing.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "NOR"
+          ],
+          "confidence": 0.8,
+          "reason": "The water is moving slowly with a mostly smooth surface.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "MU"
+          ],
+          "confidence": 0.9,
+          "reason": "The water is muddy and cloudy.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.8,
+          "reason": "The ground beside the stream is grass and soil.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.8,
+          "reason": "Plants cover most of the bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "H"
+          ],
+          "confidence": 0.75,
+          "reason": "Grass and low herbs are the dominant plants on the bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.8,
+          "reason": "The ground beside the stream is grass and open land.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.8,
+          "reason": "Plants cover the bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "H"
+          ],
+          "confidence": 0.75,
+          "reason": "Grass and herbs are the dominant plants on the bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4935,
+        "output_tokens": 736,
+        "thought_tokens": 0,
+        "total_tokens": 5671
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "pollution_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 5080,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.9,
+          "reason": "The bed is made of loose stones and pebbles sorted along the channel bottom.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.95,
+          "reason": "The banks have poured concrete retaining walls along the upper edges.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "DRY"
+          ],
+          "confidence": 0.9,
+          "reason": "There is no water visible in the channel bed at the time of the visit.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.95,
+          "reason": "A paved path runs right up close to the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "N"
+          ],
+          "confidence": 0.9,
+          "reason": "The left bank strip is covered by fabric netting rather than growing plants.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Buildings and fences run close to the right bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Plants and shrubs cover most of the right bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "B"
+          ],
+          "confidence": 0.85,
+          "reason": "Shrubs are the dominant woody plants along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4930,
+        "output_tokens": 631,
+        "thought_tokens": 0,
+        "total_tokens": 5561
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "pollution_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2142,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4935,
+        "output_tokens": 58,
+        "thought_tokens": 0,
+        "total_tokens": 4993
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "pollution_03.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4547,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4940,
+        "output_tokens": 61,
+        "thought_tokens": 0,
+        "total_tokens": 5001
+      },
+      "photo_ok": false,
+      "photo_issues": [
+        "overexposed"
+      ]
+    },
+    {
+      "photo": "rapids_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4391,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4921,
+        "output_tokens": 74,
+        "thought_tokens": 0,
+        "total_tokens": 4995
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "rapids_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3247,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4947,
+        "output_tokens": 71,
+        "thought_tokens": 0,
+        "total_tokens": 5018
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "riparian_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2426,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 67,
+        "thought_tokens": 0,
+        "total_tokens": 4986
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "riparian_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3783,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 55,
+        "thought_tokens": 0,
+        "total_tokens": 4974
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "streambed_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 4221,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.9,
+          "reason": "The bed is made of natural rock and stones shaped by the stream.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "RF",
+            "SD"
+          ],
+          "confidence": 0.85,
+          "reason": "Riffles and loose stone deposits are visible within the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.85,
+          "reason": "The water is moving fast with white water visible around obstacles.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.85,
+          "reason": "You can see through the water to the bed below.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.75,
+          "reason": "A dam or weir structure is visible blocking movement along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.85,
+          "reason": "Trees are the dominant vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 593,
+        "thought_tokens": 0,
+        "total_tokens": 5512
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "streambed_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3842,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.85,
+          "reason": "The bed is made of natural stones and rocks sorted by water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.8,
+          "reason": "The banks are made of natural soil and plant cover.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "SD"
+          ],
+          "confidence": 0.8,
+          "reason": "Loose stones and gravel are gathered across the dry bed.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "DRY"
+          ],
+          "confidence": 0.95,
+          "reason": "There is no water visible in the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Plants and trees cover the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.8,
+          "reason": "Trees are the dominant vegetation along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Plants cover most of the right bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.8,
+          "reason": "Trees are the dominant vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 580,
+        "thought_tokens": 0,
+        "total_tokens": 5499
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "toulouse_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3870,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CL"
+          ],
+          "confidence": 0.8,
+          "reason": "The water appears clear with a natural greenish tint.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.95,
+          "reason": "A large concrete dam structure blocks the river channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Tarmac and a building are located right beside the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.8,
+          "reason": "Plants and trees cover the bank area.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.75,
+          "reason": "Trees are the dominant tall plants along the bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4935,
+        "output_tokens": 430,
+        "thought_tokens": 0,
+        "total_tokens": 5365
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "toulouse_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3133,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4947,
+        "output_tokens": 82,
+        "thought_tokens": 0,
+        "total_tokens": 5029
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "weir_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 6586,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "NAT"
+          ],
+          "confidence": 0.8,
+          "reason": "The stream bed is made of natural stones and rocks visible through the water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART"
+          ],
+          "confidence": 0.9,
+          "reason": "Engineered concrete structures are present along portions of the banks.",
+          "needs_review": false
+        },
+        {
+          "question_id": "habitats",
+          "codes": [
+            "RF",
+            "SD"
+          ],
+          "confidence": 0.9,
+          "reason": "Stone deposits and shallow fast stretches breaking over rocks are clearly visible.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.9,
+          "reason": "The water surface is rippled and broken as it passes over obstacles.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "MU"
+          ],
+          "confidence": 0.8,
+          "reason": "The water appears muddy and cloudy with suspended sediment.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.95,
+          "reason": "A concrete weir structure blocks movement along the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "construction",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Recent concrete engineering works and disturbed earth are visible beside the channel.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.8,
+          "reason": "Concrete infrastructure runs right up close to the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.85,
+          "reason": "Plants and trees cover most of the left bank strip.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantL",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.9,
+          "reason": "Trees are the dominant vegetation type along the left bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "Concrete engineering works run directly along the right bank.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.8,
+          "reason": "Plants cover parts of the right bank alongside engineered structures.",
+          "needs_review": false
+        },
+        {
+          "question_id": "vegDominantR",
+          "codes": [
+            "T"
+          ],
+          "confidence": 0.8,
+          "reason": "Trees are the dominant tall vegetation along the right bank.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 1005,
+        "thought_tokens": 0,
+        "total_tokens": 5924
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "weir_02.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 3464,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [
+        {
+          "question_id": "habitats",
+          "codes": [
+            "RF"
+          ],
+          "confidence": 0.85,
+          "reason": "There is a small waterfall where water breaks over the structure.",
+          "needs_review": false
+        },
+        {
+          "question_id": "fallenBiomass",
+          "codes": [
+            "FL"
+          ],
+          "confidence": 0.9,
+          "reason": "A small pile of leaves is caught in the flowing water.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "FAS"
+          ],
+          "confidence": 0.95,
+          "reason": "The water is falling fast and the surface is broken and white.",
+          "needs_review": false
+        },
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "FO"
+          ],
+          "confidence": 0.8,
+          "reason": "White foam is visible where the water falls and churns.",
+          "needs_review": false
+        },
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ],
+          "confidence": 0.9,
+          "reason": "A man-made drop blocks movement along the channel.",
+          "needs_review": false
+        }
+      ],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4919,
+        "output_tokens": 436,
+        "thought_tokens": 0,
+        "total_tokens": 5355
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    },
+    {
+      "photo": "woodydebris_01.jpg",
+      "ok": true,
+      "error": "",
+      "latency_ms": 2779,
+      "degraded": false,
+      "degraded_reason": "",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "is_mock": false,
+      "chips": [],
+      "dropped": [],
+      "usage": {
+        "prompt_tokens": 4957,
+        "output_tokens": 68,
+        "thought_tokens": 0,
+        "total_tokens": 5025
+      },
+      "photo_ok": true,
+      "photo_issues": []
+    }
+  ]
+}

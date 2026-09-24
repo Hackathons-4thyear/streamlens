@@ -102,6 +102,11 @@ const en = {
       "{{count}} suggestion was discarded because it did not match the official answer list.",
     dropped_other:
       "{{count}} suggestions were discarded because they did not match the official answer list.",
+    notWatercourse: "This doesn't look like a stream",
+    notWatercourseBody:
+      "Retake the photo? Point the camera at the water and both banks. You can still answer every question yourself if you prefer.",
+    retakePhoto: "Retake the photo",
+    answerAnyway: "Answer the questions anyway",
     aiUnavailable: "AI unavailable — answer manually",
     aiUnavailableBody:
       "{{reason}} Nothing was lost: work through the questions yourself. The draft answers below come from the offline demo heuristic, not a model, so do not rely on them.",
@@ -251,6 +256,11 @@ const pt: Dict = {
       "{{count}} sugestão foi descartada por não corresponder à lista oficial de respostas.",
     dropped_other:
       "{{count}} sugestões foram descartadas por não corresponderem à lista oficial de respostas.",
+    notWatercourse: "Isto não parece um ribeiro",
+    notWatercourseBody:
+      "Quer repetir a foto? Aponte a câmara para a água e para as duas margens. Também pode responder a tudo por si.",
+    retakePhoto: "Repetir a foto",
+    answerAnyway: "Responder às perguntas mesmo assim",
     aiUnavailable: "IA indisponível — responda manualmente",
     aiUnavailableBody:
       "{{reason}} Nada se perdeu: responda às perguntas por si. As respostas em baixo vêm da heurística de demonstração, não de um modelo, por isso não confie nelas.",
@@ -391,6 +401,11 @@ const it: Dict = {
       "{{count}} suggerimento è stato scartato perché non corrispondeva all'elenco ufficiale delle risposte.",
     dropped_other:
       "{{count}} suggerimenti sono stati scartati perché non corrispondevano all'elenco ufficiale delle risposte.",
+    notWatercourse: "Questo non sembra un corso d'acqua",
+    notWatercourseBody:
+      "Vuoi rifare la foto? Inquadra l'acqua e entrambe le sponde. Puoi comunque rispondere tu a tutte le domande.",
+    retakePhoto: "Rifai la foto",
+    answerAnyway: "Rispondi comunque alle domande",
     aiUnavailable: "IA non disponibile — rispondi a mano",
     aiUnavailableBody:
       "{{reason}} Non si è perso nulla: rispondi tu alle domande. Le risposte qui sotto vengono dall'euristica dimostrativa, non da un modello, quindi non fidarti.",
@@ -531,6 +546,11 @@ const fr: Dict = {
       "{{count}} suggestion a été écartée car elle ne correspondait pas à la liste officielle de réponses.",
     dropped_other:
       "{{count}} suggestions ont été écartées car elles ne correspondaient pas à la liste officielle de réponses.",
+    notWatercourse: "Cela ne ressemble pas à un cours d'eau",
+    notWatercourseBody:
+      "Reprendre la photo ? Cadrez l'eau et les deux berges. Vous pouvez aussi répondre vous-même à toutes les questions.",
+    retakePhoto: "Reprendre la photo",
+    answerAnyway: "Répondre quand même aux questions",
     aiUnavailable: "IA indisponible — répondez vous-même",
     aiUnavailableBody:
       "{{reason}} Rien n'est perdu : répondez aux questions vous-même. Les réponses ci-dessous viennent de l'heuristique de démonstration, pas d'un modèle : ne vous y fiez pas.",
@@ -671,6 +691,11 @@ const nl: Dict = {
       "{{count}} suggestie is weggegooid omdat ze niet op de officiële antwoordlijst stond.",
     dropped_other:
       "{{count}} suggesties zijn weggegooid omdat ze niet op de officiële antwoordlijst stonden.",
+    notWatercourse: "Dit lijkt geen beek",
+    notWatercourseBody:
+      "Foto opnieuw maken? Richt op het water en beide oevers. Je kunt de vragen ook gewoon zelf beantwoorden.",
+    retakePhoto: "Foto opnieuw maken",
+    answerAnyway: "Toch de vragen beantwoorden",
     aiUnavailable: "AI niet beschikbaar — beantwoord zelf",
     aiUnavailableBody:
       "{{reason}} Er is niets verloren: loop de vragen zelf door. De antwoorden hieronder komen van de demo-heuristiek, niet van een model, dus vertrouw er niet op.",
@@ -811,6 +836,11 @@ const no: Dict = {
       "{{count}} forslag ble forkastet fordi det ikke fantes i den offisielle svarlisten.",
     dropped_other:
       "{{count}} forslag ble forkastet fordi de ikke fantes i den offisielle svarlisten.",
+    notWatercourse: "Dette ser ikke ut som en bekk",
+    notWatercourseBody:
+      "Vil du ta bildet på nytt? Sikt mot vannet og begge bredder. Du kan også svare på alle spørsmålene selv.",
+    retakePhoto: "Ta bildet på nytt",
+    answerAnyway: "Svar på spørsmålene likevel",
     aiUnavailable: "KI utilgjengelig — svar selv",
     aiUnavailableBody:
       "{{reason}} Ingenting gikk tapt: gå gjennom spørsmålene selv. Svarene under kommer fra demo-heuristikken, ikke fra en modell, så ikke stol på dem.",

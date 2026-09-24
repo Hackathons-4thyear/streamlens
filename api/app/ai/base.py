@@ -70,6 +70,10 @@ class ProviderResult:
     # Free-text note from the provider, e.g. why it answered little.
     note: str = ""
     usage: Usage = field(default_factory=Usage)
+    # The watercourse gate: False means the photo is not of a stream at all,
+    # and no suggestion should be shown whatever else came back.
+    is_watercourse: bool = True
+    not_watercourse_reason: str = ""
 
 
 class ProviderError(RuntimeError):

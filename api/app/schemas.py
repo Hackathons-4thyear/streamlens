@@ -117,6 +117,12 @@ class SuggestResponse(BaseModel):
     degraded_kind: str = Field(
         default="", description="timeout | transport | auth | bad_output | other"
     )
+    is_watercourse: bool = Field(
+        default=True,
+        description="False when the photo does not show a stream at all. The UI must "
+        "then show no chips and ask for a different photo.",
+    )
+    not_watercourse_reason: str = ""
     attempts: int = 1
     latency_ms: int = 0
     usage: UsageOut = Field(default_factory=UsageOut)

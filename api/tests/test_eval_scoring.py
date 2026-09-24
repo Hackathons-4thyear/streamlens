@@ -183,3 +183,48 @@ def test_untidy_cells_are_tolerated(tmp_path, raw):
         encoding="utf-8",
     )
     assert read_labels(path)[("a.jpg", "channelType")] == {"NAT"}
+
+
+# --------------------------------------------------------------------------
+# Set overlap, for choose-ALL questions
+# --------------------------------------------------------------------------
+
+def test_a_correct_superset_earns_partial_credit_not_zero():
+    """The model spotting a real feature the labeller missed is not the same
+    error as naming the wrong thing, and the two should not score alike."""
+    runs = [_run("a.jpg", [("habitats", ["SD", "RF"], 0.85)])]
+    labels = {("a.jpg", "habitats"): {"SD"}}
+
+    stats = score(runs, labels)["habitats"]
+    assert stats.agreement == 0.0, "exact match is unchanged"
+    assert stats.overlap == 0.5, "one of two codes shared"
+
+
+def test_overlap_equals_exact_match_when_the_sets_are_identical():
+    runs = [_run("a.jpg", [("habitats", ["SD", "RF"], 0.85)])]
+    labels = {("a.jpg", "habitats"): {"RF", "SD"}}
+
+    stats = score(runs, labels)["habitats"]
+    assert stats.agreement == 1.0
+    assert stats.overlap == 1.0
+
+
+def test_overlap_is_zero_when_nothing_is_shared():
+    runs = [_run("a.jpg", [("habitats", ["SB"], 0.8)])]
+    labels = {("a.jpg", "habitats"): {"RF"}}
+
+    stats = score(runs, labels)["habitats"]
+    assert stats.overlap == 0.0
+
+
+def test_single_answer_overlap_is_all_or_nothing():
+    runs = [
+        _run("a.jpg", [("channelType", ["NAT"], 0.9)]),
+        _run("b.jpg", [("channelType", ["ART"], 0.9)]),
+    ]
+    labels = {
+        ("a.jpg", "channelType"): {"NAT"},
+        ("b.jpg", "channelType"): {"NAT"},
+    }
+    stats = score(runs, labels)["channelType"]
+    assert stats.overlap == 0.5, "one of two photos matched, no partial credit within one"

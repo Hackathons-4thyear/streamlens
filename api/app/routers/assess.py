@@ -212,9 +212,15 @@ async def suggest(
         ) from exc
 
     photos_ok = all(p.ok for p in prepared)
-    chips, dropped = validate_suggestions(
-        outcome.result.suggestions, questions, settings.low_confidence, photos_ok
-    )
+
+    if not outcome.is_watercourse:
+        # The model says this is not a stream. Whatever else it returned, none
+        # of it is an assessment of a watercourse, so none of it is shown.
+        chips, dropped = [], []
+    else:
+        chips, dropped = validate_suggestions(
+            outcome.result.suggestions, questions, settings.low_confidence, photos_ok
+        )
 
     return SuggestResponse(
         site_id=site_id,
@@ -226,6 +232,8 @@ async def suggest(
         degraded=outcome.degraded,
         degraded_reason=outcome.degraded_reason,
         degraded_kind=outcome.degraded_kind,
+        is_watercourse=outcome.is_watercourse,
+        not_watercourse_reason=outcome.not_watercourse_reason,
         attempts=outcome.attempts,
         latency_ms=outcome.latency_ms,
         usage=UsageOut(**vars(outcome.usage)),

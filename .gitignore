@@ -34,3 +34,7 @@ eval/photos/*
 !eval/photos/README.md
 !eval/photos/.gitkeep
 eval/_dryrun_photos/
+
+# Source documents fetched from their publishers. Cited, not redistributed:
+# see data/README.md for the DOI and the download command.
+data/sources/

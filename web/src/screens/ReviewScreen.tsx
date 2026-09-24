@@ -67,6 +67,34 @@ export function ReviewScreen({
   const pending = pendingChips(answers).length;
   const answered = answeredCount(answers);
 
+  // Not a stream: the model's own gate. Nothing is shown, because an
+  // assessment of a watercourse that is not in the photo is worse than none.
+  if (!loading && suggestion && !suggestion.is_watercourse && !showAll) {
+    return (
+      <div className="flex flex-col gap-4">
+        <header>
+          <h2 className="text-xl font-bold text-ink">{t("review.notWatercourse")}</h2>
+        </header>
+
+        <Notice tone="warn" title={t("review.notWatercourse")}>
+          <p>{t("review.notWatercourseBody")}</p>
+          {suggestion.not_watercourse_reason ? (
+            <p className="mt-2 italic">{suggestion.not_watercourse_reason}</p>
+          ) : null}
+        </Notice>
+
+        <div className="flex flex-col gap-2">
+          <Button full onClick={onBack}>
+            {t("review.retakePhoto")}
+          </Button>
+          <Button variant="secondary" full onClick={() => setShowAll(true)}>
+            {t("review.answerAnyway")}
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   if (loading) {
     return (
       <div className="flex flex-col gap-4 py-10">

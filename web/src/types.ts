@@ -120,6 +120,9 @@ export interface SuggestResponse {
   degraded: boolean;
   degraded_reason: string;
   degraded_kind: string;
+  /** False when the photo does not show a stream. Show no chips. */
+  is_watercourse: boolean;
+  not_watercourse_reason: string;
   attempts: number;
   latency_ms: number;
   usage: Usage;

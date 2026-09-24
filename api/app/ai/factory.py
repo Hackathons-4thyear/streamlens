@@ -78,6 +78,8 @@ class SuggestOutcome:
     attempts: int = 1
     latency_ms: int = 0
     usage: Usage = field(default_factory=Usage)
+    is_watercourse: bool = True
+    not_watercourse_reason: str = ""
 
 
 async def suggest_with_fallback(
@@ -127,4 +129,6 @@ async def suggest_with_fallback(
         requested_provider=requested,
         latency_ms=int((time.perf_counter() - started) * 1000),
         usage=result.usage,
+        is_watercourse=result.is_watercourse,
+        not_watercourse_reason=result.not_watercourse_reason,
     )

@@ -150,20 +150,29 @@ QUESTIONS: list[dict] = [
     q(
         "bankType", "channel",
         "Bank type", "Tipo de margem",
-        "What the sides of the channel are made of. Natural banks are soil and plant roots; "
-        "hardened banks are concrete or stacked stone.",
-        "De que são feitas as margens: terra natural, betão ou pedra assente.",
+        "What the sides of the channel are made of. Answer for the HARDEST material "
+        "you can see on the bank: if any part of it has been armoured with concrete or "
+        "stone, answer for that, even where the rest is bare earth. Natural banks are "
+        "soil and plant roots held together by vegetation.",
+        "De que são feitas as margens. Responda pelo material MAIS DURO que consegue "
+        "ver: se alguma parte foi revestida com betão ou pedra, responda por essa, "
+        "mesmo que o resto seja terra.",
         [
             opt("NAT", "Natural", "Natural",
-                "Earth, sediment and plant roots holding the bank together."),
+                "Earth, sediment and plant roots holding the bank together, with no "
+                "concrete or placed stone anywhere on it."),
             opt("ART", "Concrete", "Betão",
-                "A poured or rendered concrete wall."),
+                "A poured or rendered concrete wall, sheet piling, or any hard "
+                "engineered facing - even if it covers only part of the bank."),
             opt("LAS", "Laid stones", "Pedra assente",
                 "Stones or blocks placed by people - rip-rap, gabions or a stone wall."),
             opt("NS", "I'm not sure", "Não tenho a certeza",
                 "Choose this if vegetation hides the bank surface."),
         ],
-        photo_hint_en="Look at the strip between the water's edge and the top of the bank.",
+        photo_hint_en=(
+            "Look at the strip between the water's edge and the top of the bank. If part "
+            "is armoured and part is bare earth, answer for the armoured part."
+        ),
         terms=["bank"],
     ),
 
@@ -549,7 +558,28 @@ def main() -> int:
             question["not_suggestable_reason"] = reason
 
     doc = {
-        "version": "1.0.0",
+        "version": "1.1.0",
+        "changelog": [
+            {
+                "version": "1.1.0",
+                "date": "2026-09-24",
+                "changes": [
+                    "bankType: the question now says to answer for the HARDEST material "
+                    "visible on the bank. In the assess_v1 evaluation this was the "
+                    "single largest source of disagreement between the model and the "
+                    "labeller: on outfall_02 and pollution_01 the model described the "
+                    "wider earth bank while the labeller described the engineered "
+                    "structure in it. Both readings were defensible, which meant the "
+                    "question was ambiguous rather than either party wrong. "
+                    "See eval/reports/v1-vs-v2.md.",
+                    "Six questions a single still photograph cannot settle were marked "
+                    "ai_suggestable=false (withdrawal, invasiveL/R, cutsL/R). waterFlow "
+                    "was proposed for this list and reinstated after the baseline showed "
+                    "the model answering it correctly 7 times out of 7.",
+                ],
+            },
+            {"version": "1.0.0", "date": "2026-09-23", "changes": ["First question set."]},
+        ],
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "generated_by": "scripts/build_questions.py",
         "synthetic": False,

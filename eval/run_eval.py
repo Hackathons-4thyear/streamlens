@@ -91,12 +91,26 @@ class QuestionStats:
     dropped: int = 0
     labelled: int = 0
     correct: int = 0
+    # Sum of per-comparison overlap scores; see `overlap` below.
+    overlap_sum: float = 0.0
     confidences_right: list[float] = field(default_factory=list)
     confidences_wrong: list[float] = field(default_factory=list)
 
     @property
     def agreement(self) -> float | None:
+        """Exact match: the two code sets are identical."""
         return self.correct / self.labelled if self.labelled else None
+
+    @property
+    def overlap(self) -> float | None:
+        """Mean set overlap (Jaccard), so a correct superset earns partial credit.
+
+        Exact match punishes a model that spotted a real feature the labeller
+        missed exactly as hard as one that named the wrong thing. For choose-ALL
+        questions those are not the same error, and this measure separates them.
+        Identical for single-answer questions, where Jaccard is 1.0 or 0.0.
+        """
+        return self.overlap_sum / self.labelled if self.labelled else None
 
     @property
     def unknown_rate(self) -> float | None:
@@ -254,6 +268,8 @@ def score(runs: list[PhotoRun], labels: dict) -> dict[str, QuestionStats]:
             truth = labels.get((run.photo, qid))
             if truth:
                 row.labelled += 1
+                union = codes | truth
+                row.overlap_sum += len(codes & truth) / len(union) if union else 0.0
                 if codes == truth:
                     row.correct += 1
                     row.confidences_right.append(chip["confidence"])
@@ -305,6 +321,7 @@ def build_report(
     total_unknown = sum(s.unknown for s in stats.values())
     total_labelled = sum(s.labelled for s in stats.values())
     total_correct = sum(s.correct for s in stats.values())
+    total_overlap = sum(s.overlap_sum for s in stats.values())
 
     right = [c for s in stats.values() for c in s.confidences_right]
     wrong = [c for s in stats.values() for c in s.confidences_wrong]
@@ -372,8 +389,10 @@ def build_report(
     add("")
     add("| Measure | Value | What it means |")
     add("|---|---|---|")
-    add(f"| Agreement with labels | {pct(total_correct / total_labelled if total_labelled else None)} "
+    add(f"| Agreement (exact match) | {pct(total_correct / total_labelled if total_labelled else None)} "
         f"| {total_correct}/{total_labelled} suggestions matched the labeller exactly |")
+    add(f"| Agreement (set overlap) | {pct(total_overlap / total_labelled if total_labelled else None)} "
+        "| mean Jaccard; a correct superset earns partial credit |")
     add(f"| Unknown (`NS`) rate | {pct(total_unknown / total_chips if total_chips else None)} "
         f"| {total_unknown}/{total_chips} suggestions were \"I'm not sure\" |")
     add(f"| Dropped by validation | {pct(total_dropped / (total_chips + total_dropped) if (total_chips + total_dropped) else None)} "
@@ -420,8 +439,8 @@ def build_report(
     add("")
     add("Sorted by drop rate, then by disagreement: the rows that need attention first.")
     add("")
-    add("| Question | Asked | `NS` | Dropped | Labelled | Agreement | Conf. right | Conf. wrong |")
-    add("|---|---:|---:|---:|---:|---:|---:|---:|")
+    add("| Question | Asked | `NS` | Dropped | Labelled | Exact | Overlap | Conf. right | Conf. wrong |")
+    add("|---|---:|---:|---:|---:|---:|---:|---:|---:|")
 
     def sort_key(s: QuestionStats):
         total = s.suggested + s.dropped
@@ -434,8 +453,8 @@ def build_report(
         label = question.raw["label"].get("en", s.question_id) if question else s.question_id
         add(
             f"| `{s.question_id}` — {label} | {s.suggested} | {s.unknown} | {s.dropped} "
-            f"| {s.labelled} | {pct(s.agreement)} | {num(mean(s.confidences_right))} "
-            f"| {num(mean(s.confidences_wrong))} |"
+            f"| {s.labelled} | {pct(s.agreement)} | {pct(s.overlap)} "
+            f"| {num(mean(s.confidences_right))} | {num(mean(s.confidences_wrong))} |"
         )
     add("")
 
@@ -506,6 +525,10 @@ def build_report(
 
     add("## How to read this")
     add("")
+    add("- **Exact match against set overlap.** Where the two differ, the model is")
+    add("  giving partly-right answers to choose-ALL questions - naming a real feature")
+    add("  the labeller left out, or missing one. A large gap is a signal about the")
+    add("  question, not only about the model.")
     add("- **Dropped rate is the first thing to look at.** Anything above zero means")
     add("  the model is inventing codes the prompt did not offer it.")
     add("- **An unknown rate of zero is a red flag**, not a success: a model that is")

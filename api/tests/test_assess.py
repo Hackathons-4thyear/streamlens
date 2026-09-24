@@ -22,8 +22,13 @@ class FakeProvider:
     is_mock = False
     retries = 1
 
-    def __init__(self, suggestions, note="") -> None:
-        self._result = ProviderResult(suggestions=suggestions, note=note)
+    def __init__(self, suggestions, note="", is_watercourse=True, reason="") -> None:
+        self._result = ProviderResult(
+            suggestions=suggestions,
+            note=note,
+            is_watercourse=is_watercourse,
+            not_watercourse_reason=reason,
+        )
         self.calls: list[tuple] = []
 
     async def suggest(self, images, context):
@@ -326,3 +331,41 @@ def test_mock_provider_output_is_valid_and_deterministic(client, site_id):
 def test_mock_provider_never_suggests_a_rating(client, site_id):
     body = _post(client, site_id).json()
     assert "overall" not in [c["question_id"] for c in body["suggestions"]]
+
+
+# --------------------------------------------------------------------------
+# The watercourse gate
+# --------------------------------------------------------------------------
+
+def test_a_photo_that_is_not_a_stream_yields_no_chips(client, site_id, use_provider):
+    """Even when the model contradicts itself and returns suggestions anyway,
+    nothing is shown: an assessment of a stream that is not there is worthless."""
+    use_provider(FakeProvider(
+        [RawSuggestion("channelType", ["ART"], 0.95, "grey and flat")],
+        is_watercourse=False,
+        reason="This is a close-up of stones in a wire cage, with no water in view.",
+    ))
+
+    body = _post(client, site_id).json()
+    assert body["is_watercourse"] is False
+    assert body["suggestions"] == []
+    assert "wire cage" in body["not_watercourse_reason"]
+
+
+def test_a_real_stream_is_unaffected_by_the_gate(client, site_id, use_provider):
+    use_provider(FakeProvider(
+        [RawSuggestion("channelType", ["NAT"], 0.9, "gravel bed")],
+        is_watercourse=True,
+    ))
+
+    body = _post(client, site_id).json()
+    assert body["is_watercourse"] is True
+    assert len(body["suggestions"]) == 1
+    assert body["not_watercourse_reason"] == ""
+
+
+def test_the_gate_defaults_to_showing_suggestions(client, site_id, use_provider):
+    """A provider that says nothing about the gate is treated as a watercourse,
+    so an older prompt without the field keeps working."""
+    use_provider(FakeProvider([RawSuggestion("sewage", ["N"], 0.8, "nothing visible")]))
+    assert _post(client, site_id).json()["is_watercourse"] is True

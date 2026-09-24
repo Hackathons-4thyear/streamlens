@@ -93,6 +93,13 @@ class _Suggestion(BaseModel):
 
 
 class _Response(BaseModel):
+    is_watercourse: bool = Field(
+        default=True,
+        description="False when the image does not show a watercourse at all.",
+    )
+    not_watercourse_reason: str = Field(
+        default="", description="One sentence, only when is_watercourse is false."
+    )
     suggestions: list[_Suggestion]
     note: str = ""
 
@@ -268,6 +275,8 @@ class GeminiProvider:
             ],
             note=parsed.note or "",
             usage=_usage_of(response),
+            is_watercourse=bool(getattr(parsed, "is_watercourse", True)),
+            not_watercourse_reason=getattr(parsed, "not_watercourse_reason", "") or "",
         )
 
 
