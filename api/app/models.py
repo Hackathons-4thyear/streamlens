@@ -121,7 +121,7 @@ def get_engine(settings: Settings | None = None):
     if _engine is None:
         settings = settings or get_settings()
         _engine = create_engine(
-            settings.database_url,
+            settings.resolved_database_url,
             connect_args={"check_same_thread": False},
         )
     return _engine

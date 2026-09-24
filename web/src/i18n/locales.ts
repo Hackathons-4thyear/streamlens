@@ -29,6 +29,7 @@ const en = {
     translationWarning:
       "Translations are machine made and not yet checked by a native speaker.",
   },
+  nav: { observe: "Assess a stream", explore: "Explore" },
   steps: {
     site: "Site",
     photos: "Photos",
@@ -183,6 +184,7 @@ const pt: Dict = {
     translationWarning:
       "As traduções são automáticas e ainda não foram revistas por um falante nativo.",
   },
+  nav: { observe: "Avaliar um ribeiro", explore: "Explorar" },
   steps: {
     site: "Local",
     photos: "Fotos",
@@ -334,6 +336,7 @@ const it: Dict = {
     translationWarning:
       "Le traduzioni sono automatiche e non ancora riviste da un madrelingua.",
   },
+  nav: { observe: "Valuta un corso d'acqua", explore: "Esplora" },
   steps: { site: "Sito", photos: "Foto", review: "Verifica", rating: "Giudizio", submit: "Invia" },
   common: {
     back: "Indietro",
@@ -479,6 +482,7 @@ const fr: Dict = {
     translationWarning:
       "Les traductions sont automatiques et pas encore relues par un locuteur natif.",
   },
+  nav: { observe: "Évaluer un cours d'eau", explore: "Explorer" },
   steps: { site: "Site", photos: "Photos", review: "Vérifier", rating: "Évaluation", submit: "Envoyer" },
   common: {
     back: "Retour",
@@ -624,6 +628,7 @@ const nl: Dict = {
     translationWarning:
       "Vertalingen zijn machinaal gemaakt en nog niet nagekeken door een moedertaalspreker.",
   },
+  nav: { observe: "Beek beoordelen", explore: "Verkennen" },
   steps: { site: "Locatie", photos: "Foto's", review: "Nakijken", rating: "Oordeel", submit: "Versturen" },
   common: {
     back: "Terug",
@@ -769,6 +774,7 @@ const no: Dict = {
     translationWarning:
       "Oversettelsene er maskinlagde og ennå ikke sjekket av en som har språket som morsmål.",
   },
+  nav: { observe: "Vurder en bekk", explore: "Utforsk" },
   steps: { site: "Sted", photos: "Bilder", review: "Sjekk", rating: "Vurdering", submit: "Send" },
   common: {
     back: "Tilbake",

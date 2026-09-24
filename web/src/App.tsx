@@ -7,7 +7,10 @@ import { ApiError, api } from "./lib/api";
 import { cacheGet, cacheSet, pendingCount, queueObservation } from "./lib/db";
 import type { Position } from "./lib/geo";
 import { flushOutbox, startAutoSync } from "./lib/sync";
+import { CityScreen, ExploreScreen } from "./screens/ExploreScreen";
 import { PhotosScreen, type PhotoSlotValue } from "./screens/PhotosScreen";
+import { SitePage } from "./screens/SitePage";
+import type { DataScope } from "./lib/insights";
 import { RatingScreen } from "./screens/RatingScreen";
 import { ReviewScreen } from "./screens/ReviewScreen";
 import { SiteScreen } from "./screens/SiteScreen";
@@ -28,6 +31,13 @@ import type {
 
 const STEPS = ["site", "photos", "review", "rating", "submit"] as const;
 type Step = (typeof STEPS)[number];
+
+/** The two halves of the product: record an assessment, or read what is there. */
+type Mode = "observe" | "explore";
+type ExploreView =
+  | { kind: "home" }
+  | { kind: "site"; siteId: string }
+  | { kind: "city"; city: string };
 
 const CLIENT_ID_KEY = "streamlens.client";
 
@@ -61,6 +71,9 @@ export default function App() {
   const { t, i18n } = useTranslation();
   const online = useOnline();
 
+  const [mode, setMode] = useState<Mode>("observe");
+  const [explore, setExplore] = useState<ExploreView>({ kind: "home" });
+  const [scope, setScope] = useState<DataScope>("all");
   const [step, setStep] = useState<Step>("site");
   const [catalogueError, setCatalogueError] = useState("");
   const [sites, setSites] = useState<SitesResponse | null>(null);
@@ -319,6 +332,25 @@ export default function App() {
           </div>
         </div>
 
+        <nav className="mx-auto flex max-w-2xl gap-2 px-4 pb-2">
+          {(["observe", "explore"] as Mode[]).map((name) => (
+            <button
+              key={name}
+              type="button"
+              onClick={() => setMode(name)}
+              aria-current={mode === name ? "page" : undefined}
+              className={`tap flex-1 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                mode === name
+                  ? "bg-brand text-white"
+                  : "bg-slate-100 text-slate-600 hover:text-brand"
+              }`}
+            >
+              {name === "observe" ? t("nav.observe") : t("nav.explore")}
+            </button>
+          ))}
+        </nav>
+
+        {mode === "observe" ? (
         <ol className="mx-auto flex max-w-2xl gap-1 px-4 pb-3 text-xs">
           {STEPS.map((name, index) => (
             <li
@@ -336,6 +368,7 @@ export default function App() {
             </li>
           ))}
         </ol>
+        ) : null}
       </header>
 
       <main className="mx-auto max-w-2xl px-4 py-5 pb-[calc(2rem+var(--safe-bottom))]">
@@ -343,7 +376,39 @@ export default function App() {
           <p className="mb-3 text-xs text-muted">{t("app.translationWarning")}</p>
         ) : null}
 
-        {step === "site" ? (
+        {mode === "explore" && explore.kind === "home" ? (
+          <ExploreScreen
+            sites={sites.sites}
+            cities={sites.cities}
+            scope={scope}
+            onScope={setScope}
+            position={position}
+            onPosition={setPosition}
+            onOpenSite={(siteId) => setExplore({ kind: "site", siteId })}
+            onOpenCity={(city) => setExplore({ kind: "city", city })}
+          />
+        ) : null}
+
+        {mode === "explore" && explore.kind === "site" ? (
+          <SitePage
+            siteId={explore.siteId}
+            scope={scope}
+            onScope={setScope}
+            onBack={() => setExplore({ kind: "home" })}
+          />
+        ) : null}
+
+        {mode === "explore" && explore.kind === "city" ? (
+          <CityScreen
+            city={explore.city}
+            scope={scope}
+            onScope={setScope}
+            onOpenSite={(siteId) => setExplore({ kind: "site", siteId })}
+            onBack={() => setExplore({ kind: "home" })}
+          />
+        ) : null}
+
+        {mode === "observe" && step === "site" ? (
           <SiteScreen
             sites={sites.sites}
             cities={sites.cities}
@@ -356,7 +421,7 @@ export default function App() {
           />
         ) : null}
 
-        {step === "photos" ? (
+        {mode === "observe" && step === "photos" ? (
           <PhotosScreen
             upstream={upstream}
             downstream={downstream}
@@ -370,7 +435,7 @@ export default function App() {
           />
         ) : null}
 
-        {step === "review" ? (
+        {mode === "observe" && step === "review" ? (
           <ReviewScreen
             loading={suggestLoading}
             error={suggestError}
@@ -383,7 +448,7 @@ export default function App() {
           />
         ) : null}
 
-        {step === "rating" ? (
+        {mode === "observe" && step === "rating" ? (
           <RatingScreen
             questionSet={questionSet}
             overall={overall}
@@ -399,7 +464,7 @@ export default function App() {
           />
         ) : null}
 
-        {step === "submit" && site ? (
+        {mode === "observe" && step === "submit" && site ? (
           <SubmitScreen
             site={site}
             overall={overall}
@@ -414,6 +479,10 @@ export default function App() {
             }}
             onBack={() => setStep("rating")}
             onRestart={restart}
+            onViewSite={() => {
+              setExplore({ kind: "site", siteId: site.id });
+              setMode("explore");
+            }}
           />
         ) : null}
       </main>

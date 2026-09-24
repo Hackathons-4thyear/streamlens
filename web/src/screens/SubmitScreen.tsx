@@ -24,6 +24,7 @@ export function SubmitScreen({
   onSyncNow,
   onBack,
   onRestart,
+  onViewSite,
 }: {
   site: Site;
   overall: string;
@@ -36,6 +37,7 @@ export function SubmitScreen({
   onSyncNow: () => void;
   onBack: () => void;
   onRestart: () => void;
+  onViewSite?: () => void;
 }) {
   const { t } = useTranslation();
   const [consent, setConsent] = useState(false);
@@ -81,7 +83,12 @@ export function SubmitScreen({
 
         <p className="text-xs text-muted">{t("submit.noMedicalClaim")}</p>
 
-        <Button full onClick={onRestart}>
+        {onViewSite ? (
+          <Button full onClick={onViewSite}>
+            See what this site now shows
+          </Button>
+        ) : null}
+        <Button full variant={onViewSite ? "secondary" : "primary"} onClick={onRestart}>
           {t("submit.startAnother")}
         </Button>
       </div>

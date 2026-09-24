@@ -60,6 +60,22 @@ class Settings(BaseSettings):
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
 
     @property
+    def resolved_database_url(self) -> str:
+        """The database URL with any relative SQLite path pinned to api/.
+
+        Without this the database file lands wherever the process happened to be
+        started from, so `npm run dev` and `python scripts/seed_demo.py` quietly
+        used two different databases and the demo data appeared to vanish.
+        """
+        prefix = "sqlite:///"
+        if not self.database_url.startswith(prefix):
+            return self.database_url
+        raw = self.database_url[len(prefix):]
+        if raw.startswith("/") or (len(raw) > 1 and raw[1] == ":"):
+            return self.database_url  # already absolute
+        return prefix + str((API_DIR / raw.lstrip("./")).resolve())
+
+    @property
     def upload_path(self) -> Path:
         path = Path(self.upload_dir)
         if not path.is_absolute():
