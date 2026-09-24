@@ -75,6 +75,76 @@ to `api/.env` and set `AI_PROVIDER=gemini` plus your `GEMINI_API_KEY`.
 - **Provenance is visible.** Answer codes are not presented as official unless they
   came from a public source; machine-translated strings are flagged.
 
+## Responsible AI
+
+### What the AI does
+
+It looks at the citizen's photographs and proposes draft answers to factual
+questions about the stream — what the bed is made of, whether the banks are
+hardened, what is growing on the margins — each with a confidence and a
+one-sentence reason pointing at something in the picture.
+
+### What it does not do
+
+- **It never sets the overall rating.** Good / Moderate / Poor is the citizen's
+  alone. The question is not offered to the model, and a suggestion for it is
+  refused by the API even at confidence 1.0.
+- **It never makes a health claim.** StreamLens describes the condition of a
+  stream. It does not diagnose, does not advise, and does not say whether water
+  is safe to touch or drink.
+- **It never identifies people.** The prompt forbids describing people, vehicles
+  or anything else that could identify someone, and photo metadata is destroyed
+  before storage.
+- **It never decides anything.** A suggestion the citizen has not acted on is
+  not submitted. Silence is not consent.
+
+### The three guards
+
+1. **The prompt** tells the model to answer `NS` ("I'm not sure") rather than
+   guess, and that the overall rating does not exist for it.
+2. **The validation gate** checks every returned code against the published
+   question set before a citizen can see it. Invented codes, unknown questions
+   and answers to never-suggest questions are discarded into a `dropped` list
+   that the interface surfaces rather than hides.
+3. **The interface** starts every suggestion unanswered, records the citizen's
+   answer alongside what the AI proposed so disagreement is measurable, and
+   labels itself: a "demo AI (mock)" badge when no model is running, and an
+   "AI unavailable — answer manually" notice when a real provider fails and the
+   offline heuristic stands in. The fallback is never silent.
+
+### How it is evaluated
+
+`eval/run_eval.py` runs a folder of photographs through the real provider using
+the same preparation and validation code as the live API, and scores the result
+against a human labeller's own answers. It reports, per question and overall:
+agreement, unknown (`NS`) rate, the rate of suggestions dropped by validation,
+calibration (mean confidence when right versus when wrong), latency and
+approximate cost. Reports are committed to `eval/reports/`, so a prompt change
+can be argued for with numbers. See [eval/README.md](eval/README.md) for how to
+read them.
+
+### Latest numbers
+
+**None yet — no vision model has been evaluated.** At the time of writing there
+is no API key configured, so the only completed run
+([`eval/reports/assess_v1-dry-run.md`](eval/reports/assess_v1-dry-run.md)) used
+the offline mock heuristic and measures the harness, not a model. It is reported
+here rather than omitted, because an evaluation section with nothing behind it
+would be exactly the kind of claim this project exists to avoid making.
+
+The failure path *has* been verified against the live Gemini endpoint: an
+invalid key produces a correctly classified authentication error, no retry, and
+a clean labelled fallback in under a second.
+
+### Limits to keep in mind when these numbers arrive
+
+- **One labeller**, not a consensus of ecologists. Where the label and the model
+  disagree, the label is not automatically right.
+- **Small sample** — tens of photographs. Per-question rows with a handful of
+  observations are anecdote, not evidence.
+- **Single photo per assessment** in the harness, where the app sends two.
+- **Costs are approximate** and depend on `eval/pricing.json` being current.
+
 ## Data sources
 
 - **Research sites** — `https://api.enora-oah.eu/api/sites/all` (public, no auth).

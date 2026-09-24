@@ -163,6 +163,12 @@ class GeminiProvider:
                     response_mime_type="application/json",
                     response_schema=_Response,
                     temperature=0.2,
+                    # We pass no tools, and the SDK warns about automatic
+                    # function calling being on by default. Turn it off so the
+                    # model has exactly one job: fill in the schema.
+                    automatic_function_calling=types.AutomaticFunctionCallingConfig(
+                        disable=True
+                    ),
                 ),
             ),
             timeout=self.timeout_s,
