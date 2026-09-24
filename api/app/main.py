@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .config import get_settings
 from .models import init_db
-from .routers import assess, catalog, observations
+from .routers import assess, catalog, insights, observations
 
 logging.basicConfig(level=logging.INFO)
 
@@ -51,6 +51,7 @@ def create_app() -> FastAPI:
     app.include_router(catalog.router)
     app.include_router(assess.router)
     app.include_router(observations.router)
+    app.include_router(insights.router)
     return app
 
 

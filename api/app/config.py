@@ -32,6 +32,10 @@ class Settings(BaseSettings):
     # Which prompt in app/ai/prompts/ to use, without the .md.
     assess_prompt: str = "assess_v3"
 
+    # --- Weather ------------------------------------------------------------
+    # How long an Open-Meteo forecast is reused before refetching.
+    weather_cache_seconds: int = 3600
+
     # --- Storage -----------------------------------------------------------
     database_url: str = "sqlite:///./streamlens.db"
     upload_dir: str = "./uploads"

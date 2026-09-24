@@ -94,6 +94,21 @@ class ObservationPhoto(SQLModel, table=True):
     bytes_stored: int = 0
 
 
+class WeatherCache(SQLModel, table=True):
+    """The last Open-Meteo response for a site.
+
+    Cached so the app does not hammer a free service, and kept so that a phone
+    with no signal beside a stream can still show a forecast - clearly marked
+    with when it was fetched.
+    """
+
+    __tablename__ = "weather_cache"
+
+    site_id: str = Field(primary_key=True)
+    payload_json: str = ""
+    fetched_at: datetime = Field(default_factory=_now)
+
+
 # --------------------------------------------------------------------------
 # Engine / session
 # --------------------------------------------------------------------------
