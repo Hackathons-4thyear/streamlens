@@ -9,6 +9,7 @@ from __future__ import annotations
 import pytest
 
 from app.ai import factory
+from app.config import get_settings
 from app.ai.base import ProviderError, ProviderResult, RawSuggestion
 from tests.conftest import blurry_image, dark_image, green_image, sharp_image
 
@@ -85,7 +86,8 @@ def test_suggest_returns_validated_chips(client, site_id, use_provider):
     assert body["dropped"] == []
     assert body["provider"] == "fake"
     assert body["is_mock"] is False
-    assert body["prompt_version"] == "assess_v1"
+    # Whatever prompt the server is configured with, it must report it.
+    assert body["prompt_version"] == get_settings().assess_prompt
     assert "suggestions only" in body["notice"]
 
 

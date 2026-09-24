@@ -125,25 +125,50 @@ read them.
 
 ### Latest numbers
 
-**None yet — no vision model has been evaluated.** At the time of writing there
-is no API key configured, so the only completed run
-([`eval/reports/assess_v1-dry-run.md`](eval/reports/assess_v1-dry-run.md)) used
-the offline mock heuristic and measures the harness, not a model. It is reported
-here rather than omitted, because an evaluation section with nothing behind it
-would be exactly the kind of claim this project exists to avoid making.
+Measured 24 September 2026 on **29 freely-licensed photographs** from Wikimedia
+Commons, against **129 labels**, using **`gemini-3.5-flash-lite`**. Full reports
+in [`eval/reports/`](eval/reports/); the comparison that chose the current
+prompt is [`v1-vs-v2.md`](eval/reports/v1-vs-v2.md).
 
-The failure path *has* been verified against the live Gemini endpoint: an
-invalid key produces a correctly classified authentication error, no retry, and
-a clean labelled fallback in under a second.
+| | `assess_v1` | `assess_v2` (current) |
+|---|---:|---:|
+| Agreement with an independent AI labeller | 89% | **91%** |
+| Suggestions dropped by validation | 0% | **0%** |
+| Said "not sure" | 0% | 2% |
+| Confidence when agreeing / disagreeing | 0.87 / 0.84 | 0.89 / 0.82 |
+| Calibration gap | 0.03 | **0.07** |
+| Stayed silent on images with no watercourse | 9 of 13 | 10 of 13 |
+| Mean latency | 3.8 s | 4.0 s |
+| Approximate cost | — | **$0.002 per photograph** (~$2 per 1,000) |
 
-### Limits to keep in mind when these numbers arrive
+**Read "agreement", not "accuracy".** There were **no human expert labels**.
+The labeller is Claude (the coding agent) viewing each photograph and answering
+only what was clearly visible; the model under test is Gemini. Two AI systems
+agreeing is not the same as either being right, and where they agree they may
+be agreeing on the same mistake. On inspection, of six scored disagreements in
+the baseline, one was a labeller error, two were ambiguous questions and one was
+a scoring artefact - so the headline figure understates compatibility and the
+sample is far too small to make a confident claim in either direction.
 
-- **One labeller**, not a consensus of ecologists. Where the label and the model
-  disagree, the label is not automatically right.
-- **Small sample** — tens of photographs. Per-question rows with a handful of
-  observations are anecdote, not evidence.
-- **Single photo per assessment** in the harness, where the app sends two.
-- **Costs are approximate** and depend on `eval/pricing.json` being current.
+The result worth more than the percentages: **nothing was dropped by validation
+in either run.** Across 173 suggestions the model never invented an answer code
+or answered a question it was not offered. The guard held.
+
+### Limits on those numbers
+
+- **No human expert was involved.** Both the labeller and the model are AI.
+- **Small sample.** 29 photographs, 129 labels, 45-57 scored comparisons. A
+  two-point difference is well inside the noise, and per-question rows with two
+  or three observations are anecdote.
+- **Web photographs, not app submissions.** Images chosen from Commons
+  categories and framed by photographers with other purposes - not phone snaps
+  taken by a volunteer standing on a bank. Thirteen of the 29 turned out not to
+  show a watercourse at all, and were kept deliberately as negative controls.
+- **One photograph per assessment**, where the real flow sends two.
+- **One model, one afternoon.** `gemini-3.6-flash` was unusable throughout
+  (HTTP 503 under sustained load), so these are `gemini-3.5-flash-lite` numbers.
+- **Costs are approximate** and depend on [`eval/pricing.json`](eval/pricing.json)
+  being current.
 
 ## Data sources
 

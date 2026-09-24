@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-09-23T10:49:21Z",
+  "generated_at": "2026-09-24T07:26:05Z",
   "generated_by": "scripts/build_questions.py",
   "synthetic": false,
   "languages": [
@@ -35,7 +35,7 @@
   },
   "unknown_code": "NS",
   "unknown_note": "NS ('I'm not sure') is the unknown answer. The AI is instructed to return NS rather than guess, and NS is always an acceptable citizen answer.",
-  "ai_policy": "Questions with ai_suggestable=false are never suggested by the AI. The overall Good/Moderate/Poor rating is always the citizen's own decision.",
+  "ai_policy": "Questions with ai_suggestable=false are never suggested by the AI. The overall Good/Moderate/Poor rating is always the citizen's own decision. Questions that a single still photograph cannot settle are also marked false and carry a not_suggestable_reason, because a guess with a confidence number attached is worse than silence. The citizen still answers every question.",
   "sections": [
     {
       "id": "channel",
@@ -706,7 +706,7 @@
       "id": "withdrawal",
       "section": "pressures",
       "type": "single",
-      "ai_suggestable": true,
+      "ai_suggestable": false,
       "source": "streamcheck-fhir-docs",
       "label": {
         "en": "Water abstraction",
@@ -758,7 +758,8 @@
           "explain_source": "manual"
         }
       ],
-      "order": 8
+      "order": 8,
+      "not_suggestable_reason": "Absence of evidence: a pump out of frame is invisible."
     },
     {
       "id": "dams",
@@ -1188,7 +1189,7 @@
       "id": "invasiveL",
       "section": "margin_left",
       "type": "single",
-      "ai_suggestable": true,
+      "ai_suggestable": false,
       "source": "streamcheck-fhir-docs",
       "label": {
         "en": "Invasive species, left bank",
@@ -1242,13 +1243,14 @@
           "explain_source": "manual"
         }
       ],
-      "order": 16
+      "order": 16,
+      "not_suggestable_reason": "Species identification from an uncontrolled wide shot."
     },
     {
       "id": "cutsL",
       "section": "margin_left",
       "type": "single",
-      "ai_suggestable": true,
+      "ai_suggestable": false,
       "source": "streamcheck-fhir-docs",
       "label": {
         "en": "Vegetation management, left bank",
@@ -1300,7 +1302,8 @@
           "explain_source": "manual"
         }
       ],
-      "order": 17
+      "order": 17,
+      "not_suggestable_reason": "'Recent' is a time judgement; a photo shows cut stems, not when."
     },
     {
       "id": "imperviousR",
@@ -1499,7 +1502,7 @@
       "id": "invasiveR",
       "section": "margin_right",
       "type": "single",
-      "ai_suggestable": true,
+      "ai_suggestable": false,
       "source": "streamcheck-fhir-docs",
       "label": {
         "en": "Invasive species, right bank",
@@ -1553,13 +1556,14 @@
           "explain_source": "manual"
         }
       ],
-      "order": 21
+      "order": 21,
+      "not_suggestable_reason": "Species identification from an uncontrolled wide shot."
     },
     {
       "id": "cutsR",
       "section": "margin_right",
       "type": "single",
-      "ai_suggestable": true,
+      "ai_suggestable": false,
       "source": "streamcheck-fhir-docs",
       "label": {
         "en": "Vegetation management, right bank",
@@ -1611,7 +1615,8 @@
           "explain_source": "manual"
         }
       ],
-      "order": 22
+      "order": 22,
+      "not_suggestable_reason": "'Recent' is a time judgement; a photo shows cut stems, not when."
     },
     {
       "id": "overall",

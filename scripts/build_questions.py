@@ -518,9 +518,35 @@ SECTIONS = [
 ]
 
 
+
+# --------------------------------------------------------------------------
+# Questions a single still photograph cannot settle
+# --------------------------------------------------------------------------
+#
+# These stay in the assessment - the citizen still answers them - but the AI is
+# never asked, because a guess carrying a confidence number is worse than
+# silence. Added in the assess_v2 round; see eval/assess_v2-proposal.md and the
+# measured baseline in eval/reports/ for the evidence behind each one.
+NOT_PHOTO_ANSWERABLE = {
+    # waterFlow was in this list in the original proposal. The measured baseline
+    # refuted that: the model answered it on 14 of 29 photographs and agreed with
+    # the labeller on 7 of 7 checked, at 0.89 confidence. The distinctions that
+    # matter in practice - DRY and FAS - are plainly visible in a still frame.
+    # Removing it would have deleted the single most-used, best-agreeing question.
+    "invasiveL": "Species identification from an uncontrolled wide shot.",
+    "invasiveR": "Species identification from an uncontrolled wide shot.",
+    "cutsL": "'Recent' is a time judgement; a photo shows cut stems, not when.",
+    "cutsR": "'Recent' is a time judgement; a photo shows cut stems, not when.",
+    "withdrawal": "Absence of evidence: a pump out of frame is invisible.",
+}
+
 def main() -> int:
     for order, question in enumerate(QUESTIONS, start=1):
         question["order"] = order
+        reason = NOT_PHOTO_ANSWERABLE.get(question["id"])
+        if reason:
+            question["ai_suggestable"] = False
+            question["not_suggestable_reason"] = reason
 
     doc = {
         "version": "1.0.0",
@@ -566,7 +592,10 @@ def main() -> int:
         ),
         "ai_policy": (
             "Questions with ai_suggestable=false are never suggested by the AI. The overall "
-            "Good/Moderate/Poor rating is always the citizen's own decision."
+            "Good/Moderate/Poor rating is always the citizen's own decision. Questions that "
+            "a single still photograph cannot settle are also marked false and carry a "
+            "not_suggestable_reason, because a guess with a confidence number attached is "
+            "worse than silence. The citizen still answers every question."
         ),
         "sections": SECTIONS,
         "glossary": GLOSSARY,

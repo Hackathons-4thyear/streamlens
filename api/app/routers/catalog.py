@@ -5,7 +5,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, Query
 
 from ..ai.factory import get_provider
-from ..ai.gemini import PROMPT_VERSION
+from ..ai.gemini import prompt_version
 from ..config import Settings, get_settings
 from ..questions import QuestionSet, get_questions
 from ..schemas import HealthResponse, SitesResponse
@@ -31,7 +31,7 @@ def health(
         ai_is_mock=provider.is_mock,
         questions=len(questions.questions),
         sites=len(site_set.sites),
-        prompt_version=PROMPT_VERSION,
+        prompt_version=prompt_version(),
     )
 
 

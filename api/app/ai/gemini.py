@@ -24,6 +24,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import random
 from pathlib import Path
 
 from pydantic import BaseModel, Field
@@ -39,8 +40,24 @@ from .base import (
 
 logger = logging.getLogger(__name__)
 
-PROMPT_PATH = Path(__file__).parent / "prompts" / "assess_v1.md"
-PROMPT_VERSION = "assess_v1"
+PROMPTS_DIR = Path(__file__).parent / "prompts"
+
+
+def prompt_version() -> str:
+    """The prompt the server is configured to use, e.g. 'assess_v1'."""
+    from ..config import get_settings  # noqa: PLC0415 - avoids a circular import
+
+    return get_settings().assess_prompt
+
+
+def prompt_path(version: str | None = None) -> Path:
+    return PROMPTS_DIR / f"{version or prompt_version()}.md"
+
+
+# Kept as a module attribute so existing imports keep working; it reflects the
+# configured prompt at import time.
+PROMPT_VERSION = prompt_version()
+PROMPT_PATH = prompt_path()
 
 # Substrings that mark a failure as permanent. Retrying these is pointless.
 _PERMANENT_MARKERS = (
@@ -57,9 +74,19 @@ _PERMANENT_MARKERS = (
 
 
 class _Suggestion(BaseModel):
-    """The shape we require back from the model."""
+    """The shape we require back from the model.
+
+    `observation` is a thinking aid introduced in assess_v2: naming what is
+    visible BEFORE choosing a code makes the answer follow the evidence rather
+    than the reason rationalising a decision already made. It is not shown to
+    the citizen. Optional, so assess_v1 still validates.
+    """
 
     question_id: str = Field(description="Exact question id from the list.")
+    observation: str = Field(
+        default="",
+        description="What is visible, as a short clause with no conclusion in it.",
+    )
     codes: list[str] = Field(description="Exact answer codes. One for choose-ONE questions.")
     confidence: float = Field(ge=0.0, le=1.0)
     reason: str = Field(description="One short sentence for the volunteer, max 25 words.")
@@ -70,14 +97,17 @@ class _Response(BaseModel):
     note: str = ""
 
 
-def load_prompt() -> str:
+def load_prompt(version: str | None = None) -> str:
     """Read the prompt from disk at call time, so editing it needs no restart."""
-    return PROMPT_PATH.read_text(encoding="utf-8")
+    path = prompt_path(version)
+    if not path.exists():
+        raise ProviderError(f"no prompt file at {path}", "other")
+    return path.read_text(encoding="utf-8")
 
 
-def render_prompt(context: AssessContext) -> str:
+def render_prompt(context: AssessContext, version: str | None = None) -> str:
     return (
-        load_prompt()
+        load_prompt(version)
         .replace("{{SITE_NAME}}", context.site_name or "unknown")
         .replace("{{CITY}}", context.city or "unknown")
         .replace("{{COUNTRY}}", context.country or "unknown")
@@ -113,14 +143,26 @@ class GeminiProvider:
         *,
         timeout_s: float = 20.0,
         retries: int = 1,
+        backoff_base_s: float = 0.6,
     ) -> None:
         if not api_key:
             raise ValueError("GeminiProvider needs an API key")
         self.model = model
         self.timeout_s = timeout_s
         self.retries = max(0, retries)
+        self.backoff_base_s = backoff_base_s
         self._api_key = api_key
         self._client = None
+
+    def backoff_for(self, attempt: int) -> float:
+        """Exponential backoff with jitter, in seconds, before `attempt` + 1.
+
+        Retrying an overloaded model instantly just adds to the overload, and
+        503 'high demand' is the failure this is most likely to meet.
+        """
+        if self.backoff_base_s <= 0:
+            return 0.0
+        return self.backoff_base_s * (2 ** (attempt - 1)) * (0.7 + random.random() * 0.6)
 
     # --- SDK plumbing -------------------------------------------------------
 
@@ -189,9 +231,13 @@ class GeminiProvider:
                 kind = classify_failure(exc)
                 last = ProviderError(str(exc) or exc.__class__.__name__, kind)
                 if attempt < attempts and is_retryable(kind):
+                    delay = self.backoff_for(attempt)
                     logger.warning(
-                        "Gemini attempt %d/%d failed (%s); retrying.", attempt, attempts, kind
+                        "Gemini attempt %d/%d failed (%s); retrying in %.1fs.",
+                        attempt, attempts, kind, delay,
                     )
+                    if delay:
+                        await asyncio.sleep(delay)
                     continue
                 raise last from exc
 

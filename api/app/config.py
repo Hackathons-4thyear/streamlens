@@ -22,11 +22,15 @@ class Settings(BaseSettings):
     # --- AI provider -------------------------------------------------------
     ai_provider: str = "mock"
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-3.5-flash-lite"
     # A citizen standing in the rain does not wait indefinitely for a model.
     gemini_timeout_s: float = 20.0
     # Number of RETRIES after the first attempt, so 1 means two attempts.
     gemini_retries: int = 1
+    # Base for exponential backoff between retries, with jitter.
+    gemini_backoff_base_s: float = 0.6
+    # Which prompt in app/ai/prompts/ to use, without the .md.
+    assess_prompt: str = "assess_v2"
 
     # --- Storage -----------------------------------------------------------
     database_url: str = "sqlite:///./streamlens.db"

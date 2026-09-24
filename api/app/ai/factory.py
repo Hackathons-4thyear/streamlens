@@ -51,6 +51,7 @@ def get_provider(settings: Settings) -> VisionProvider:
                 settings.gemini_model,
                 timeout_s=settings.gemini_timeout_s,
                 retries=settings.gemini_retries,
+                backoff_base_s=settings.gemini_backoff_base_s,
             )
         except Exception as exc:  # noqa: BLE001 - never break the flow over a provider
             logger.warning("Could not start the Gemini provider (%s); using the mock.", exc)

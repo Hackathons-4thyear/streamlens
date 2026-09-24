@@ -89,9 +89,18 @@ class MockProvider:
         leafy = green > 0.35
         hard = saturation < 0.18
 
+        # Only ever propose questions the catalogue still allows the AI to
+        # answer. Without this the mock keeps suggesting retired questions and
+        # the validation gate silently discards them.
+        from ..questions import get_questions  # noqa: PLC0415 - avoids a cycle
+
+        allowed = {q.id for q in get_questions().suggestable}
+
         out: list[RawSuggestion] = []
 
         def add(qid: str, codes: list[str], base: float, reason: str) -> None:
+            if qid not in allowed:
+                return
             out.append(RawSuggestion(qid, codes, conf(base), reason))
 
         # Channel and banks: grey and unsaturated reads as engineered.

@@ -4,14 +4,34 @@
     "Cost figures in the evaluation reports are APPROXIMATE and depend on these",
     "numbers being current. Re-check them before quoting a cost anywhere that",
     "matters, and update 'checked' when you do.",
-    "Thinking tokens are billed as output, and the harness counts them that way."
+    "Thinking tokens are billed as output, and the harness counts them that way.",
+    "Gemini 3.6 Flash is promotionally priced through 2026-12-31; it doubles on 2027-01-01. Costs below use the promotional rate."
   ],
   "source": "https://ai.google.dev/gemini-api/docs/pricing",
   "checked": "2026-09-24",
   "currency": "USD",
   "per_million_tokens": {
-    "gemini-2.5-flash": { "input": 0.3, "output": 2.5 },
-    "gemini-2.5-flash-lite": { "input": 0.1, "output": 0.4 },
-    "_default": { "input": 0.3, "output": 2.5 }
+    "gemini-3.6-flash": {
+      "input": 0.75,
+      "output": 3.75,
+      "note": "promotional to 2026-12-31; 1.50/7.50 from 2027-01-01"
+    },
+    "gemini-3.5-flash": {
+      "input": 1.5,
+      "output": 9.0
+    },
+    "gemini-3.5-flash-lite": {
+      "input": 0.3,
+      "output": 2.5
+    },
+    "gemini-2.5-flash": {
+      "input": 0.3,
+      "output": 2.5,
+      "note": "retired for new API keys as of 2026-09"
+    },
+    "_default": {
+      "input": 0.75,
+      "output": 3.75
+    }
   }
 }

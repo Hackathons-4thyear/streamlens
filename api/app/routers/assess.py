@@ -15,7 +15,7 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 
 from ..ai.base import AssessContext, ImageInput
 from ..ai.factory import suggest_with_fallback
-from ..ai.gemini import PROMPT_VERSION
+from ..ai.gemini import prompt_version
 from ..config import Settings, get_settings
 from ..imaging import PreparedPhoto, prepare
 from ..questions import QuestionSet, get_questions
@@ -229,7 +229,7 @@ async def suggest(
         attempts=outcome.attempts,
         latency_ms=outcome.latency_ms,
         usage=UsageOut(**vars(outcome.usage)),
-        prompt_version=PROMPT_VERSION,
+        prompt_version=prompt_version(),
         provider_note=outcome.result.note,
         generated_at=datetime.now(timezone.utc),
         photo_quality=[_quality_out(p) for p in prepared],

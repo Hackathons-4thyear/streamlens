@@ -50,7 +50,7 @@ sys.path.insert(0, str(REPO_ROOT / "api"))
 
 from app.ai.base import AssessContext, ImageInput  # noqa: E402
 from app.ai.factory import suggest_with_fallback  # noqa: E402
-from app.ai.gemini import PROMPT_VERSION  # noqa: E402
+from app.ai.gemini import prompt_version  # noqa: E402
 from app.config import get_settings  # noqa: E402
 from app.imaging import prepare  # noqa: E402
 from app.questions import get_questions  # noqa: E402
@@ -135,6 +135,19 @@ def read_labels(path: Path | None = None) -> dict[tuple[str, str], set[str]]:
     return labels
 
 
+def read_usable(path: Path | None = None) -> dict[str, bool]:
+    """Which photographs the labeller judged to show a watercourse at all."""
+    target = path or LABELS_PATH
+    if not target.exists():
+        return {}
+    usable: dict[str, bool] = {}
+    with target.open(encoding="utf-8", newline="") as fh:
+        for row in csv.DictReader(fh):
+            flag = (row.get("photo_usable") or "yes").strip().lower()
+            usable[row["photo"]] = flag != "no"
+    return usable
+
+
 def load_pricing() -> dict:
     with PRICING_PATH.open(encoding="utf-8") as fh:
         return json.load(fh)
@@ -212,10 +225,21 @@ async def run_photo(path: Path, site: dict, settings, questions) -> PhotoRun:
     return run
 
 
+def scorable(runs: list[PhotoRun]) -> list[PhotoRun]:
+    """Runs that actually came from the configured model.
+
+    A degraded run is MOCK output that stood in after the provider failed.
+    Scoring it as the model's would silently mix a colour heuristic into the
+    model's numbers - which is exactly the kind of quiet contamination this
+    whole harness exists to catch.
+    """
+    return [r for r in runs if r.ok and not r.degraded]
+
+
 def score(runs: list[PhotoRun], labels: dict) -> dict[str, QuestionStats]:
     stats: dict[str, QuestionStats] = defaultdict(lambda: QuestionStats(""))
     for run in runs:
-        if not run.ok:
+        if not run.ok or run.degraded:
             continue
         for chip in run.chips:
             qid = chip["question_id"]
@@ -269,10 +293,11 @@ def build_report(
     settings,
     site: dict,
     prompt_version: str,
+    usable: dict[str, bool] | None = None,
 ) -> str:
-    good = [r for r in runs if r.ok]
+    good = scorable(runs)
     failed = [r for r in runs if not r.ok]
-    degraded = [r for r in good if r.degraded]
+    degraded = [r for r in runs if r.ok and r.degraded]
     latencies = [r.latency_ms for r in good if r.latency_ms]
 
     total_chips = sum(s.suggested for s in stats.values())
@@ -315,8 +340,11 @@ def build_report(
         add("> latency describe the harness and the validation gate, not a model.")
         add("")
     if degraded:
-        add(f"> **{len(degraded)} of {len(good)} calls fell back to the mock provider.**")
-        add(f"> First reason given: {degraded[0].degraded_reason}")
+        add(f"> **{len(degraded)} photographs fell back to the mock provider and are")
+        add(f"> EXCLUDED from every figure below.** They are mock output, not the")
+        add(f"> model's, and scoring them would contaminate the result. Excluded: "
+            f"{', '.join(sorted(r.photo for r in degraded))}. "
+            f"Reason: {degraded[0].degraded_reason}")
         add("")
     if not labels:
         add("> **No labels filled in yet.** Agreement and calibration are blank.")
@@ -331,7 +359,8 @@ def build_report(
     add(f"| Prompt | `{prompt_version}` |")
     add(f"| Provider | `{good[0].provider if good else 'n/a'}` |")
     add(f"| Model | `{model}` |")
-    add(f"| Photos | {len(runs)} ({len(failed)} could not be read) |")
+    add(f"| Photos scored | {len(good)} of {len(runs)} "
+        f"({len(failed)} unreadable, {len(degraded)} fell back to the mock) |")
     add(f"| Site context | {site.get('name', '?')}, {site.get('city', '?')} |")
     add(f"| Questions offered to the model | {suggestable} |")
     add(f"| Labelled answers | {total_labelled} |")
@@ -450,6 +479,31 @@ def build_report(
             add(f"- `{run.photo}`: {run.error}")
         add("")
 
+    # --- negative controls ------------------------------------------------
+    usable = usable or {}
+    controls = [r for r in good if usable.get(r.photo) is False]
+    if controls:
+        add("## Negative controls")
+        add("")
+        add(f"{len(controls)} of the {len(good)} images do not show a watercourse at "
+            "all - artwork, diagrams, plant close-ups, dry hillsides. The prompt tells "
+            "the model to stay silent on those. This counts whether it did.")
+        add("")
+        silent = [r for r in controls if not r.chips]
+        add(f"- **Stayed silent on {len(silent)} of {len(controls)}** "
+            f"({len(silent) / len(controls) * 100:.0f}%).")
+        noisy = sorted((r for r in controls if r.chips),
+                       key=lambda r: -len(r.chips))
+        if noisy:
+            add(f"- Offered suggestions anyway on {len(noisy)}:")
+            add("")
+            add("| Photo | Suggestions | Highest confidence |")
+            add("|---|---:|---:|")
+            for r in noisy[:12]:
+                top = max((c["confidence"] for c in r.chips), default=0)
+                add(f"| {r.photo} | {len(r.chips)} | {top:.2f} |")
+        add("")
+
     add("## How to read this")
     add("")
     add("- **Dropped rate is the first thing to look at.** Anything above zero means")
@@ -469,6 +523,7 @@ def build_report(
 
 async def main_async(args) -> int:
     settings = get_settings()
+    PROMPT_VER = prompt_version()
     questions = get_questions()
     sites = get_sites()
 
@@ -501,21 +556,22 @@ async def main_async(args) -> int:
         )
 
     stats = score(runs, labels)
+    usable = read_usable(Path(args.labels) if args.labels else None)
     report = build_report(
-        runs, stats, labels, questions, pricing, settings, site, PROMPT_VERSION
+        runs, stats, labels, questions, pricing, settings, site, PROMPT_VER, usable
     )
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     suffix = f"-{args.label_suffix}" if args.label_suffix else ""
-    report_path = REPORTS_DIR / f"{PROMPT_VERSION}{suffix}.md"
+    report_path = REPORTS_DIR / f"{PROMPT_VER}{suffix}.md"
     report_path.write_text(report + "\n", encoding="utf-8")
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    raw_path = REPORTS_DIR / f"{PROMPT_VERSION}{suffix}-{stamp}.json"
+    raw_path = REPORTS_DIR / f"{PROMPT_VER}{suffix}-{stamp}.json"
     raw_path.write_text(
         json.dumps(
             {
-                "prompt_version": PROMPT_VERSION,
+                "prompt_version": PROMPT_VER,
                 "generated_at": stamp,
                 "provider": settings.ai_provider,
                 "labels_filled": len(labels),
@@ -533,6 +589,27 @@ async def main_async(args) -> int:
     return 0
 
 
+def rebuild(json_path: Path, args) -> int:
+    """Regenerate a report from a saved raw run - no API calls."""
+    doc = json.loads(json_path.read_text(encoding="utf-8"))
+    runs = [PhotoRun(**row) for row in doc["runs"]]
+    settings = get_settings()
+    questions = get_questions()
+    sites = get_sites()
+    site = sites.get(args.site) or (sites.all()[0] if sites.all() else {})
+    labels = read_labels(Path(args.labels) if args.labels else None)
+    usable = read_usable(Path(args.labels) if args.labels else None)
+    stats = score(runs, labels)
+    version = doc.get("prompt_version", json_path.stem.split("-")[0])
+    report = build_report(runs, stats, labels, questions, load_pricing(),
+                          settings, site, version, usable)
+    out = json_path.with_suffix("").with_name(
+        json_path.name.split("-2")[0] + ".md")
+    out.write_text(report + chr(10), encoding="utf-8")
+    print(f"Rebuilt {out} from {json_path.name}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--limit", type=int, default=None,
@@ -543,9 +620,14 @@ def main() -> int:
                         help="suffix for the report filename, e.g. 'dry-run'")
     parser.add_argument("--photos-dir", default="",
                         help="read photos from here instead of eval/photos/")
+    parser.add_argument("--rebuild", default="",
+                        help="regenerate a report from a saved raw JSON run")
     parser.add_argument("--labels", default="",
                         help="read labels from here instead of eval/labels.csv")
-    return asyncio.run(main_async(parser.parse_args()))
+    args = parser.parse_args()
+    if args.rebuild:
+        return rebuild(Path(args.rebuild), args)
+    return asyncio.run(main_async(args))
 
 
 if __name__ == "__main__":
