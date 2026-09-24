@@ -31,6 +31,11 @@ POINTS_PATH = DATA_DIR / "points_rules.json"
 # the payload as well, so the interface cannot quietly drop the caveat.
 MIN_GROUP = 10
 
+# A "team" of one person is an individual ranking by the back door, which is the
+# thing the team-only rule exists to prevent. Such teams are computed but held
+# back from the published ranking, and the response says how many were held.
+MIN_TEAM_MEMBERS = 2
+
 POSITIVE_EMOTIONS = ("joy", "serenity")
 
 
@@ -240,8 +245,29 @@ def leaderboard(
         )
         for name, data in teams.items()
     ]
-    standings.sort(key=lambda t: (-t.points, -t.sites_covered, t.team))
-    return standings
+    ranked = [t for t in standings if t.members >= MIN_TEAM_MEMBERS]
+    ranked.sort(key=lambda t: (-t.points, -t.sites_covered, t.team))
+    return ranked
+
+
+def withheld_teams(
+    observations: list[ObservationInput],
+    scored: list[ScoredObservation],
+    city: str | None = None,
+    site_city: dict[str, str] | None = None,
+) -> int:
+    """How many teams were too small to publish. Shown, never silently dropped."""
+    site_city = site_city or {}
+    members: dict[str, set[str]] = defaultdict(set)
+    for observation in observations:
+        team = (observation.team or "").strip()
+        if not team:
+            continue
+        where = site_city.get(observation.site_id, "")
+        if city and where.lower() != city.lower():
+            continue
+        members[team].add(observation.client_id)
+    return sum(1 for people in members.values() if len(people) < MIN_TEAM_MEMBERS)
 
 
 def coverage(

@@ -29,8 +29,10 @@ from ..points import (
     ObservationInput,
     coverage,
     get_points_rules,
+    MIN_TEAM_MEMBERS,
     leaderboard,
     score_observations,
+    withheld_teams,
     wellbeing,
 )
 from ..questions import QuestionSet, get_questions
@@ -233,6 +235,7 @@ def team_leaderboard(
     site_city = {s["id"]: s.get("city", "") for s in site_set.all()}
 
     standings = leaderboard(inputs, scored, city=city, site_city=site_city)
+    withheld = withheld_teams(inputs, scored, city=city, site_city=site_city)
     rules = get_points_rules()
     return {
         "scope": scope,
@@ -240,6 +243,12 @@ def team_leaderboard(
         "teams": [asdict(t) for t in standings],
         "team_count": len(standings),
         "individuals_ranked": False,
+        "min_team_members": MIN_TEAM_MEMBERS,
+        "teams_withheld_too_small": withheld,
+        "why_withheld": (
+            f"Teams with fewer than {MIN_TEAM_MEMBERS} people are not ranked: a team "
+            "of one is an individual ranking by another name."
+        ),
         "why_teams_only": (
             "Ranking individuals on a scientific dataset rewards whoever submits "
             "most, and the fastest way to submit most is to stop looking properly."

@@ -13,8 +13,10 @@ from app.routers.assess import validate_suggestions
 # --------------------------------------------------------------------------
 
 def test_catalogue_loads(questions):
-    assert len(questions.questions) == 23
+    # 23 questions from the OAH-derived set, plus our own 'litter'.
+    assert len(questions.questions) == 24
     assert questions.get("channelType") is not None
+    assert questions.get("litter") is not None
 
 
 def test_every_question_has_options_and_provenance(questions):
