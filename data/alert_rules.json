@@ -1,0 +1,191 @@
+{
+  "version": "1.0.0",
+  "synthetic": false,
+  "purpose": "48-hour advisory alerts for a stream site, from forecast weather and recent citizen observations.",
+  "how_to_read": [
+    "These rules are deliberately simple and written to be read by a scientist, not by a programmer. Nothing here is a model: every alert is the result of the arithmetic below, and every alert shows the numbers that produced it.",
+    "A rule fires only when EVERY one of its conditions is met. The message template is filled with the actual measured and forecast values, so a reader can always check the reasoning.",
+    "Each threshold carries its own source. Where no published figure exists for a threshold we needed, the source says 'project judgement' and explains the reasoning, rather than borrowing an unrelated citation to look authoritative."
+  ],
+  "language_rules": {
+    "never_say": [
+      "unsafe",
+      "safe",
+      "dangerous",
+      "contaminated",
+      "you will get ill",
+      "health risk to you",
+      "diagnosis"
+    ],
+    "always_include": "Check official local advice.",
+    "rationale": "StreamLens describes the condition of a stream and the weather forecast for it. It is not a health service, it has no water sample, and it must never imply otherwise. Alerts describe conditions and what they can mean in general; they never tell an individual what will happen to them."
+  },
+  "defaults": {
+    "forecast_hours": 48,
+    "cache_seconds": 3600,
+    "weather_source": {
+      "name": "Open-Meteo forecast API",
+      "url": "https://open-meteo.com/",
+      "licence": "CC-BY-4.0",
+      "note": "No API key required. Cached for one hour; the last cached value is served when offline, with its timestamp shown."
+    }
+  },
+  "rules": [
+    {
+      "id": "sewage_overflow_risk",
+      "name": "Possible sewer overflow after heavy rain",
+      "severity": "high",
+      "plain_language_condition": "Heavy rain is forecast in the next 48 hours AND somebody reported sewage or a polluted pipe at this site recently.",
+      "why": "Where a sewer carries both foul water and rainwater, heavy rain can exceed its capacity and the overflow discharges to the stream. A site where citizens have already seen sewage or a discharging pipe is more likely to be on such a network.",
+      "inputs": [
+        {
+          "key": "rain_mm_48h",
+          "from": "Open-Meteo, sum of hourly precipitation over the next 48 hours at the site coordinates",
+          "unit": "mm"
+        },
+        {
+          "key": "sewage_reports",
+          "from": "citizen-confirmed answers at this site: sewage = Y or pollutedPipes = Y",
+          "unit": "count of observations"
+        }
+      ],
+      "thresholds": [
+        {
+          "key": "rain_mm_48h",
+          "operator": ">=",
+          "value": 20,
+          "unit": "mm",
+          "source": "project judgement",
+          "source_note": "There is no pan-European rainfall figure that defines when a combined sewer overflows: it depends entirely on the local network, its storage and how wet the ground already is. The UK Met Office moved from fixed millimetre thresholds to impact-based warnings in 2011, so there is no current national number to borrow either. 20 mm over 48 hours is our own conservative trigger for 'worth mentioning', chosen to fire on a genuinely wet couple of days rather than ordinary rain. A municipality should replace it with the figure their own network is known to spill at."
+        },
+        {
+          "key": "sewage_reports",
+          "operator": ">=",
+          "value": 1,
+          "unit": "observations",
+          "source": "project judgement",
+          "source_note": "One credible citizen report is enough to make the combination worth flagging, because the alert only advises caution and points at official sources."
+        },
+        {
+          "key": "reports_within_days",
+          "operator": "<=",
+          "value": 14,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "Two weeks keeps the signal recent without discarding a report made on the last visit to a site that is checked fortnightly."
+        }
+      ],
+      "message_template": "{rain_mm_48h} mm of rain is forecast here over the next 48 hours, and {sewage_reports} visitor report(s) in the last {reports_within_days} days mentioned sewage or a discharging pipe at this site. Where sewers carry rainwater as well as foul water, heavy rain can cause them to overflow into the stream. Many authorities advise avoiding contact with affected water for around 72 hours after such an event. Check official local advice.",
+      "advice_sources": [
+        {
+          "claim": "around 72 hours after the event",
+          "source": "Directive 2006/7/EC of the European Parliament and of the Council of 15 February 2006 concerning the management of bathing water quality, Article 2, definition of 'short-term pollution'",
+          "quote": "contamination ... not normally expected to affect bathing water quality for more than approximately 72 hours",
+          "url": "https://eur-lex.europa.eu/eli/dir/2006/7/oj",
+          "note": "The Directive governs designated bathing waters, not urban streams generally. It is cited here for its definition of how long rainfall-driven contamination is normally expected to persist, which is the basis for the 72-hour figure in the message. It is not a statement about this stream."
+        }
+      ]
+    },
+    {
+      "id": "mosquito_breeding_conditions",
+      "name": "Conditions that suit mosquito breeding",
+      "severity": "medium",
+      "plain_language_condition": "Warm weather is forecast over the next 48 hours AND the water here was recently reported as standing or the channel as dry.",
+      "why": "Mosquitoes lay in water that does not move. Warmth speeds larval development; in cool water it effectively stops. Warm weather plus standing water is the combination that turns a stagnant reach into a breeding site.",
+      "inputs": [
+        {
+          "key": "temp_max_c",
+          "from": "Open-Meteo, maximum 2 m air temperature over the next 48 hours at the site coordinates",
+          "unit": "degrees Celsius"
+        },
+        {
+          "key": "standing_reports",
+          "from": "citizen-confirmed answers at this site: waterFlow = STA or waterFlow = DRY",
+          "unit": "count of observations"
+        }
+      ],
+      "thresholds": [
+        {
+          "key": "temp_max_c",
+          "operator": ">=",
+          "value": 20,
+          "unit": "degrees Celsius",
+          "source": "project judgement, informed by published larval development rates",
+          "source_note": "Published work on Culex development shows development essentially halting below about 10 degrees C and proceeding rapidly at 25-30 degrees C, with larvae reaching adulthood in roughly five to eight days at 30 degrees C. 20 degrees C is our own trigger, set between 'development has stopped' and 'development is fast', so the alert fires while there is still time to act rather than once larvae have emerged. It is not a threshold from the literature.",
+          "literature": [
+            {
+              "claim": "development essentially halts below about 10 degrees C; rapid at 25-30 degrees C; roughly 5-8 days to adulthood at 30 degrees C",
+              "source": "Influence of rearing-water temperature on life stages' vector attributes, distribution and utilisation of metabolic reserves in Culex quinquefasciatus (Diptera: Culicidae), The Journal of Basic and Applied Zoology, 2018",
+              "url": "https://basicandappliedzoology.springeropen.com/articles/10.1186/s41936-018-0045-3"
+            }
+          ]
+        },
+        {
+          "key": "standing_reports",
+          "operator": ">=",
+          "value": 1,
+          "unit": "observations",
+          "source": "project judgement",
+          "source_note": "One report of standing or dry conditions is enough, since the alert only describes conditions and suggests looking."
+        },
+        {
+          "key": "reports_within_days",
+          "operator": "<=",
+          "value": 21,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "Three weeks, because a reach that was standing recently often still is, and because larval development takes about a week in warm water."
+        }
+      ],
+      "message_template": "Up to {temp_max_c} degrees C is forecast here over the next 48 hours, and {standing_reports} visitor report(s) in the last {reports_within_days} days described the water as standing or the channel as dry. Still, warm water is where mosquitoes breed; larvae need roughly a week of undisturbed standing water to develop. Removing standing water in containers nearby is the usual first step. Check official local advice.",
+      "advice_sources": []
+    },
+    {
+      "id": "debris_blockage_watch",
+      "name": "Debris or flooding watch at a barrier",
+      "severity": "medium",
+      "plain_language_condition": "Heavy rain is forecast in the next 48 hours AND this site has a reported barrier or fallen wood in the channel.",
+      "why": "Rain raises the flow and moves loose material downstream. Where a weir, culvert or fallen tree already narrows the channel, debris collects against it, which can worsen local flooding and damage the structure.",
+      "inputs": [
+        {
+          "key": "rain_mm_48h",
+          "from": "Open-Meteo, sum of hourly precipitation over the next 48 hours at the site coordinates",
+          "unit": "mm"
+        },
+        {
+          "key": "obstruction_reports",
+          "from": "citizen-confirmed answers at this site: dams = Y, or fallenBiomass includes FT or FB",
+          "unit": "count of observations"
+        }
+      ],
+      "thresholds": [
+        {
+          "key": "rain_mm_48h",
+          "operator": ">=",
+          "value": 25,
+          "unit": "mm",
+          "source": "project judgement",
+          "source_note": "Set slightly above the sewer-overflow trigger because debris movement needs enough flow to lift and carry material, not merely a wet spell. As with that rule, no published pan-European figure defines this, and a local authority should substitute a threshold calibrated to the catchment."
+        },
+        {
+          "key": "obstruction_reports",
+          "operator": ">=",
+          "value": 1,
+          "unit": "observations",
+          "source": "project judgement",
+          "source_note": "One reported barrier or fallen tree is enough for a watch-level message."
+        },
+        {
+          "key": "reports_within_days",
+          "operator": "<=",
+          "value": 60,
+          "unit": "days",
+          "source": "project judgement",
+          "source_note": "Two months, because a weir or a fallen trunk is a lasting feature, unlike a discharge or a dry spell."
+        }
+      ],
+      "message_template": "{rain_mm_48h} mm of rain is forecast here over the next 48 hours, and {obstruction_reports} visitor report(s) in the last {reports_within_days} days noted a barrier or fallen wood in the channel. Rising flow can pile debris against an obstruction, which can worsen local flooding. Do not attempt to clear it yourself. Check official local advice.",
+      "advice_sources": []
+    }
+  ]
+}

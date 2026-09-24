@@ -1,0 +1,845 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-09-24T08:24:32Z",
+  "generated_by": "scripts/build_measures.py",
+  "synthetic": false,
+  "catalogue": {
+    "title": "D2.4 Catalogue of measures for urban aquatic ecosystems rehabilitation",
+    "authors": "Dias, M., Serra, S.R.Q., Feio, M.J. (University of Coimbra)",
+    "project": "OneAquaHealth, Horizon Europe, Grant Agreement 101086521",
+    "date": "2025-12-22",
+    "doi": "10.5281/zenodo.20040211",
+    "url": "https://doi.org/10.5281/zenodo.20040211",
+    "licence": "CC-BY-4.0",
+    "page_note": "Page numbers are the printed document pages from the catalogue's own table of contents. In this PDF, printed page N is sheet N+2."
+  },
+  "verification": "verified against the PDF on 2026-09-24",
+  "provenance_note": "Measure names, sections and page numbers are from the catalogue. The mapping from observable problems to measures, the plain-language descriptions, the health co-benefit tags and the effort estimates are ours and are marked 'project judgement (StreamLens)'. The catalogue links rehabilitation to health in general terms at p.132 rather than measure by measure.",
+  "health_note": "Co-benefit tags describe why a measure may be good for people in general terms - shade, fewer mosquito breeding sites, a place worth walking to. They are not medical claims and must never be presented as any.",
+  "measures": [
+    {
+      "id": "passive_riparian",
+      "name": "Let the bank vegetation grow back on its own",
+      "type": "nature-based",
+      "plain_language": "Stop mowing and clearing a strip along the bank and let whatever grows there come back by itself. The cheapest measure in the catalogue.",
+      "ecosystem_benefit": "Shade, bank stability, leaf litter as food, cover for animals.",
+      "health_cobenefits": [
+        "cooling",
+        "wellbeing"
+      ],
+      "effort": "low",
+      "source": {
+        "catalogue_name": "Passive riparian vegetation: allowing natural regeneration",
+        "section": "4.1.1",
+        "page": 32,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "active_riparian",
+      "name": "Replant the bank with native trees and shrubs",
+      "type": "nature-based",
+      "plain_language": "Plant native trees and shrubs along the bank where nothing is regenerating on its own.",
+      "ecosystem_benefit": "Shade that cools the water, roots that hold the bank, habitat and a corridor for wildlife.",
+      "health_cobenefits": [
+        "cooling",
+        "wellbeing",
+        "recreation"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Active riparian vegetation restoration",
+        "section": "4.1.2",
+        "page": 33,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "riparian_buffer",
+      "name": "Keep a planted buffer strip between the town and the water",
+      "type": "nature-based",
+      "plain_language": "A planted strip between the built-up area and the water, even a narrow one, to filter what runs off the land.",
+      "ecosystem_benefit": "Filters runoff before it reaches the water; buffers the channel from what happens on the land beside it.",
+      "health_cobenefits": [
+        "cooling",
+        "wellbeing"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Constrained riparian vegetation corridors (buffers)",
+        "section": "4.1.3",
+        "page": 37,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "sewer_improvements",
+      "name": "Fix the sewer connections and point discharges",
+      "type": "structural",
+      "plain_language": "Find and fix misconnected or leaking pipes, and reduce discharges from the sewer network into the stream.",
+      "ecosystem_benefit": "Removes the pollution at source rather than treating it downstream; the first-line measure for foul water.",
+      "health_cobenefits": [
+        "vector control",
+        "recreation"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Sewer system and point-source improvements",
+        "section": "4.2.2",
+        "page": 42,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "self_purification",
+      "name": "Help the stream clean itself",
+      "type": "nature-based",
+      "plain_language": "Restore the riffles, gravels and plants that let a stream break down pollutants through its own biology.",
+      "ecosystem_benefit": "Higher oxygen and more biological processing of nutrients.",
+      "health_cobenefits": [
+        "recreation"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "In-stream self-purification enhancement",
+        "section": "4.2.1",
+        "page": 41,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "litter_control",
+      "name": "Litter, plastic and oil control",
+      "type": "structural",
+      "plain_language": "Traps, screens and regular clean-ups, together with stopping litter entering from the street drains in the first place.",
+      "ecosystem_benefit": "Less physical harm to animals; fewer pollutants leaching into the water.",
+      "health_cobenefits": [
+        "wellbeing",
+        "recreation"
+      ],
+      "effort": "low",
+      "source": {
+        "catalogue_name": "Litter, plastic, and hydrocarbon control",
+        "section": "4.2.3",
+        "page": 43,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "natural_wwtp",
+      "name": "Treat waste water with a constructed wetland",
+      "type": "nature-based",
+      "plain_language": "A reed bed or constructed wetland that treats waste water using plants and soil instead of a chemical plant.",
+      "ecosystem_benefit": "Removes nutrients and pathogens while itself being habitat.",
+      "health_cobenefits": [
+        "vector control",
+        "wellbeing"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Natural wastewater treatment plants",
+        "section": "4.7.1",
+        "page": 105,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "floating_wetland",
+      "name": "Floating treatment wetlands",
+      "type": "nature-based",
+      "plain_language": "Rafts of plants floating on the water whose roots strip out nutrients. Useful where there is no room on the bank.",
+      "ecosystem_benefit": "Nutrient uptake and shade in slow or standing reaches.",
+      "health_cobenefits": [
+        "wellbeing"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Floating treatment wetlands",
+        "section": "4.7.2",
+        "page": 107,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "remove_barriers",
+      "name": "Remove the barrier",
+      "type": "structural",
+      "plain_language": "Take out a weir, dam or culvert that no longer serves a purpose, so animals and sediment can move along the stream again.",
+      "ecosystem_benefit": "Restores movement up and down the stream for fish and invertebrates, and lets sediment through.",
+      "health_cobenefits": [
+        "recreation",
+        "wellbeing"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Removing barriers",
+        "section": "4.3.1",
+        "page": 47,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "pass_barriers",
+      "name": "Make the barrier passable",
+      "type": "structural",
+      "plain_language": "Where a barrier has to stay, add a fish pass or rock ramp so animals can still get past it.",
+      "ecosystem_benefit": "Partial restoration of movement where removal is not possible.",
+      "health_cobenefits": [
+        "recreation"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Passing barriers",
+        "section": "4.3.2",
+        "page": 49,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "remeandering",
+      "name": "Let the stream bend again",
+      "type": "structural",
+      "plain_language": "Give a straightened channel its bends back, so it has fast and slow stretches instead of one uniform chute.",
+      "ecosystem_benefit": "Varied flow and depth, which is what creates varied habitat.",
+      "health_cobenefits": [
+        "recreation",
+        "wellbeing"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Stream re-meandering",
+        "section": "4.3.3",
+        "page": 52,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "bed_renaturalization",
+      "name": "Put a natural bed back",
+      "type": "structural",
+      "plain_language": "Replace a concrete bed with gravel, stone and sediment the stream can move and sort by itself.",
+      "ecosystem_benefit": "Restores the spaces between stones where stream animals live.",
+      "health_cobenefits": [
+        "recreation"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Stream bed re-naturalization",
+        "section": "4.3.4",
+        "page": 53,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "constructed_riffles",
+      "name": "Build riffles",
+      "type": "structural",
+      "plain_language": "Add shallow stony stretches where water breaks over stones and picks up oxygen.",
+      "ecosystem_benefit": "Oxygenation and the habitat most invertebrates depend on.",
+      "health_cobenefits": [],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Constructed riffles",
+        "section": "4.3.5",
+        "page": 54,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "remove_bank_protection",
+      "name": "Take the hard bank facing out",
+      "type": "structural",
+      "plain_language": "Remove concrete or stone facing from the bank where it is no longer needed, and let the bank become soil and roots again.",
+      "ecosystem_benefit": "Reconnects the water with the bank and its wildlife.",
+      "health_cobenefits": [
+        "cooling",
+        "wellbeing"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Elimination of riverbank protection",
+        "section": "4.3.8",
+        "page": 66,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "bank_regrading",
+      "name": "Reshape a steep bank to a gentle slope",
+      "type": "structural",
+      "plain_language": "Slope a steep or undercut bank back so plants can root and people can reach the water safely.",
+      "ecosystem_benefit": "Stable bank with a planted margin instead of a bare face.",
+      "health_cobenefits": [
+        "recreation",
+        "wellbeing"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Riverbank regrading",
+        "section": "4.3.10",
+        "page": 69,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "live_fascines",
+      "name": "Live fascines (bundles of living branches)",
+      "type": "nature-based",
+      "plain_language": "Bundles of living willow branches laid along the bank; they root and hold the soil, replacing stone or concrete.",
+      "ecosystem_benefit": "Bank stability that is alive and gets stronger over time.",
+      "health_cobenefits": [
+        "cooling"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Live fascines",
+        "section": "4.3.13",
+        "page": 73,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "erosion_blanket",
+      "name": "Erosion control blanket",
+      "type": "nature-based",
+      "plain_language": "A biodegradable mat pinned over bare soil so it holds until planting takes root.",
+      "ecosystem_benefit": "Stops soil washing into the stream while vegetation establishes.",
+      "health_cobenefits": [],
+      "effort": "low",
+      "source": {
+        "catalogue_name": "Erosion control blanket",
+        "section": "4.3.20",
+        "page": 85,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "rain_gardens",
+      "name": "Rain gardens",
+      "type": "nature-based",
+      "plain_language": "Planted hollows that catch road and roof runoff and let it soak away instead of rushing into the stream.",
+      "ecosystem_benefit": "Cuts the flashy peak after rain and filters what is in it.",
+      "health_cobenefits": [
+        "cooling",
+        "wellbeing"
+      ],
+      "effort": "low",
+      "source": {
+        "catalogue_name": "Rain gardens",
+        "section": "4.6.1",
+        "page": 97,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "permeable_pavement",
+      "name": "Permeable paving",
+      "type": "structural",
+      "plain_language": "Surfaces rain can soak through, instead of tarmac that sends it straight to the stream.",
+      "ecosystem_benefit": "Less runoff volume and less of the pollution it carries.",
+      "health_cobenefits": [
+        "cooling"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Permeable pavements",
+        "section": "4.6.3",
+        "page": 99,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "disconnect_impervious",
+      "name": "Disconnect the hard surfaces from the drain",
+      "type": "structural",
+      "plain_language": "Route water from roofs and paving onto soil and planting rather than into the storm drain.",
+      "ecosystem_benefit": "Directly reduces the storm peak reaching the channel.",
+      "health_cobenefits": [
+        "cooling"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Disconnection of impervious areas",
+        "section": "4.6.5",
+        "page": 101,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "vegetated_swales",
+      "name": "Vegetated swales",
+      "type": "nature-based",
+      "plain_language": "Shallow planted channels that carry runoff slowly and clean it on the way.",
+      "ecosystem_benefit": "Slows and filters runoff before it reaches the stream.",
+      "health_cobenefits": [
+        "cooling",
+        "wellbeing"
+      ],
+      "effort": "medium",
+      "source": {
+        "catalogue_name": "Vegetated swales",
+        "section": "4.6.6",
+        "page": 102,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "retention_ponds",
+      "name": "Retention ponds and floodable parks",
+      "type": "nature-based",
+      "plain_language": "Places designed to hold water when it rains hard - often a park that is allowed to flood.",
+      "ecosystem_benefit": "Storm storage, plus wetland habitat the rest of the year.",
+      "health_cobenefits": [
+        "cooling",
+        "recreation",
+        "wellbeing"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Retention ponds and floodable parks",
+        "section": "4.6.7",
+        "page": 103,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "floodplain_reconnection",
+      "name": "Reconnect the floodplain",
+      "type": "nature-based",
+      "plain_language": "Let the stream spill onto its floodplain again instead of being held inside walls.",
+      "ecosystem_benefit": "Flood storage, sediment deposition and wet habitat.",
+      "health_cobenefits": [
+        "cooling",
+        "recreation"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Floodplain reconnection and storage basins",
+        "section": "4.3.21",
+        "page": 86,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "invasive_control",
+      "name": "Control or remove invasive species",
+      "type": "nature-based",
+      "plain_language": "Remove invasive plants and replant with native species. Usually needs repeating for several years to work.",
+      "ecosystem_benefit": "Lets native bank vegetation and the animals that depend on it re-establish.",
+      "health_cobenefits": [
+        "wellbeing"
+      ],
+      "effort": "high",
+      "source": {
+        "catalogue_name": "Control / Removal of invasive species",
+        "section": "4.5.1",
+        "page": 93,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    },
+    {
+      "id": "citizen_science",
+      "name": "Citizen science and school partnerships",
+      "type": "nature-based",
+      "plain_language": "Keep people watching the stream - which is what StreamLens itself is for. Sustained local attention is what keeps other measures maintained.",
+      "ecosystem_benefit": "Continuous monitoring and earlier detection of problems.",
+      "health_cobenefits": [
+        "wellbeing",
+        "recreation"
+      ],
+      "effort": "low",
+      "source": {
+        "catalogue_name": "Citizen Science and educational partnerships",
+        "section": "4.4.2",
+        "page": 90,
+        "doi": "10.5281/zenodo.20040211",
+        "licence": "CC-BY-4.0",
+        "verified": true
+      },
+      "authored_by_us": {
+        "plain_language": "project judgement (StreamLens)",
+        "health_cobenefits": "project judgement (StreamLens)",
+        "effort": "project judgement (StreamLens)"
+      }
+    }
+  ],
+  "problems": [
+    {
+      "id": "hardened_banks",
+      "name": "Paved or hardened banks",
+      "detected_by": [
+        {
+          "question_id": "bankType",
+          "codes": [
+            "ART",
+            "LAS"
+          ]
+        }
+      ],
+      "why_it_matters": "A concrete or stone bank has no roots, no burrows and no plants, so the edge of the stream stops being habitat.",
+      "measures": [
+        "remove_bank_protection",
+        "bank_regrading",
+        "live_fascines",
+        "active_riparian"
+      ]
+    },
+    {
+      "id": "channelised",
+      "name": "Concrete or artificial bed",
+      "detected_by": [
+        {
+          "question_id": "channelType",
+          "codes": [
+            "ART"
+          ]
+        }
+      ],
+      "why_it_matters": "A hard flat bed has none of the gaps between stones where stream insects live, and water runs over it too fast.",
+      "measures": [
+        "bed_renaturalization",
+        "constructed_riffles",
+        "remeandering"
+      ]
+    },
+    {
+      "id": "no_riparian_vegetation",
+      "name": "Bare or unvegetated banks",
+      "detected_by": [
+        {
+          "question_id": "vegCoverL",
+          "codes": [
+            "N"
+          ]
+        },
+        {
+          "question_id": "vegCoverR",
+          "codes": [
+            "N"
+          ]
+        }
+      ],
+      "why_it_matters": "Without plants the water is unshaded and warmer, the bank erodes, and nothing filters what runs off the land.",
+      "measures": [
+        "passive_riparian",
+        "active_riparian",
+        "riparian_buffer",
+        "erosion_blanket"
+      ]
+    },
+    {
+      "id": "sewage",
+      "name": "Sewage or a polluted outfall",
+      "detected_by": [
+        {
+          "question_id": "sewage",
+          "codes": [
+            "Y"
+          ]
+        },
+        {
+          "question_id": "pollutedPipes",
+          "codes": [
+            "Y"
+          ]
+        }
+      ],
+      "why_it_matters": "Foul water strips oxygen from the stream and is the pressure most likely to matter to people living nearby.",
+      "measures": [
+        "sewer_improvements",
+        "natural_wwtp",
+        "floating_wetland",
+        "self_purification"
+      ]
+    },
+    {
+      "id": "barriers",
+      "name": "Barriers blocking the stream",
+      "detected_by": [
+        {
+          "question_id": "dams",
+          "codes": [
+            "Y"
+          ]
+        }
+      ],
+      "why_it_matters": "A weir or culvert stops fish and invertebrates moving up and down, cutting populations off from each other.",
+      "measures": [
+        "remove_barriers",
+        "pass_barriers"
+      ]
+    },
+    {
+      "id": "litter",
+      "name": "Litter in or beside the channel",
+      "detected_by": [
+        {
+          "question_id": "waterAspect",
+          "codes": [
+            "CO"
+          ]
+        }
+      ],
+      "detection_note": "StreamLens has no dedicated litter question yet; this is currently inferred and should get its own question.",
+      "why_it_matters": "Litter harms animals directly and is the strongest visible signal to residents that a stream is neglected.",
+      "measures": [
+        "litter_control",
+        "citizen_science"
+      ]
+    },
+    {
+      "id": "impervious_surroundings",
+      "name": "Sealed surfaces right up to the bank",
+      "detected_by": [
+        {
+          "question_id": "imperviousL",
+          "codes": [
+            "Y"
+          ]
+        },
+        {
+          "question_id": "imperviousR",
+          "codes": [
+            "Y"
+          ]
+        }
+      ],
+      "why_it_matters": "Rain runs straight off tarmac into the stream, carrying whatever was on the surface and causing a flashy surge.",
+      "measures": [
+        "rain_gardens",
+        "disconnect_impervious",
+        "permeable_pavement",
+        "vegetated_swales"
+      ]
+    },
+    {
+      "id": "invasive_plants",
+      "name": "Invasive plants on the banks",
+      "detected_by": [
+        {
+          "question_id": "invasiveL",
+          "codes": [
+            "Y"
+          ]
+        },
+        {
+          "question_id": "invasiveR",
+          "codes": [
+            "Y"
+          ]
+        }
+      ],
+      "why_it_matters": "Species such as giant reed or knotweed crowd out native plants and leave banks bare when they die back.",
+      "measures": [
+        "invasive_control",
+        "active_riparian"
+      ]
+    },
+    {
+      "id": "low_or_no_flow",
+      "name": "Standing or dry channel",
+      "detected_by": [
+        {
+          "question_id": "waterFlow",
+          "codes": [
+            "STA",
+            "DRY"
+          ]
+        }
+      ],
+      "why_it_matters": "Water that does not move warms up, loses oxygen and can become mosquito habitat.",
+      "measures": [
+        "floodplain_reconnection",
+        "retention_ponds",
+        "rain_gardens",
+        "riparian_buffer"
+      ]
+    },
+    {
+      "id": "no_instream_habitat",
+      "name": "No habitat features in the water",
+      "detected_by": [
+        {
+          "question_id": "habitats",
+          "codes": [
+            "NONE"
+          ]
+        }
+      ],
+      "why_it_matters": "A uniform channel with no stones, bars or plants supports very few species however clean the water is.",
+      "measures": [
+        "constructed_riffles",
+        "bed_renaturalization",
+        "remeandering"
+      ]
+    }
+  ]
+}
