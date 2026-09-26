@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { SamplePicker } from "../components/SamplePicker";
 import { Button, Notice } from "../components/ui";
 
 export interface PhotoSlotValue {
@@ -127,6 +128,18 @@ export function PhotosScreen({
       </div>
 
       <Notice tone="info">{t("photos.privacy")}</Notice>
+
+      <SamplePicker
+        onPick={(role, blob) => {
+          const value = { blob, url: URL.createObjectURL(blob) };
+          if (role === "upstream") onUpstream(value);
+          else onDownstream(value);
+        }}
+        onPickPair={(up, down) => {
+          onUpstream({ blob: up, url: URL.createObjectURL(up) });
+          onDownstream({ blob: down, url: URL.createObjectURL(down) });
+        }}
+      />
 
       <PhotoSlot
         role="upstream"

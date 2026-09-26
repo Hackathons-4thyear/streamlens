@@ -1,0 +1,82 @@
+{
+  "samples": [
+    {
+      "id": "benevento-upstream",
+      "file": "samples/benevento-upstream.jpg",
+      "shows": "River at Benevento, Italy (OAH city)",
+      "purpose": "A real river in Benevento, one of the OneAquaHealth cities. Use as the upstream view.",
+      "author": "Adam91",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Calore_dal_Ponte_Maria_Cristina.JPG",
+      "width": 1024,
+      "height": 768,
+      "kb": 246
+    },
+    {
+      "id": "benevento-downstream",
+      "file": "samples/benevento-downstream.jpg",
+      "shows": "River at Benevento, Italy (OAH city)",
+      "purpose": "The same river, a second view. Use as the downstream view to see the questions that need both.",
+      "author": "Almer at Italian Wikipedia",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fiume_Calore.jpg",
+      "width": 1024,
+      "height": 768,
+      "kb": 147
+    },
+    {
+      "id": "oslo",
+      "file": "samples/oslo.jpg",
+      "shows": "River in Oslo, Norway (OAH city)",
+      "purpose": "The Akerselva in Oslo, another OneAquaHealth city: a green bank in a capital.",
+      "author": "Grzegorz Wysocki",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Akerselva_-_estuary.jpg",
+      "width": 1024,
+      "height": 766,
+      "kb": 195
+    },
+    {
+      "id": "algae",
+      "file": "samples/algae.jpg",
+      "shows": "Algal bloom, unusual water colour",
+      "purpose": "An algal bloom. Watch what the app does with water colour, and what the health card says.",
+      "author": "AnRo0002",
+      "licence": "CC0",
+      "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source_url": "https://commons.wikimedia.org/wiki/File:20150317Bachwiesen1.jpg",
+      "width": 1024,
+      "height": 768,
+      "kb": 254
+    },
+    {
+      "id": "litter",
+      "file": "samples/litter.jpg",
+      "shows": "Debris washed up at the water's edge",
+      "purpose": "Debris at the water's edge, for the litter question.",
+      "author": "T3rminatr",
+      "licence": "Public domain",
+      "licence_url": "",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Aerosolcan_pullution.jpg",
+      "width": 1024,
+      "height": 681,
+      "kb": 85
+    },
+    {
+      "id": "not-a-stream",
+      "file": "samples/not-a-stream.jpg",
+      "shows": "Bank hardened with laid stone in cages",
+      "purpose": "No water at all. The assessment should refuse this one rather than guess.",
+      "author": "Zimbres (attribution as stated on Wikimedia Commons)",
+      "licence": "CC BY-SA 2.5",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gabion1.jpg",
+      "width": 1024,
+      "height": 682,
+      "kb": 211
+    }
+  ]
+}

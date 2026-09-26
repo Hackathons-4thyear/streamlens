@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { QuickTour } from "./components/QuickTour";
 import { Button, Notice, Spinner } from "./components/ui";
 import { LANGUAGES, setLanguage, type LanguageCode } from "./i18n";
 import { ApiError, api } from "./lib/api";
@@ -488,6 +489,12 @@ export default function App() {
             onOpenSite={(siteId) => setExplore({ kind: "site", siteId })}
             onBack={() => setExplore({ kind: "home" })}
           />
+        ) : null}
+
+        {mode === "observe" && step === "site" ? (
+          <div className="mb-4 flex flex-col">
+            <QuickTour />
+          </div>
         ) : null}
 
         {mode === "observe" && step === "site" ? (

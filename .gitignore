@@ -29,7 +29,10 @@ coverage/
 Thumbs.db
 
 # Evaluation images: keep third-party licensing out of the repository.
-# The reports and labels ARE committed; the photographs are not.
+# The reports and labels ARE committed; the evaluation photographs are not.
+# The six demo photographs in web/public/samples are the deliberate
+# exception: they ship with the app, and each carries its author and
+# licence in web/public/samples/LICENCES.md.
 eval/photos/*
 !eval/photos/README.md
 !eval/photos/.gitkeep

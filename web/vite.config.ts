@@ -45,6 +45,17 @@ export default defineConfig({
             },
           },
           {
+            // The bundled sample photographs are ~1.2 MB in total, so they are
+            // kept out of the precache and fetched only if somebody opens the
+            // panel. Once fetched they stay, so the demo also works offline.
+            urlPattern: /\/samples\/.*$/,
+            handler: "CacheFirst",
+            options: {
+              cacheName: "streamlens-samples",
+              expiration: { maxEntries: 12, maxAgeSeconds: 60 * 60 * 24 * 90 },
+            },
+          },
+          {
             urlPattern: /^https:\/\/[a-c]\.tile\.openstreetmap\.org\/.*/,
             handler: "CacheFirst",
             options: {
