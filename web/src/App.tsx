@@ -406,7 +406,7 @@ export default function App() {
                   ? "bg-brand text-white"
                   : index < stepIndex
                     ? "bg-brand-light text-brand-dark"
-                    : "bg-slate-100 text-slate-500"
+                    : "bg-slate-100 text-slate-600"
               }`}
               aria-current={index === stepIndex ? "step" : undefined}
             >

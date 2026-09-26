@@ -192,6 +192,76 @@ def test_offline_falls_back_to_a_stale_entry_and_says_it_is_stale(session):
     assert "last forecast" in forecast.error
 
 
+def _planted_payload(rain_per_hour: float = 0.6) -> dict:
+    """What scripts/seed_demo.py writes: 48 h of past, 72 h ahead, labelled."""
+    start = datetime.now(timezone.utc) - timedelta(hours=48)
+    hours = [(start + timedelta(hours=h)).strftime("%Y-%m-%dT%H:00") for h in range(120)]
+    return {
+        "_streamlens_synthetic": True,
+        "_note": "Planted by scripts/seed_demo.py so the demo can show this rule.",
+        "hourly": {
+            "time": hours,
+            "precipitation": [rain_per_hour] * 120,
+            "temperature_2m": [14.0] * 120,
+        },
+    }
+
+
+def test_a_planted_forecast_is_labelled_and_survives_its_cache_window(session):
+    """A demo forecast that expires in an hour demonstrates nothing.
+
+    Planted rows are rebased onto the current clock instead of ageing out, so
+    the rule they exist to show still fires a week later - and still says
+    DEMO FORECAST while it does.
+    """
+    planted_days_ago = datetime.now(timezone.utc) - timedelta(days=6)
+    session.add(WeatherCache(site_id="C1",
+                             payload_json=json.dumps(_planted_payload()),
+                             fetched_at=planted_days_ago))
+    session.commit()
+
+    forecast = get_forecast(session, "C1", 40.2, -8.4, allow_network=False)
+    assert forecast.available is True
+    assert forecast.synthetic is True
+    assert forecast.stale is False
+    assert forecast.rain_mm_48h == pytest.approx(28.8, abs=0.5)
+    # The past window drives the after-rain quests, and must move too.
+    assert forecast.rain_mm_past_48h == pytest.approx(28.8, abs=0.5)
+    assert "DEMO FORECAST" in forecast.summary
+
+
+def test_a_planted_forecast_is_not_replaced_by_the_live_one(session):
+    """Nothing is fetched for a planted site, so the plant is not overwritten."""
+    session.add(WeatherCache(site_id="C1",
+                             payload_json=json.dumps(_planted_payload()),
+                             fetched_at=datetime.now(timezone.utc) - timedelta(days=3)))
+    session.commit()
+
+    def explode(*args, **kwargs):  # pragma: no cover - must never be called
+        raise AssertionError("a planted forecast must not hit the network")
+
+    from app import weather as weather_module
+
+    original = weather_module.fetch_live
+    weather_module.fetch_live = explode
+    try:
+        forecast = get_forecast(session, "C1", 40.2, -8.4, allow_network=True)
+    finally:
+        weather_module.fetch_live = original
+
+    assert forecast.synthetic is True
+
+
+def test_a_real_forecast_is_never_mistaken_for_a_planted_one(session):
+    session.add(WeatherCache(site_id="C1", payload_json=json.dumps(_payload()),
+                             fetched_at=datetime.now(timezone.utc)))
+    session.commit()
+
+    forecast = get_forecast(session, "C1", 40.2, -8.4, allow_network=False)
+    assert forecast.synthetic is False
+    assert "DEMO FORECAST" not in forecast.summary
+
+
 def test_offline_with_nothing_cached_reports_unavailable_rather_than_zero(session):
     forecast = get_forecast(session, "NEVER-SEEN", 40.2, -8.4, allow_network=False)
     assert forecast.available is False

@@ -285,6 +285,21 @@ def plant_demo_weather(session: Session, targets: dict[str, dict]) -> None:
     session.commit()
 
 
+def clear_planted_weather(session: Session) -> int:
+    """Remove planted forecasts, so those sites go back to the real weather."""
+    from app.models import WeatherCache
+    from app.weather import is_planted
+
+    removed = 0
+    for row in session.exec(select(WeatherCache)).all():
+        if is_planted(json.loads(row.payload_json)):
+            session.delete(row)
+            removed += 1
+    if removed:
+        session.commit()
+    return removed
+
+
 def reset(session: Session) -> int:
     demo = session.exec(
         select(Observation).where(Observation.synthetic == True)  # noqa: E712
@@ -345,6 +360,9 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=20260924)
     parser.add_argument("--no-demo-weather", action="store_true",
                         help="do not plant synthetic forecasts; use real weather only")
+    parser.add_argument("--plant-weather", action="store_true",
+                        help="only re-plant the demo forecasts, leaving the "
+                             "observations alone")
     args = parser.parse_args()
 
     init_db()
@@ -354,6 +372,20 @@ def main() -> int:
 
     with Session(get_engine()) as session:
         if args.check:
+            check(session, site_set)
+            return 0
+
+        if args.plant_weather:
+            chosen = pick_sites(site_set, rng)
+            targets = {}
+            wanted = {"sewage": {"rain_per_hour": 0.6, "temp": 14.0},
+                      "obstructed": {"rain_per_hour": 0.8, "temp": 13.0}}
+            for site, character in chosen:
+                shape = wanted.pop(character, None)
+                if shape:
+                    targets[site["id"]] = shape
+            plant_demo_weather(session, targets)
+            print(f"Planted demo forecasts for {', '.join(sorted(targets))}.")
             check(session, site_set)
             return 0
 
@@ -368,6 +400,9 @@ def main() -> int:
         if args.reset:
             removed = reset(session)
             print(f"Removed {removed} existing demo observations")
+            planted = clear_planted_weather(session)
+            if planted:
+                print(f"Removed {planted} planted demo forecast(s)")
 
         chosen = pick_sites(site_set, rng)
         now = datetime.now(timezone.utc)

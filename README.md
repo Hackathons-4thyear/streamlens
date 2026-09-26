@@ -4,6 +4,58 @@
 
 IEEE OneAquaHealth Global Hackathon 2026.
 
+## Try it
+
+| | |
+| --- | --- |
+| **Live demo** | _not deployed yet_ |
+| **API** | _not deployed yet_ |
+| **Runs locally** | `npm run setup && npm run dev` — no key needed |
+
+The demo needs no account and no sign-in. It carries labelled synthetic data so
+the maps and alerts have something to show; every synthetic record says
+`synthetic: true`, and the toggle at the top of Explore and Community switches
+between all data, real only and demo only.
+
+### Judge quick tour (about four minutes)
+
+The same five steps appear in the app itself, on the first screen.
+
+1. **Pick a site.** The list is the OneAquaHealth / ENORA research sites in
+   Benevento, Coimbra, Oslo and Toulouse. No location permission is needed to
+   choose from the list.
+2. **Choose whether the AI helps.** With AI, a shrunk and EXIF-stripped copy of
+   the photographs goes to Google Gemini under its free-tier terms. Without, no
+   request is made at all. Both paths ask the same questions and record the same
+   data — see [docs/privacy.md](docs/privacy.md).
+3. **Photograph upstream and downstream**, or open **"Try with sample photos"**
+   for six Creative Commons photographs. One of them has no water in it: the
+   assessment should refuse that one rather than guess.
+4. **Confirm every answer.** The AI drafts; you accept, change or reject each
+   chip. Where you disagree, both answers are kept. The Good / Moderate / Poor
+   rating is never suggested.
+5. **Read what came back.** *Explore* holds the health card, the 48-hour alerts
+   with their thresholds and sources, and the restoration measures. *Community*
+   holds coverage, team standings, the wellbeing mirror and the **FHIR R4
+   export** — the download button on any site or city.
+
+Worth a look while you are there: the **DEMO FORECAST** badge on a planted
+weather row, the **demo AI (mock)** badge when the AI is unavailable or its free
+quota is spent, and the per-threshold **source** line under every alert.
+
+### Measured
+
+Lighthouse 12, mobile preset (emulated Moto G Power, throttled 4G), production
+build served locally with the API reachable:
+
+| Performance | Accessibility | Best practices | SEO |
+| --- | --- | --- | --- |
+| 91 | 100 | 100 | 100 |
+
+Hosting is Render (API), Neon (Postgres) and Vercel (web app), all on free
+tiers, with a GitHub Actions ping every ten minutes so the free instance does
+not sleep. [docs/deploy.md](docs/deploy.md) has the steps and the limits.
+
 StreamLens is a photo-first, offline-capable field companion for the
 [OneAquaHealth](https://www.oneaquahealth.eu/) Citizen Science App. A vision model
 looks at the citizen's upstream and downstream photos and pre-fills the app's own
@@ -65,7 +117,7 @@ npm run data:questions # rebuild data/questions.json
 
 No API key is needed to run the demo. With no `GEMINI_API_KEY` set, StreamLens uses
 a deterministic **mock** vision provider and the UI shows a **"demo AI (mock)"**
-badge so nobody mistakes it for a real model. To use Gemini, copy `.env.example`
+badge so nobody mistakes it for a real model. To use Gemini, copy `api/.env.example`
 to `api/.env` and set `AI_PROVIDER=gemini` plus your `GEMINI_API_KEY`.
 
 ## Privacy in one paragraph
@@ -210,10 +262,13 @@ invasive species), plus licence-filtered search platforms.
 ## Repository layout
 
 ```
-api/    FastAPI + Pydantic v2 + SQLModel/SQLite, provider-agnostic AI layer
+api/    FastAPI + Pydantic v2 + SQLModel (SQLite locally, Postgres hosted)
 web/    React + Vite + TypeScript + Tailwind + PWA + Leaflet + Dexie + i18next
-data/   sites.json, questions.json
-docs/   status, photo test sources, FHIR notes
+data/   sites.json, questions.json, alert/quest/points rules
+docs/   status, privacy, deploy, photo test sources, FHIR notes
+eval/   the vision-prompt evaluation harness and its reports
+web/public/samples/  six Creative Commons demo photographs, with licences
+render.yaml, web/vercel.json, .github/workflows/  the hosted demo
 ```
 
 See [CLAUDE.md](CLAUDE.md) for the full brief, architecture and working rules.
@@ -221,4 +276,7 @@ See [CLAUDE.md](CLAUDE.md) for the full brief, architecture and working rules.
 ## Licence
 
 Code: MIT. Site data belongs to the OneAquaHealth / ENORA consortium and is
-redistributed here for hackathon evaluation with attribution.
+redistributed here for hackathon evaluation with attribution. The six sample
+photographs in `web/public/samples/` keep their own Creative Commons or public
+domain licences, listed with their authors in
+[web/public/samples/LICENCES.md](web/public/samples/LICENCES.md).

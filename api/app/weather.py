@@ -73,6 +73,40 @@ def _now() -> datetime:
     return datetime.now(timezone.utc)
 
 
+def is_planted(payload: dict) -> bool:
+    """True for a demo forecast written by scripts/seed_demo.py."""
+    return bool(payload.get("_streamlens_synthetic"))
+
+
+def rebase_planted(payload: dict, *, now: datetime | None = None) -> dict:
+    """Slide a planted forecast onto the current clock.
+
+    A planted forecast is a shape - so many millimetres an hour, from 48 hours
+    ago to 72 hours ahead - not a claim about particular hours. Left alone it
+    ages out of its own window within a day and the rules it exists to
+    demonstrate fall silent again. Rebasing keeps the shape and moves the
+    timestamps, so a demo shows the same thing in a week as it does today.
+
+    It stays labelled synthetic throughout. The point is to demonstrate a rule
+    honestly, not to pass planted weather off as real.
+    """
+    hourly = payload.get("hourly") or {}
+    count = len(hourly.get("time") or [])
+    if not count:
+        return payload
+
+    moment = (now or _now()).replace(minute=0, second=0, microsecond=0, tzinfo=None)
+    # The planter writes 48 hours of past before the present hour.
+    start = moment - timedelta(hours=48)
+    rebased = dict(payload)
+    rebased["hourly"] = dict(hourly)
+    rebased["hourly"]["time"] = [
+        (start + timedelta(hours=index)).strftime("%Y-%m-%dT%H:00")
+        for index in range(count)
+    ]
+    return rebased
+
+
 def _parse(site_id: str, payload: dict, fetched_at: datetime, stale: bool) -> Forecast:
     hourly = payload.get("hourly") or {}
     times = hourly.get("time") or []
@@ -153,6 +187,14 @@ def get_forecast(
 
     cached = session.get(WeatherCache, site_id)
     if cached:
+        payload = json.loads(cached.payload_json)
+        if is_planted(payload):
+            # Planted demo weather is never refreshed from the network and never
+            # expires: it is there to demonstrate a rule, and a demo that only
+            # works for an hour after seeding demonstrates nothing. Delete the
+            # row (scripts/seed_demo.py --reset) to get the real forecast back.
+            return _parse(site_id, rebase_planted(payload), _now(), stale=False)
+
         age = (_now() - cached.fetched_at.replace(tzinfo=timezone.utc)).total_seconds()
         if age < cache_seconds:
             return _parse(site_id, json.loads(cached.payload_json),

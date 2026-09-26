@@ -347,7 +347,9 @@ export function IdentityCard({
 
   return (
     <Card className="flex flex-col gap-3">
-      <h3 className="font-semibold text-ink">What should we call you?</h3>
+      {/* An h2: this card is the first thing on the page after the app
+          title, so an h3 here skips a level for a screen reader. */}
+      <h2 className="font-semibold text-ink">What should we call you?</h2>
       <p className="text-sm text-muted">
         Only so the app can say "your points". Your nickname stays on this phone
         and is never sent anywhere. There is no account and no password.
