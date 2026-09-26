@@ -26,6 +26,7 @@ const en = {
     title: "StreamLens",
     tagline: "The AI suggests. You decide.",
     language: "Language",
+    settings: "Settings",
     translationWarning:
       "Translations are machine made and not yet checked by a native speaker.",
   },
@@ -50,7 +51,27 @@ const en = {
     manualOnly: "Answering yourself - photos not sent to Google",
     change: "Change",
   },
+  settings: {
+    title: "Settings",
+    youTitle: "You",
+    nickname: "Nickname",
+    nicknameHelp: "Shown in this app only. Never sent to the server.",
+    team: "Team or school code",
+    teamHelp:
+      "Sent with your assessments so your team appears on the leaderboard.",
+    save: "Save",
+    saved: "Saved on this device.",
+    clearTitle: "Clear my data on this device",
+    clearBody:
+      "Removes your nickname, team code, device id, saved answers and anything still waiting to be sent.",
+    clearLimit:
+      "Assessments you have already sent stay in the record. They carry no name, so there is no way to find them again and remove them.",
+    clear: "Clear my data",
+    clearConfirm: "Yes, clear everything",
+    privacyLink: "How StreamLens handles photographs and data",
+  },
   steps: {
+    aiChoice: "AI help",
     site: "Site",
     photos: "Photos",
     review: "Review",
@@ -202,6 +223,7 @@ const pt: Dict = {
     title: "StreamLens",
     tagline: "A IA sugere. Você decide.",
     language: "Idioma",
+    settings: "Definicoes",
     translationWarning:
       "As traduções são automáticas e ainda não foram revistas por um falante nativo.",
   },
@@ -226,7 +248,28 @@ const pt: Dict = {
     manualOnly: "A responder por si - fotos nao enviadas a Google",
     change: "Alterar",
   },
+  settings: {
+    title: "Definicoes",
+    youTitle: "Voce",
+    nickname: "Nome no aplicativo",
+    nicknameHelp:
+      "Mostrado apenas nesta aplicacao. Nunca e enviado para o servidor.",
+    team: "Codigo de equipa ou escola",
+    teamHelp:
+      "Enviado com as suas avaliacoes para que a sua equipa apareca na tabela.",
+    save: "Guardar",
+    saved: "Guardado neste dispositivo.",
+    clearTitle: "Apagar os meus dados neste dispositivo",
+    clearBody:
+      "Remove o seu nome, codigo de equipa, identificador do dispositivo, respostas guardadas e tudo o que aguarda envio.",
+    clearLimit:
+      "As avaliacoes ja enviadas permanecem no registo. Nao tem nome, por isso nao e possivel encontra-las e remove-las.",
+    clear: "Apagar os meus dados",
+    clearConfirm: "Sim, apagar tudo",
+    privacyLink: "Como o StreamLens trata as fotografias e os dados",
+  },
   steps: {
+    aiChoice: "Ajuda IA",
     site: "Local",
     photos: "Fotos",
     review: "Rever",
@@ -375,6 +418,7 @@ const it: Dict = {
     title: "StreamLens",
     tagline: "L'IA suggerisce. Decidi tu.",
     language: "Lingua",
+    settings: "Impostazioni",
     translationWarning:
       "Le traduzioni sono automatiche e non ancora riviste da un madrelingua.",
   },
@@ -399,7 +443,27 @@ const it: Dict = {
     manualOnly: "Rispondi tu - foto non inviate a Google",
     change: "Cambia",
   },
-  steps: { site: "Sito", photos: "Foto", review: "Verifica", rating: "Giudizio", submit: "Invia" },
+  settings: {
+    title: "Impostazioni",
+    youTitle: "Tu",
+    nickname: "Soprannome",
+    nicknameHelp:
+      "Mostrato solo in questa app. Non viene mai inviato al server.",
+    team: "Codice squadra o scuola",
+    teamHelp:
+      "Inviato con le tue valutazioni perche la tua squadra compaia in classifica.",
+    save: "Salva",
+    saved: "Salvato su questo dispositivo.",
+    clearTitle: "Cancella i miei dati su questo dispositivo",
+    clearBody:
+      "Rimuove soprannome, codice squadra, identificativo del dispositivo, risposte salvate e tutto cio che attende di essere inviato.",
+    clearLimit:
+      "Le valutazioni gia inviate restano nel registro. Non contengono un nome, quindi non e possibile ritrovarle e rimuoverle.",
+    clear: "Cancella i miei dati",
+    clearConfirm: "Si, cancella tutto",
+    privacyLink: "Come StreamLens tratta fotografie e dati",
+  },
+  steps: { aiChoice: "Aiuto IA", site: "Sito", photos: "Foto", review: "Verifica", rating: "Giudizio", submit: "Invia" },
   common: {
     back: "Indietro",
     next: "Avanti",
@@ -542,6 +606,7 @@ const fr: Dict = {
     title: "StreamLens",
     tagline: "L'IA propose. Vous décidez.",
     language: "Langue",
+    settings: "Parametres",
     translationWarning:
       "Les traductions sont automatiques et pas encore relues par un locuteur natif.",
   },
@@ -566,7 +631,27 @@ const fr: Dict = {
     manualOnly: "Vous repondez - photos non envoyees a Google",
     change: "Changer",
   },
-  steps: { site: "Site", photos: "Photos", review: "Vérifier", rating: "Évaluation", submit: "Envoyer" },
+  settings: {
+    title: "Parametres",
+    youTitle: "Vous",
+    nickname: "Pseudonyme",
+    nicknameHelp:
+      "Affiche uniquement dans cette application. Jamais envoye au serveur.",
+    team: "Code d equipe ou d ecole",
+    teamHelp:
+      "Envoye avec vos evaluations pour que votre equipe apparaisse au classement.",
+    save: "Enregistrer",
+    saved: "Enregistre sur cet appareil.",
+    clearTitle: "Effacer mes donnees sur cet appareil",
+    clearBody:
+      "Supprime votre pseudonyme, votre code d equipe, l identifiant de l appareil, les reponses enregistrees et tout ce qui attend d etre envoye.",
+    clearLimit:
+      "Les evaluations deja envoyees restent dans le registre. Elles ne portent aucun nom, il est donc impossible de les retrouver pour les supprimer.",
+    clear: "Effacer mes donnees",
+    clearConfirm: "Oui, tout effacer",
+    privacyLink: "Comment StreamLens traite les photos et les donnees",
+  },
+  steps: { aiChoice: "Aide IA", site: "Site", photos: "Photos", review: "Vérifier", rating: "Évaluation", submit: "Envoyer" },
   common: {
     back: "Retour",
     next: "Suivant",
@@ -709,6 +794,7 @@ const nl: Dict = {
     title: "StreamLens",
     tagline: "De AI stelt voor. Jij beslist.",
     language: "Taal",
+    settings: "Instellingen",
     translationWarning:
       "Vertalingen zijn machinaal gemaakt en nog niet nagekeken door een moedertaalspreker.",
   },
@@ -733,7 +819,27 @@ const nl: Dict = {
     manualOnly: "Je antwoordt zelf - foto's niet naar Google",
     change: "Wijzigen",
   },
-  steps: { site: "Locatie", photos: "Foto's", review: "Nakijken", rating: "Oordeel", submit: "Versturen" },
+  settings: {
+    title: "Instellingen",
+    youTitle: "Jij",
+    nickname: "Bijnaam",
+    nicknameHelp:
+      "Alleen zichtbaar in deze app. Wordt nooit naar de server gestuurd.",
+    team: "Team- of schoolcode",
+    teamHelp:
+      "Wordt met je beoordelingen meegestuurd zodat je team op de ranglijst komt.",
+    save: "Opslaan",
+    saved: "Opgeslagen op dit apparaat.",
+    clearTitle: "Mijn gegevens op dit apparaat wissen",
+    clearBody:
+      "Verwijdert je bijnaam, teamcode, apparaat-id, opgeslagen antwoorden en alles wat nog verstuurd moet worden.",
+    clearLimit:
+      "Al verstuurde beoordelingen blijven in het register staan. Ze bevatten geen naam, dus ze zijn niet terug te vinden en te verwijderen.",
+    clear: "Mijn gegevens wissen",
+    clearConfirm: "Ja, alles wissen",
+    privacyLink: "Hoe StreamLens omgaat met fotos en gegevens",
+  },
+  steps: { aiChoice: "AI-hulp", site: "Locatie", photos: "Foto's", review: "Nakijken", rating: "Oordeel", submit: "Versturen" },
   common: {
     back: "Terug",
     next: "Volgende",
@@ -876,6 +982,7 @@ const no: Dict = {
     title: "StreamLens",
     tagline: "KI-en foreslår. Du bestemmer.",
     language: "Språk",
+    settings: "Innstillinger",
     translationWarning:
       "Oversettelsene er maskinlagde og ennå ikke sjekket av en som har språket som morsmål.",
   },
@@ -900,7 +1007,26 @@ const no: Dict = {
     manualOnly: "Du svarer selv - bilder ikke sendt til Google",
     change: "Endre",
   },
-  steps: { site: "Sted", photos: "Bilder", review: "Sjekk", rating: "Vurdering", submit: "Send" },
+  settings: {
+    title: "Innstillinger",
+    youTitle: "Deg",
+    nickname: "Kallenavn",
+    nicknameHelp: "Vises bare i denne appen. Sendes aldri til serveren.",
+    team: "Lag- eller skolekode",
+    teamHelp:
+      "Sendes med vurderingene dine slik at laget ditt vises pa lagtavlen.",
+    save: "Lagre",
+    saved: "Lagret pa denne enheten.",
+    clearTitle: "Slett dataene mine pa denne enheten",
+    clearBody:
+      "Fjerner kallenavn, lagkode, enhets-ID, lagrede svar og alt som venter pa a bli sendt.",
+    clearLimit:
+      "Vurderinger du allerede har sendt, blir vaerende i registeret. De har ingen navn, sa de kan ikke finnes igjen og slettes.",
+    clear: "Slett dataene mine",
+    clearConfirm: "Ja, slett alt",
+    privacyLink: "Slik behandler StreamLens bilder og data",
+  },
+  steps: { aiChoice: "KI-hjelp", site: "Sted", photos: "Bilder", review: "Sjekk", rating: "Vurdering", submit: "Send" },
   common: {
     back: "Tilbake",
     next: "Neste",

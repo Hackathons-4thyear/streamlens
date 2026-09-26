@@ -150,3 +150,48 @@ def test_observations_can_be_listed_by_site(client, site_id, sites):
     listed = client.get("/observations", params={"site_id": site_id}).json()
     assert len(listed) == 1
     assert listed[0]["site_id"] == site_id
+
+
+def test_a_quest_completion_travels_from_the_form_to_the_points(client, site_id):
+    """The whole path the citizen takes: tap a quest, assess, see the award.
+
+    The unit tests cover the scoring rule; this covers the wiring around it,
+    which is where a renamed field would otherwise go unnoticed.
+    """
+    me = "device-quest-1"
+    posted = _post(
+        client,
+        _payload(site_id, client_id=me, completed_quest="stale_site"),
+        files=[
+            ("upstream", ("upstream.jpg", sharp_image(), "image/jpeg")),
+            ("downstream", ("downstream.jpg", sharp_image(), "image/jpeg")),
+        ],
+    )
+    assert posted.status_code == 201
+
+    mine = client.get("/points/me", params={"client_id": me}).json()
+    assert mine["observations"] == 1
+
+    awards = mine["awards"][0]["awards"]
+    quest_award = [a for a in awards if a["rule_id"] == "quest_completed"]
+    assert quest_award, awards
+    assert quest_award[0]["points"] > 0
+    assert "stale_site" in quest_award[0]["detail"]
+    assert mine["total_points"] >= quest_award[0]["points"]
+
+
+def test_points_are_not_awarded_for_a_quest_that_was_not_taken(client, site_id):
+    me = "device-quest-2"
+    _post(client, _payload(site_id, client_id=me))
+
+    mine = client.get("/points/me", params={"client_id": me}).json()
+    awards = mine["awards"][0]["awards"]
+    assert [a for a in awards if a["rule_id"] == "quest_completed"] == []
+
+
+def test_another_devices_points_are_not_mine(client, site_id):
+    _post(client, _payload(site_id, client_id="device-a", completed_quest="stale_site"))
+
+    mine = client.get("/points/me", params={"client_id": "device-b"}).json()
+    assert mine["observations"] == 0
+    assert mine["total_points"] == 0

@@ -16,6 +16,7 @@ import { getIdentity, markIntroduced, needsIntroduction, setIdentity } from "./l
 import type { DataScope } from "./lib/insights";
 import { RatingScreen } from "./screens/RatingScreen";
 import { ReviewScreen } from "./screens/ReviewScreen";
+import { SettingsScreen } from "./screens/SettingsScreen";
 import { SiteScreen } from "./screens/SiteScreen";
 import { SubmitScreen, type SubmitOutcome } from "./screens/SubmitScreen";
 import {
@@ -65,6 +66,7 @@ export default function App() {
   const [scope, setScope] = useState<DataScope>("all");
   const [identity, setIdentityState] = useState(getIdentity);
   const [askName, setAskName] = useState(needsIntroduction);
+  const [settingsOpen, setSettingsOpen] = useState(false);
   const [step, setStep] = useState<Step>("site");
   const [catalogueError, setCatalogueError] = useState("");
   const [sites, setSites] = useState<SitesResponse | null>(null);
@@ -78,6 +80,11 @@ export default function App() {
   // Null until the citizen has chosen. Never defaulted to true: sending a
   // photograph to Google is their decision, not one we make for them.
   const [useAi, setUseAi] = useState<boolean | null>(null);
+  // Set when the citizen started from a quest, so the record can say which
+  // gap this visit filled and the points can be awarded for filling it.
+  const [quest, setQuest] = useState<{ siteId: string; ruleId: string } | null>(
+    null
+  );
   const [suggestion, setSuggestion] = useState<SuggestResponse | null>(null);
   const [suggestLoading, setSuggestLoading] = useState(false);
   const [suggestError, setSuggestError] = useState("");
@@ -197,7 +204,8 @@ export default function App() {
       synthetic: false,
       client_id: identity.clientId,
       team: identity.team,
-      completed_quest: "",
+      completed_quest:
+        quest && site && quest.siteId === site.id ? quest.ruleId : "",
       recorded_at: new Date().toISOString(),
       ai_provider: useAi ? suggestion?.provider ?? "" : "",
       ai_model: useAi ? suggestion?.model ?? "" : "",
@@ -236,6 +244,23 @@ export default function App() {
     }
   };
 
+  /** Jump from a quest straight into assessing that site. */
+  const startQuest = (siteId: string, ruleId: string) => {
+    const target = sites?.sites.find((s) => s.id === siteId) ?? null;
+    if (!target) return;
+    setSite(target);
+    setQuest({ siteId, ruleId });
+    setUpstream(null);
+    setDownstream(null);
+    setSuggestion(null);
+    setUseAi(null);
+    dispatch({ type: "reset" });
+    setOverall("");
+    setOutcome({ kind: "idle" });
+    setMode("observe");
+    setStep("aiChoice");
+  };
+
   const restart = () => {
     setSite(null);
     setUpstream(null);
@@ -243,6 +268,7 @@ export default function App() {
     setSuggestion(null);
     setSuggestError("");
     setUseAi(null);
+    setQuest(null);
     dispatch({ type: "reset" });
     setOverall("");
     setEmotions({});
@@ -317,6 +343,15 @@ export default function App() {
               </button>
             ) : null}
 
+            <button
+              type="button"
+              onClick={() => setSettingsOpen(true)}
+              aria-label={t("app.settings")}
+              className="tap rounded-xl border-2 border-line bg-white px-2 py-1 text-sm"
+            >
+              <span aria-hidden="true">⚙</span>
+            </button>
+
             <label className="sr-only" htmlFor="lang">
               {t("app.language")}
             </label>
@@ -360,7 +395,7 @@ export default function App() {
           ))}
         </nav>
 
-        {mode === "observe" ? (
+        {mode === "observe" && !settingsOpen ? (
         <ol className="mx-auto flex max-w-2xl gap-1 px-4 pb-3 text-xs">
           {STEPS.map((name, index) => (
             <li
@@ -386,6 +421,13 @@ export default function App() {
           <p className="mb-3 text-xs text-muted">{t("app.translationWarning")}</p>
         ) : null}
 
+        {settingsOpen ? (
+          <SettingsScreen
+            onSaved={setIdentityState}
+            onBack={() => setSettingsOpen(false)}
+          />
+        ) : (
+        <>
         {askName ? (
           <div className="mb-4">
             <IdentityCard
@@ -404,6 +446,7 @@ export default function App() {
 
         {mode === "return" ? (
           <ReturnScreen
+            cities={sites.cities}
             scope={scope}
             onScope={setScope}
             onOpenSite={(siteId) => {
@@ -423,11 +466,13 @@ export default function App() {
             onPosition={setPosition}
             onOpenSite={(siteId) => setExplore({ kind: "site", siteId })}
             onOpenCity={(city) => setExplore({ kind: "city", city })}
+            onStartQuest={startQuest}
           />
         ) : null}
 
         {mode === "explore" && explore.kind === "site" ? (
           <SitePage
+            onStartQuest={startQuest}
             siteId={explore.siteId}
             scope={scope}
             onScope={setScope}
@@ -528,6 +573,11 @@ export default function App() {
               void flushOutbox().then(() => refreshQueued());
             }}
             onBack={() => setStep("rating")}
+            clientId={identity.clientId}
+            scope={scope}
+            questCompleted={
+              quest && quest.siteId === site.id ? quest.ruleId : ""
+            }
             onRestart={restart}
             onViewSite={() => {
               setExplore({ kind: "site", siteId: site.id });
@@ -535,6 +585,8 @@ export default function App() {
             }}
           />
         ) : null}
+        </>
+        )}
       </main>
     </div>
   );

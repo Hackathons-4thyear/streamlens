@@ -17,6 +17,7 @@ export function ExploreScreen({
   onPosition,
   onOpenSite,
   onOpenCity,
+  onStartQuest,
 }: {
   sites: Site[];
   cities: string[];
@@ -26,6 +27,7 @@ export function ExploreScreen({
   onPosition: (position: Position) => void;
   onOpenSite: (siteId: string) => void;
   onOpenCity: (city: string) => void;
+  onStartQuest: (siteId: string, ruleId: string) => void;
 }) {
   const [near, setNear] = useState<SiteAlerts[] | null>(null);
   const [quests, setQuests] = useState<Quest[] | null>(null);
@@ -182,11 +184,9 @@ export function ExploreScreen({
             Each of these points at a real gap in the record.
           </p>
           {quests.slice(0, 6).map((quest) => (
-            <button
+            <div
               key={`${quest.site_id}-${quest.rule_id}`}
-              type="button"
-              onClick={() => onOpenSite(quest.site_id)}
-              className="tap rounded-2xl border-2 border-brand/30 bg-brand-light/30 p-4 text-left"
+              className="rounded-2xl border-2 border-brand/30 bg-brand-light/30 p-4"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="font-semibold text-ink">{quest.site_name}</span>
@@ -206,7 +206,18 @@ export function ExploreScreen({
                   </span>
                 ) : null}
               </div>
-            </button>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Button onClick={() => onStartQuest(quest.site_id, quest.rule_id)}>
+                  Take this on
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() => onOpenSite(quest.site_id)}
+                >
+                  See the site
+                </Button>
+              </div>
+            </div>
           ))}
         </section>
       ) : null}

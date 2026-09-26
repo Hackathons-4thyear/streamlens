@@ -42,3 +42,6 @@ data/sources/
 # Downloaded tooling: the FHIR validator jar (200 MB) and the IG source.
 # docs/fhir/validation-report.md has the commands to fetch both.
 tools/
+
+# TypeScript incremental build state, regenerated on every build
+web/tsconfig.tsbuildinfo

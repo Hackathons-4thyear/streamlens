@@ -23,11 +23,13 @@ import {
  * and what could be done about it. The demo centrepiece.
  */
 export function SitePage({
+  onStartQuest,
   siteId,
   scope,
   onScope,
   onBack,
 }: {
+  onStartQuest: (siteId: string, ruleId: string) => void;
   siteId: string;
   scope: DataScope;
   onScope: (scope: DataScope) => void;
@@ -136,6 +138,11 @@ export function SitePage({
           {quests.map((quest) => (
             <Notice key={quest.rule_id} tone="info" title={quest.name}>
               <p>{quest.why}</p>
+              <div className="mt-2">
+                <Button onClick={() => onStartQuest(siteId, quest.rule_id)}>
+                  Take this on
+                </Button>
+              </div>
               {quest.weather_synthetic ? (
                 <span className="mt-2 inline-block rounded-full border border-amber-700/40 bg-amber-100 px-2 py-0.5 text-xs font-bold text-amber-900 uppercase">
                   ● demo forecast

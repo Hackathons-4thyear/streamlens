@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button, Card, Notice } from "../components/ui";
 import { agreementStats, type AnswersState } from "../state/answers";
+import { returns, type MyPoints } from "../lib/returns";
+import type { DataScope } from "../lib/insights";
 import type { Site } from "../types";
 
 export type SubmitOutcome =
@@ -25,6 +27,9 @@ export function SubmitScreen({
   onBack,
   onRestart,
   onViewSite,
+  clientId,
+  scope,
+  questCompleted,
 }: {
   site: Site;
   overall: string;
@@ -38,10 +43,31 @@ export function SubmitScreen({
   onBack: () => void;
   onRestart: () => void;
   onViewSite?: () => void;
+  clientId: string;
+  scope: DataScope;
+  questCompleted: string;
 }) {
   const { t } = useTranslation();
   const [consent, setConsent] = useState(false);
   const [touched, setTouched] = useState(false);
+
+  const [points, setPoints] = useState<MyPoints | null>(null);
+
+  // Points are computed server-side from what was actually stored, so they are
+  // fetched after the record lands rather than guessed here.
+  useEffect(() => {
+    if (outcome.kind !== "sent") return;
+    let cancelled = false;
+    returns
+      .myPoints(scope, clientId)
+      .then((result) => {
+        if (!cancelled) setPoints(result);
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [outcome.kind, scope, clientId]);
 
   const stats = agreementStats(answers);
   const answeredTotal = Object.values(answers).filter(
@@ -69,6 +95,37 @@ export function SubmitScreen({
             <p>{t("submit.queued")}</p>
           )}
         </Notice>
+
+        {outcome.kind === "sent" && points ? (
+          <Card className="flex flex-col gap-2">
+            <div className="flex items-baseline justify-between">
+              <span className="font-semibold text-ink">Points</span>
+              <span className="text-2xl font-bold tabular-nums text-brand">
+                {points.total_points}
+              </span>
+            </div>
+            {points.awards[0]?.awards.length ? (
+              <ul className="flex flex-col gap-1 text-sm text-muted">
+                {points.awards[0].awards.map((award) => (
+                  <li key={award.rule_id}>
+                    +{award.points} — {award.detail}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-muted">
+                No points this time. Points come from photo quality, filling a
+                gap, and agreeing with another visitor — never from how much you
+                submit.
+              </p>
+            )}
+            {questCompleted ? (
+              <p className="text-xs text-muted">
+                This visit filled the “{questCompleted.replace(/_/g, " ")}” gap.
+              </p>
+            ) : null}
+          </Card>
+        ) : null}
 
         {pendingCount > 0 ? (
           <Card>

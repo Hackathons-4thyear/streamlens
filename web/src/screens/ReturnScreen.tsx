@@ -92,10 +92,12 @@ export function CoverageMap({
 
 /** Return: what the community got back. Coverage, teams, and your own mirror. */
 export function ReturnScreen({
+  cities,
   scope,
   onScope,
   onOpenSite,
 }: {
+  cities: string[];
   scope: DataScope;
   onScope: (scope: DataScope) => void;
   onOpenSite: (siteId: string) => void;
@@ -107,6 +109,9 @@ export function ReturnScreen({
   const [points, setPoints] = useState<MyPoints | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  // Empty means every city. Coverage and the team standings follow it
+  // together, so the map and the table always describe the same place.
+  const [city, setCity] = useState("");
 
   const identity = getIdentity();
 
@@ -116,8 +121,8 @@ export function ReturnScreen({
     setError("");
 
     Promise.all([
-      returns.coverage(scope, 30),
-      returns.leaderboard(scope),
+      returns.coverage(scope, 30, city || null),
+      returns.leaderboard(scope, city || null),
       returns.wellbeing(scope, identity.clientId, false).catch(() => null),
       returns.wellbeing(scope, identity.clientId, true).catch(() => null),
       returns.myPoints(scope, identity.clientId).catch(() => null),
@@ -140,7 +145,7 @@ export function ReturnScreen({
     return () => {
       cancelled = true;
     };
-  }, [scope, identity.clientId]);
+  }, [scope, city, identity.clientId]);
 
   if (loading) {
     return (
@@ -160,6 +165,28 @@ export function ReturnScreen({
       </header>
 
       <ScopeToggle scope={scope} onChange={onScope} />
+
+      <div className="flex flex-wrap items-center gap-2">
+        <label
+          className="text-sm font-semibold text-muted"
+          htmlFor="return-city"
+        >
+          City
+        </label>
+        <select
+          id="return-city"
+          value={city}
+          onChange={(event) => setCity(event.target.value)}
+          className="tap rounded-xl border-2 border-line bg-white px-3 py-2 text-sm"
+        >
+          <option value="">All cities</option>
+          {cities.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
       {error ? <Notice tone="warn">{error}</Notice> : null}
 
       {coverage ? <CoverageMap coverage={coverage} onOpenSite={onOpenSite} /> : null}
@@ -204,8 +231,9 @@ export function ReturnScreen({
           </h3>
           {board.teams.length === 0 ? (
             <Notice tone="info">
-              No teams yet. Add a team code in Settings and your assessments will
-              count towards it.
+              {city
+                ? `No teams have assessed a site in ${city} yet.`
+                : "No teams yet. Add a team code in Settings and your assessments will count towards it."}
             </Notice>
           ) : (
             <Card>
