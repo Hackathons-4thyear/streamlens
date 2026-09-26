@@ -37,6 +37,9 @@ DEGRADED_MESSAGES = {
     "auth": "The AI is not configured correctly on the server.",
     "bad_output": "The AI's answer could not be read.",
     "other": "The AI is unavailable.",
+    # Not a failure: the free allowance is simply spent. Worth its own wording
+    # so nobody reads "unavailable" and assumes something is broken.
+    "quota": "The free AI allowance for this demo is used up.",
 }
 
 
@@ -80,6 +83,29 @@ class SuggestOutcome:
     usage: Usage = field(default_factory=Usage)
     is_watercourse: bool = True
     not_watercourse_reason: str = ""
+
+
+async def use_mock_instead(
+    images: list[ImageInput],
+    context: AssessContext,
+    requested: str,
+    kind: str,
+    message: str,
+) -> SuggestOutcome:
+    """Answer from the mock, saying plainly why."""
+    fallback = MockProvider()
+    result = await fallback.suggest(images, context)
+    return SuggestOutcome(
+        result=result,
+        provider=fallback.name,
+        model=fallback.model,
+        is_mock=True,
+        requested_provider=requested,
+        degraded=True,
+        degraded_reason=message or DEGRADED_MESSAGES.get(kind, DEGRADED_MESSAGES["other"]),
+        degraded_kind=kind,
+        attempts=0,
+    )
 
 
 async def suggest_with_fallback(

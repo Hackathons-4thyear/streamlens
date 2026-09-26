@@ -52,6 +52,10 @@ class PreparedPhoto:
     height: int
     blur_score: float
     brightness: float
+    # A smaller copy, and the ONLY version ever sent to an AI provider. Kept
+    # separate from `data` so that changing what we store cannot silently
+    # change what we transmit.
+    ai_data: bytes = b""
     issues: list[QualityIssue] = field(default_factory=list)
     exif_stripped: bool = True
     original_bytes: int = 0
@@ -88,6 +92,7 @@ def prepare(
     role: str,
     *,
     max_px: int = 1600,
+    ai_max_px: int = 1024,
     blur_threshold: float = 100.0,
     dark_threshold: float = 45.0,
     bright_threshold: float = 225.0,
@@ -114,6 +119,14 @@ def prepare(
     buffer = io.BytesIO()
     image.save(buffer, format="JPEG", quality=85, optimize=True)
     data = buffer.getvalue()
+
+    # The copy for the AI: smaller again, from the same stripped pixels.
+    ai_image = image.copy()
+    if max(ai_image.size) > ai_max_px:
+        ai_image.thumbnail((ai_max_px, ai_max_px), Image.LANCZOS)
+    ai_buffer = io.BytesIO()
+    ai_image.save(ai_buffer, format="JPEG", quality=82, optimize=True)
+    ai_data = ai_buffer.getvalue()
 
     gray = np.asarray(image.convert("L"), dtype=np.float64)
     blur_score = _laplacian_variance(gray)
@@ -161,6 +174,7 @@ def prepare(
         height=image.height,
         blur_score=round(blur_score, 2),
         brightness=round(brightness, 2),
+        ai_data=ai_data,
         issues=issues,
         original_bytes=len(raw),
     )

@@ -11,13 +11,16 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Request, UploadFile
+from sqlmodel import Session
 
+from .. import limits
 from ..ai.base import AssessContext, ImageInput
-from ..ai.factory import suggest_with_fallback
+from ..ai.factory import suggest_with_fallback, use_mock_instead
 from ..ai.gemini import prompt_version
 from ..config import Settings, get_settings
 from ..imaging import PreparedPhoto, prepare
+from ..models import get_session
 from ..questions import QuestionSet, get_questions
 from ..schemas import (
     DroppedSuggestion,
@@ -32,7 +35,9 @@ from ..sites import SiteSet, get_sites, haversine_m
 
 router = APIRouter(tags=["assess"])
 
-MAX_UPLOAD_BYTES = 12 * 1024 * 1024
+ALLOWED_IMAGE_TYPES = {
+    "image/jpeg", "image/jpg", "image/png", "image/webp", "image/heic", "image/heif",
+}
 
 
 def validate_suggestions(
@@ -150,15 +155,24 @@ def check_location(
 
 @router.post("/assess/suggest", response_model=SuggestResponse)
 async def suggest(
+    request: Request,
     site_id: str = Form(...),
     upstream: UploadFile | None = File(default=None),
     downstream: UploadFile | None = File(default=None),
     lat: float | None = Form(default=None),
     lon: float | None = Form(default=None),
+    client_id: str = Form(default=""),
     settings: Settings = Depends(get_settings),
     questions: QuestionSet = Depends(get_questions),
     site_set: SiteSet = Depends(get_sites),
+    session: Session = Depends(get_session),
 ) -> SuggestResponse:
+    """Draft answers for one or two photographs.
+
+    Only reached when the citizen has chosen AI help: the interface offers a
+    manual path that never calls this at all, so opting out means the photos are
+    never sent to Google rather than merely not being shown.
+    """
     site = site_set.get(site_id)
     if site is None:
         raise HTTPException(status_code=404, detail=f"unknown site '{site_id}'")
@@ -175,10 +189,15 @@ async def suggest(
         raw = await upload.read()
         if not raw:
             raise HTTPException(status_code=422, detail=f"the {role} photo was empty")
-        if len(raw) > MAX_UPLOAD_BYTES:
+        if len(raw) > settings.max_upload_mb * 1024 * 1024:
             raise HTTPException(
                 status_code=413,
-                detail=f"the {role} photo is larger than {MAX_UPLOAD_BYTES // (1024 * 1024)} MB",
+                detail=f"the {role} photo is larger than {settings.max_upload_mb} MB",
+            )
+        if upload.content_type and upload.content_type.lower() not in ALLOWED_IMAGE_TYPES:
+            raise HTTPException(
+                status_code=415,
+                detail=f"the {role} file is {upload.content_type}, not an image",
             )
         try:
             prepared.append(
@@ -186,6 +205,7 @@ async def suggest(
                     raw,
                     role,
                     max_px=settings.max_image_px,
+                    ai_max_px=settings.ai_max_image_px,
                     blur_threshold=settings.blur_threshold,
                     dark_threshold=settings.dark_threshold,
                     bright_threshold=settings.bright_threshold,
@@ -200,10 +220,28 @@ async def suggest(
         country=site.get("country", ""),
         catalogue=questions.catalogue_for_prompt(),
     )
-    images = [ImageInput(role=p.role, data=p.data) for p in prepared]
+    # The SMALLER copy is what leaves this server. Never `p.data`.
+    images = [ImageInput(role=p.role, data=p.ai_data or p.data) for p in prepared]
+
+    caller = client_id or (request.client.host if request.client else "anonymous")
+    decision = limits.check(
+        session, caller,
+        per_hour=settings.ai_calls_per_hour_per_client,
+        per_day=settings.ai_calls_per_day_total,
+    )
 
     try:
-        outcome = await suggest_with_fallback(settings, images, context)
+        if not decision.allowed:
+            # Not an error: the free allowance is spent, so the labelled mock
+            # answers instead and the interface says so.
+            outcome = await use_mock_instead(
+                images, context, settings.ai_provider.lower(),
+                "quota", decision.message,
+            )
+        else:
+            outcome = await suggest_with_fallback(settings, images, context)
+            if not outcome.is_mock:
+                limits.record(session, caller)
     except Exception as exc:  # noqa: BLE001 - only reachable if the mock itself fails
         raise HTTPException(
             status_code=502,
@@ -237,6 +275,7 @@ async def suggest(
         attempts=outcome.attempts,
         latency_ms=outcome.latency_ms,
         usage=UsageOut(**vars(outcome.usage)),
+        ai_calls_remaining_today=decision.remaining_today,
         prompt_version=prompt_version(),
         provider_note=outcome.result.note,
         generated_at=datetime.now(timezone.utc),

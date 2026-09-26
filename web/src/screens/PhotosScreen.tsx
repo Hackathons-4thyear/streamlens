@@ -80,6 +80,8 @@ export function PhotosScreen({
   onDownstream,
   onBack,
   onNext,
+  useAi,
+  onChangeAiChoice,
 }: {
   upstream: PhotoSlotValue | null;
   downstream: PhotoSlotValue | null;
@@ -87,6 +89,8 @@ export function PhotosScreen({
   onDownstream: (value: PhotoSlotValue | null) => void;
   onBack: () => void;
   onNext: () => void;
+  useAi: boolean;
+  onChangeAiChoice: () => void;
 }) {
   const { t } = useTranslation();
   const [touched, setTouched] = useState(false);
@@ -108,6 +112,19 @@ export function PhotosScreen({
         <h2 className="text-xl font-bold text-ink">{t("photos.title")}</h2>
         <p className="text-sm text-muted">{t("photos.lead")}</p>
       </header>
+
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border-2 border-line bg-white p-3">
+        <span className="text-sm font-semibold text-ink">
+          {useAi ? t("aiChoice.usingAi") : t("aiChoice.manualOnly")}
+        </span>
+        <button
+          type="button"
+          onClick={onChangeAiChoice}
+          className="tap text-sm font-semibold text-brand underline"
+        >
+          {t("aiChoice.change")}
+        </button>
+      </div>
 
       <Notice tone="info">{t("photos.privacy")}</Notice>
 

@@ -126,6 +126,10 @@ class SuggestResponse(BaseModel):
     attempts: int = 1
     latency_ms: int = 0
     usage: UsageOut = Field(default_factory=UsageOut)
+    ai_calls_remaining_today: int = Field(
+        default=0,
+        description="Free-tier allowance left today across the whole demo.",
+    )
     prompt_version: str
     provider_note: str = ""
     generated_at: datetime

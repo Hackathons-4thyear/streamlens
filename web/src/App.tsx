@@ -9,6 +9,7 @@ import type { Position } from "./lib/geo";
 import { flushOutbox, startAutoSync } from "./lib/sync";
 import { CityScreen, ExploreScreen } from "./screens/ExploreScreen";
 import { PhotosScreen, type PhotoSlotValue } from "./screens/PhotosScreen";
+import { AiChoiceScreen } from "./screens/AiChoiceScreen";
 import { IdentityCard, ReturnScreen } from "./screens/ReturnScreen";
 import { SitePage } from "./screens/SitePage";
 import { getIdentity, markIntroduced, needsIntroduction, setIdentity } from "./lib/identity";
@@ -31,7 +32,7 @@ import type {
   SuggestResponse,
 } from "./types";
 
-const STEPS = ["site", "photos", "review", "rating", "submit"] as const;
+const STEPS = ["site", "aiChoice", "photos", "review", "rating", "submit"] as const;
 type Step = (typeof STEPS)[number];
 
 /** The two halves of the product: record an assessment, or read what is there. */
@@ -74,6 +75,9 @@ export default function App() {
   const [upstream, setUpstream] = useState<PhotoSlotValue | null>(null);
   const [downstream, setDownstream] = useState<PhotoSlotValue | null>(null);
 
+  // Null until the citizen has chosen. Never defaulted to true: sending a
+  // photograph to Google is their decision, not one we make for them.
+  const [useAi, setUseAi] = useState<boolean | null>(null);
   const [suggestion, setSuggestion] = useState<SuggestResponse | null>(null);
   const [suggestLoading, setSuggestLoading] = useState(false);
   const [suggestError, setSuggestError] = useState("");
@@ -142,6 +146,14 @@ export default function App() {
 
   const fetchSuggestions = useCallback(async () => {
     if (!site) return;
+    if (!useAi) {
+      // The manual path never calls the API, so "your photos are not sent
+      // to Google" is true by construction rather than by promise.
+      setSuggestion(null);
+      setSuggestError("");
+      dispatch({ type: "reset" });
+      return;
+    }
     setSuggestLoading(true);
     setSuggestError("");
     setSuggestion(null);
@@ -152,6 +164,7 @@ export default function App() {
         downstream: downstream?.blob,
         lat: position?.lat ?? null,
         lon: position?.lon ?? null,
+        clientId: identity.clientId,
       });
       setSuggestion(result);
       dispatch({ type: "init", chips: result.suggestions });
@@ -164,7 +177,7 @@ export default function App() {
     } finally {
       setSuggestLoading(false);
     }
-  }, [site, upstream, downstream, position, t]);
+  }, [site, upstream, downstream, position, t, useAi, identity.clientId]);
 
   // --- submit --------------------------------------------------------------
 
@@ -186,8 +199,8 @@ export default function App() {
       team: identity.team,
       completed_quest: "",
       recorded_at: new Date().toISOString(),
-      ai_provider: suggestion?.provider ?? "",
-      ai_model: suggestion?.model ?? "",
+      ai_provider: useAi ? suggestion?.provider ?? "" : "",
+      ai_model: useAi ? suggestion?.model ?? "" : "",
     };
   };
 
@@ -229,6 +242,7 @@ export default function App() {
     setDownstream(null);
     setSuggestion(null);
     setSuggestError("");
+    setUseAi(null);
     dispatch({ type: "reset" });
     setOverall("");
     setEmotions({});
@@ -440,7 +454,17 @@ export default function App() {
             position={position}
             onPosition={setPosition}
             onSelect={setSite}
-            onNext={() => setStep("photos")}
+            onNext={() => setStep("aiChoice")}
+          />
+        ) : null}
+
+        {mode === "observe" && step === "aiChoice" ? (
+          <AiChoiceScreen
+            onChoose={(choice) => {
+              setUseAi(choice);
+              setStep("photos");
+            }}
+            onBack={() => setStep("site")}
           />
         ) : null}
 
@@ -450,7 +474,9 @@ export default function App() {
             downstream={downstream}
             onUpstream={setUpstream}
             onDownstream={setDownstream}
-            onBack={() => setStep("site")}
+            onBack={() => setStep("aiChoice")}
+            useAi={useAi === true}
+            onChangeAiChoice={() => setStep("aiChoice")}
             onNext={() => {
               setStep("review");
               void fetchSuggestions();
@@ -463,6 +489,7 @@ export default function App() {
             loading={suggestLoading}
             error={suggestError}
             suggestion={suggestion}
+            useAi={useAi === true}
             questionSet={questionSet}
             answers={answers}
             dispatch={dispatch}

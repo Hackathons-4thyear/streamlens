@@ -68,6 +68,19 @@ a deterministic **mock** vision provider and the UI shows a **"demo AI (mock)"**
 badge so nobody mistakes it for a real model. To use Gemini, copy `.env.example`
 to `api/.env` and set `AI_PROVIDER=gemini` plus your `GEMINI_API_KEY`.
 
+## Privacy in one paragraph
+
+**AI help is optional and you choose before you take a photograph.** If you use
+it, a copy of your photos — shrunk to 1024 px and stripped of all hidden data
+including GPS — is sent to Google Gemini on its **free tier**, where Google's own
+terms say human reviewers may read them and Google may use them to improve its
+products. If you answer yourself, your photos are never sent to Google; the same
+questions are asked and the same data recorded. StreamLens asks for no name, no
+email and no password, and on the public demo photographs are not stored at all
+once they have been measured. Google's terms tell users not to send personal
+information through the free tier, so **photograph the water and the banks, not
+people**. Full detail, with the terms quoted: **[docs/privacy.md](docs/privacy.md)**.
+
 ## Ethics and data handling
 
 - **AI suggests, humans decide.** Every record stores the citizen's answer *and*

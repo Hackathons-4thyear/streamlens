@@ -15,6 +15,7 @@ export function ReviewScreen({
   loading,
   error,
   suggestion,
+  useAi,
   questionSet,
   answers,
   dispatch,
@@ -24,6 +25,8 @@ export function ReviewScreen({
   loading: boolean;
   error: string;
   suggestion: SuggestResponse | null;
+  /** False when the citizen chose to answer without AI help. */
+  useAi: boolean;
   questionSet: QuestionSet;
   answers: AnswersState;
   dispatch: (action: AnswerAction) => void;
@@ -41,7 +44,7 @@ export function ReviewScreen({
 
   // With no suggestions at all - offline, or the provider failed - showing only
   // the suggested questions would show an empty screen, so show everything.
-  const everything = showAll || chipsById.size === 0;
+  const everything = showAll || chipsById.size === 0 || !useAi;
 
   const questions = useMemo(
     () =>
@@ -89,6 +92,66 @@ export function ReviewScreen({
           </Button>
           <Button variant="secondary" full onClick={() => setShowAll(true)}>
             {t("review.answerAnyway")}
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!useAi) {
+    // Answering unaided: the same questions, no chips, and no mention of an AI
+    // that was never asked.
+    return (
+      <div className="flex flex-col gap-4">
+        <header>
+          <h2 className="text-xl font-bold text-ink">{t("review.manualTitle")}</h2>
+          <p className="text-sm text-muted">{t("aiChoice.manualOnly")}</p>
+        </header>
+
+        <div
+          className="sticky top-0 z-20 -mx-4 bg-surface/95 px-4 py-2 backdrop-blur"
+          role="status"
+        >
+          <p className="text-sm text-muted">
+            {answered} {t("common.of")} {questionSet.questions.length - 1}{" "}
+            {t("review.answered").toLowerCase()}
+          </p>
+        </div>
+
+        {sections.map(({ section, items }) => (
+          <section key={section.id}>
+            <h3 className="mb-2 text-sm font-bold tracking-wide text-muted uppercase">
+              {section.label}
+            </h3>
+            <ul className="flex flex-col gap-3">
+              {items.map((question) => (
+                <SuggestionCard
+                  key={question.id}
+                  question={question}
+                  answer={answers[question.id]}
+                  glossary={questionSet.glossary}
+                  onAccept={() => undefined}
+                  onReject={() => undefined}
+                  onToggle={(code) =>
+                    dispatch({
+                      type: "toggle",
+                      questionId: question.id,
+                      code,
+                      multi: question.type === "multi",
+                    })
+                  }
+                />
+              ))}
+            </ul>
+          </section>
+        ))}
+
+        <div className="flex gap-2 pb-2">
+          <Button variant="secondary" onClick={onBack}>
+            {t("common.back")}
+          </Button>
+          <Button full onClick={onNext}>
+            {t("common.next")}
           </Button>
         </div>
       </div>

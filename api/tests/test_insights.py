@@ -145,7 +145,11 @@ def test_the_card_always_carries_the_indicator_disclaimer(card_parts):
 # --------------------------------------------------------------------------
 
 def _payload(rain_per_hour: float = 0.5, temp: float = 18.0) -> dict:
-    hours = [(NOW + timedelta(hours=h)).strftime("%Y-%m-%dT%H:00") for h in range(72)]
+    # Anchored to the real clock, not the fixed NOW above: the parser slices the
+    # window from the actual current time, so a payload pinned to a past date
+    # yields fewer than 48 future hours and the test drifts as days pass.
+    start = datetime.now(timezone.utc)
+    hours = [(start + timedelta(hours=h)).strftime("%Y-%m-%dT%H:00") for h in range(72)]
     return {
         "hourly": {
             "time": hours,

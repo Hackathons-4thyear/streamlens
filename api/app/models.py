@@ -115,6 +115,20 @@ class WeatherCache(SQLModel, table=True):
     fetched_at: datetime = Field(default_factory=_now)
 
 
+class AiUsage(SQLModel, table=True):
+    """How many real AI calls have been made on a given day.
+
+    In the database rather than in memory so it survives restarts and is shared
+    between workers. This is the counter that actually protects a free-tier key
+    from being exhausted by a demo left open in somebody's browser tab.
+    """
+
+    __tablename__ = "ai_usage"
+
+    day: str = Field(primary_key=True, description="UTC date, YYYY-MM-DD")
+    calls: int = 0
+
+
 # --------------------------------------------------------------------------
 # Engine / session
 # --------------------------------------------------------------------------

@@ -70,6 +70,7 @@ export const api = {
     downstream?: Blob | null;
     lat?: number | null;
     lon?: number | null;
+    clientId?: string;
   }) => {
     const form = new FormData();
     form.append("site_id", args.siteId);
@@ -77,6 +78,7 @@ export const api = {
     if (args.downstream) form.append("downstream", args.downstream, "downstream.jpg");
     if (args.lat != null) form.append("lat", String(args.lat));
     if (args.lon != null) form.append("lon", String(args.lon));
+    if (args.clientId) form.append("client_id", args.clientId);
     return request<SuggestResponse>("/assess/suggest", {
       method: "POST",
       body: form,

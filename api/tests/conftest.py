@@ -14,11 +14,25 @@ from fastapi.testclient import TestClient
 from PIL import Image
 from sqlmodel import SQLModel, create_engine
 
+from app import limits
 from app.config import Settings, get_settings
 from app.main import create_app
 from app.models import set_engine
 from app.questions import get_questions
 from app.sites import get_sites
+
+
+@pytest.fixture(autouse=True)
+def _fresh_rate_limits():
+    """The hourly limiter is process-global by design, so isolate each test.
+
+    Without this the suite trips its own rate limit partway through and later
+    tests silently get the mock provider - which is the limiter working, but
+    not what those tests are checking.
+    """
+    limits.reset_for_tests()
+    yield
+    limits.reset_for_tests()
 
 
 @pytest.fixture
@@ -28,6 +42,9 @@ def settings(tmp_path) -> Settings:
         gemini_api_key="",
         database_url=f"sqlite:///{tmp_path / 'test.db'}",
         upload_dir=str(tmp_path / "uploads"),
+        # Generous in tests: the limiter has its own suite.
+        ai_calls_per_hour_per_client=10_000,
+        ai_calls_per_day_total=10_000,
     )
 
 

@@ -45,6 +45,16 @@ class Settings(BaseSettings):
 
     # --- Photo handling ----------------------------------------------------
     max_image_px: int = 1600
+    # A SEPARATE, smaller copy is what gets sent to the AI. Nothing larger than
+    # this ever leaves the server for Google, whatever we keep ourselves.
+    ai_max_image_px: int = 1024
+    # Largest upload accepted, in megabytes.
+    max_upload_mb: int = 8
+    # Whether photo bytes are kept at all. False on the hosted demo: the quality
+    # metrics are kept and the image is discarded.
+    store_photos: bool = True
+    # Stored photos are deleted after this many days.
+    photo_retention_days: int = 14
     blur_threshold: float = 100.0
     dark_threshold: float = 45.0
     bright_threshold: float = 225.0
@@ -54,6 +64,12 @@ class Settings(BaseSettings):
 
     # Below this confidence a suggestion is flagged for the citizen's attention.
     low_confidence: float = 0.55
+
+    # --- Protecting a free-tier API key -------------------------------------
+    # Per-caller and whole-service limits on AI calls. When either is reached
+    # the request still succeeds, on the mock, with a visible notice.
+    ai_calls_per_hour_per_client: int = 10
+    ai_calls_per_day_total: int = 300
 
     @property
     def cors_origin_list(self) -> list[str]:
