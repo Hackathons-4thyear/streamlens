@@ -19,6 +19,7 @@ from ..config import Settings, get_settings
 from ..imaging import prepare
 from ..models import Observation, ObservationAnswer, ObservationPhoto, get_session
 from ..questions import QuestionSet, get_questions
+from ..retention import sweep_if_due
 from ..schemas import (
     ObservationAnswerOut,
     ObservationIn,
@@ -163,7 +164,7 @@ async def create_observation(
 
     photo_rows: list[ObservationPhoto] = []
     uploads = [(r, f) for r, f in (("upstream", upstream), ("downstream", downstream)) if f]
-    if uploads:
+    if uploads and settings.store_photos:
         settings.upload_path.mkdir(parents=True, exist_ok=True)
     for role, upload in uploads:
         raw = await upload.read()
@@ -181,8 +182,14 @@ async def create_observation(
         except ValueError as exc:
             raise HTTPException(status_code=422, detail=str(exc)) from exc
 
-        filename = f"{observation.id}_{role}.jpg"
-        (settings.upload_path / filename).write_bytes(photo.data)
+        # On the hosted demo nothing is written to disk: the measurements are
+        # kept and the image is dropped. An empty filename is what every other
+        # part of the app reads as "there is no file for this photo".
+        if settings.store_photos:
+            filename = f"{observation.id}_{role}.jpg"
+            (settings.upload_path / filename).write_bytes(photo.data)
+        else:
+            filename = ""
         row = ObservationPhoto(
             observation_id=observation.id,
             role=role,
@@ -192,13 +199,18 @@ async def create_observation(
             blur_score=photo.blur_score,
             brightness=photo.brightness,
             exif_stripped=True,
-            bytes_stored=len(photo.data),
+            bytes_stored=len(photo.data) if settings.store_photos else 0,
         )
         session.add(row)
         photo_rows.append(row)
 
     session.commit()
     session.refresh(observation)
+
+    # Housekeeping while a session is already open: any stored photograph
+    # past its keep-by date goes now, at most once an hour per process.
+    sweep_if_due(session, settings)
+
     return _to_out(observation, rows, photo_rows, site.get("name", ""))
 
 

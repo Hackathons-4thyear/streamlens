@@ -1,0 +1,61 @@
+# Render blueprint for the StreamLens API (free plan).
+#
+# Everything here is free-tier: one web service on Render, with the database on
+# Neon rather than Render because Render's free Postgres expires after 30 days
+# and this demo has to outlive the judging.
+#
+# Secrets are never in this file. Every value marked `sync: false` is typed into
+# the Render dashboard by a human and lives only there.
+services:
+  - type: web
+    name: streamlens-api
+    runtime: python
+    plan: free
+    # Frankfurt is the closest free region to the OneAquaHealth cities and to
+    # a Neon project in eu-central-1, which keeps the database round trip short.
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+    buildCommand: pip install -r api/requirements.txt
+    startCommand: bash scripts/render-start.sh
+    # /health reads only local JSON files and never opens a database
+    # connection, so Render's own health checks and the keep-awake ping cost
+    # nothing in Neon compute hours.
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+
+      # --- typed into the dashboard, never committed ----------------------
+      # The Neon pooled connection string, pasted exactly as Neon prints it.
+      - key: DATABASE_URL
+        sync: false
+      # The Gemini free-tier key.
+      - key: GEMINI_API_KEY
+        sync: false
+      # The Vercel domain, e.g. https://streamlens.vercel.app - no trailing
+      # slash, no wildcard. This is the only origin the API answers.
+      - key: CORS_ORIGINS
+        sync: false
+
+      - key: AI_PROVIDER
+        value: gemini
+
+      # --- the hosted demo's promises, as configuration -------------------
+      # Photograph bytes are never written on the hosted instance. Only the
+      # quality measurements are kept, so nothing can be shown publicly and
+      # nothing needs deleting later.
+      - key: STORE_PHOTOS
+        value: "false"
+      # Honoured by any instance that does store photographs.
+      - key: PHOTO_RETENTION_DAYS
+        value: "14"
+      # Labelled synthetic demo data, seeded once if the database is empty.
+      - key: SEED_DEMO
+        value: "true"
+
+      # --- keeping a free API key alive -----------------------------------
+      - key: AI_CALLS_PER_HOUR_PER_CLIENT
+        value: "10"
+      - key: AI_CALLS_PER_DAY_TOTAL
+        value: "300"

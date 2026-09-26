@@ -10,6 +10,10 @@ pillow==11.0.0
 numpy==2.2.1
 httpx==0.28.1
 
+# Postgres driver, used only when DATABASE_URL points at one (the hosted
+# demo on Neon). SQLite needs nothing extra.
+psycopg[binary]==3.2.3
+
 # Vision provider. Imported lazily - the app runs without it on the mock provider.
 google-genai==2.25.0
 

@@ -77,19 +77,33 @@ class Settings(BaseSettings):
 
     @property
     def resolved_database_url(self) -> str:
-        """The database URL with any relative SQLite path pinned to api/.
+        """The database URL, ready for SQLAlchemy.
 
-        Without this the database file lands wherever the process happened to be
+        Two corrections happen here. A relative SQLite path is pinned to api/,
+        because without it the database file lands wherever the process was
         started from, so `npm run dev` and `python scripts/seed_demo.py` quietly
-        used two different databases and the demo data appeared to vanish.
+        used two different files and the demo data appeared to vanish. And a
+        hosted Postgres URL, which providers hand out as `postgres://` or
+        `postgresql://`, is given the driver this project actually installs, so
+        the same string can be pasted straight from Neon into the environment.
         """
+        url = self.database_url
+        if url.startswith("postgres://"):
+            url = "postgresql://" + url[len("postgres://"):]
+        if url.startswith("postgresql://"):
+            return "postgresql+psycopg://" + url[len("postgresql://"):]
+
         prefix = "sqlite:///"
-        if not self.database_url.startswith(prefix):
-            return self.database_url
-        raw = self.database_url[len(prefix):]
+        if not url.startswith(prefix):
+            return url
+        raw = url[len(prefix):]
         if raw.startswith("/") or (len(raw) > 1 and raw[1] == ":"):
-            return self.database_url  # already absolute
+            return url  # already absolute
         return prefix + str((API_DIR / raw.lstrip("./")).resolve())
+
+    @property
+    def is_sqlite(self) -> bool:
+        return self.resolved_database_url.startswith("sqlite")
 
     @property
     def upload_path(self) -> Path:

@@ -140,10 +140,21 @@ def get_engine(settings: Settings | None = None):
     global _engine
     if _engine is None:
         settings = settings or get_settings()
-        _engine = create_engine(
-            settings.resolved_database_url,
-            connect_args={"check_same_thread": False},
-        )
+        if settings.is_sqlite:
+            # check_same_thread is a SQLite-only argument, and passing it to any
+            # other driver is an immediate connection error.
+            _engine = create_engine(
+                settings.resolved_database_url,
+                connect_args={"check_same_thread": False},
+            )
+        else:
+            # A hosted Postgres suspends its compute when idle and drops the
+            # connections with it, so every checkout is tested before use.
+            _engine = create_engine(
+                settings.resolved_database_url,
+                pool_pre_ping=True,
+                pool_recycle=300,
+            )
     return _engine
 
 

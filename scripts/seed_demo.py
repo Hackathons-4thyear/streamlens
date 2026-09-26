@@ -18,6 +18,7 @@ would fire right now.
 
 Usage:
     python scripts/seed_demo.py            # add demo data
+    python scripts/seed_demo.py --if-empty # add it only if there is none yet
     python scripts/seed_demo.py --reset    # delete existing demo data first
     python scripts/seed_demo.py --check    # report which rules would fire now
 """
@@ -336,6 +337,10 @@ def main() -> int:
                         help="delete existing synthetic observations first")
     parser.add_argument("--check", action="store_true",
                         help="only report which rules would fire now")
+    parser.add_argument("--if-empty", action="store_true",
+                        help="do nothing if demo data is already present "
+                             "(used by the hosted deploy, which reruns on "
+                             "every push)")
     parser.add_argument("--days", type=int, default=90)
     parser.add_argument("--seed", type=int, default=20260924)
     parser.add_argument("--no-demo-weather", action="store_true",
@@ -351,6 +356,14 @@ def main() -> int:
         if args.check:
             check(session, site_set)
             return 0
+
+        if args.if_empty:
+            existing = session.exec(
+                select(Observation).where(Observation.synthetic == True)  # noqa: E712
+            ).first()
+            if existing is not None:
+                print("Demo data is already present; nothing to do.")
+                return 0
 
         if args.reset:
             removed = reset(session)
