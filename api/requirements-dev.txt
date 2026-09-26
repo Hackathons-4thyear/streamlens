@@ -1,0 +1,9 @@
+# Everything the API needs, plus what only the tests need.
+#
+# Install this locally (npm run setup does), and requirements.txt alone on a
+# host: the deploy then carries no test framework.
+
+-r requirements.txt
+
+pytest==8.3.4
+pytest-asyncio==0.25.0

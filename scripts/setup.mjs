@@ -28,10 +28,12 @@ if (!existsSync(venvPython())) {
 }
 
 run(venvPython(), ["-m", "pip", "install", "--upgrade", "pip"], "upgrading pip");
+// requirements-dev.txt includes requirements.txt, so this installs both the
+// runtime tree and the test framework. A host installs requirements.txt alone.
 run(
   venvPython(),
-  ["-m", "pip", "install", "-r", "api/requirements.txt"],
-  "installing API dependencies"
+  ["-m", "pip", "install", "-r", "api/requirements-dev.txt"],
+  "installing API dependencies (runtime + tests)"
 );
 run("npm", ["--prefix", "web", "install"], "installing web dependencies");
 

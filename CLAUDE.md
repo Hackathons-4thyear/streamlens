@@ -142,7 +142,8 @@ npm run dev            # API on :8000, web on :5173
 
 # API only
 py -3.11 -m venv api/.venv
-api/.venv/Scripts/python -m pip install -r api/requirements.txt
+api/.venv/Scripts/python -m pip install -r api/requirements-dev.txt  # runtime + tests
+# a host installs api/requirements.txt alone, which carries no test framework
 api/.venv/Scripts/python -m uvicorn app.main:app --reload --port 8000   # from /api
 api/.venv/Scripts/python -m pytest api/tests -q
 

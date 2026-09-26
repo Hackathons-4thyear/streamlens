@@ -1,9 +1,26 @@
 # StreamLens API - Python 3.11
+#
+# What the running service needs. Test-only packages are in
+# requirements-dev.txt, so a deploy installs neither pytest nor its tree.
+#
+# Every version here is one that has actually been installed together and run
+# the full test suite. When a pin changes, re-run the resolution in a clean
+# virtualenv before pushing - a pin that only works because the local
+# environment already had something newer is how a deploy breaks.
 
 fastapi==0.115.6
+# FastAPI's ASGI layer. Pinned rather than left to the resolver so the tested
+# version is the deployed one.
+starlette==0.41.3
 uvicorn[standard]==0.34.0
-pydantic==2.10.4
+
+# google-genai requires pydantic>=2.12.5, so this cannot go back to 2.10.x
+# while the Gemini provider is installed.
+pydantic==2.13.5
+# Hard-pinned by pydantic itself; written down so the set is reproducible.
+pydantic-core==2.46.5
 pydantic-settings==2.7.0
+
 sqlmodel==0.0.22
 python-multipart==0.0.20
 pillow==11.0.0
@@ -19,7 +36,3 @@ google-genai==2.25.0
 
 # Extracting the OneAquaHealth catalogue of measures (scripts/build_measures.py)
 pypdf==5.1.0
-
-# Tests
-pytest==8.3.4
-pytest-asyncio==0.25.0
